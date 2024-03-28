@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://xiaoqiangclub.github.io</id>
+    <title>XiaoqiangClub</title>
+    <updated>2024-03-28T07:39:25.005Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://xiaoqiangclub.github.io"/>
+    <link rel="self" href="https://xiaoqiangclub.github.io/atom.xml"/>
+    <subtitle>XiaoqiangClub</subtitle>
+    <logo>https://xiaoqiangclub.github.io/images/avatar.png</logo>
+    <icon>https://xiaoqiangclub.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2024, XiaoqiangClub</rights>
+    <entry>
+        <title type="html"><![CDATA[Hello XiaoqiangClub]]></title>
+        <id>https://xiaoqiangclub.github.io/post/hello-xiaoqiangclub/</id>
+        <link href="https://xiaoqiangclub.github.io/post/hello-xiaoqiangclub/">
+        </link>
+        <updated>2024-03-28T07:28:56.000Z</updated>
+    </entry>
+</feed>
