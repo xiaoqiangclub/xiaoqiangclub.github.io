@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://xiaoqiangclub.github.io</id>
+    <title>XiaoqiangClub</title>
+    <updated>2024-05-20T11:33:27.857Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://xiaoqiangclub.github.io"/>
+    <link rel="self" href="https://xiaoqiangclub.github.io/atom.xml"/>
+    <subtitle>XiaoqiangClub</subtitle>
+    <logo>https://xiaoqiangclub.github.io/images/avatar.png</logo>
+    <icon>https://xiaoqiangclub.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2024, XiaoqiangClub</rights>
+    <entry>
+        <title type="html"><![CDATA[如何在PC电脑上免费畅玩超级马里奥惊奇Super Mario Bros. Wonder！]]></title>
+        <id>https://xiaoqiangclub.github.io/post/ru-he-zai-pc-dian-nao-shang-mian-fei-chang-wan-chao-ji-ma-li-ao-liang-qi-super-mario-bros-wonder/</id>
+        <link href="https://xiaoqiangclub.github.io/post/ru-he-zai-pc-dian-nao-shang-mian-fei-chang-wan-chao-ji-ma-li-ao-liang-qi-super-mario-bros-wonder/">
+        </link>
+        <updated>2024-05-12T04:24:05.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[电视家复活版来啦！手把手教您如何复活电视家！]]></title>
+        <id>https://xiaoqiangclub.github.io/post/dian-shi-jia-fu-huo-ban-lai-la-shou-ba-shou-jiao-nin-ru-he-fu-huo-dian-shi-jia/</id>
+        <link href="https://xiaoqiangclub.github.io/post/dian-shi-jia-fu-huo-ban-lai-la-shou-ba-shou-jiao-nin-ru-he-fu-huo-dian-shi-jia/">
+        </link>
+        <updated>2024-04-17T03:57:13.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hello XiaoqiangClub]]></title>
+        <id>https://xiaoqiangclub.github.io/post/hello-xiaoqiangclub/</id>
+        <link href="https://xiaoqiangclub.github.io/post/hello-xiaoqiangclub/">
+        </link>
+        <updated>2024-03-28T07:28:56.000Z</updated>
+    </entry>
+</feed>
