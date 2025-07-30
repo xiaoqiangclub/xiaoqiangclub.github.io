@@ -64,18 +64,21 @@
         animation: float 4s ease-in-out infinite;
       }
 
-      /* --- 标题 (打字机效果) --- */
+      /* --- 标题 (动态波浪效果) --- */
       h1 {
-        font-size: 2.2em;
+        font-size: 2.2em; /* 调整字体大小 */
         margin-bottom: 15px;
         color: #fff;
-        font-weight: 600;
+        font-weight: 700;
+        display: flex; /* 使用flex布局 */
+        justify-content: center;
+        min-height: 40px; /* 增加最小高度防止动画抖动 */
+      }
+
+      h1 span {
         display: inline-block;
-        overflow: hidden;
-        white-space: nowrap;
-        border-right: 0.1em solid #fff; /* 光标效果 */
-        animation: typing 2s steps(10, end) forwards,
-          blink-caret 0.75s step-end infinite;
+        animation: wave 1.8s infinite;
+        animation-delay: calc(0.1s * var(--i));
       }
 
       /* --- 温馨提示 --- */
@@ -159,22 +162,16 @@
         }
       }
 
-      @keyframes typing {
-        from {
-          width: 0;
+      @keyframes wave {
+        0%,
+        40%,
+        100% {
+          transform: translateY(0);
+          text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
-        to {
-          width: 10ch; /* 10个字符的宽度 */
-        }
-      }
-
-      @keyframes blink-caret {
-        from,
-        to {
-          border-color: transparent;
-        }
-        50% {
-          border-color: #fff;
+        20% {
+          transform: translateY(-15px);
+          text-shadow: 0 0 20px #fff, 0 0 30px #82aaff, 0 0 40px #82aaff;
         }
       }
 
@@ -230,6 +227,46 @@
       .modal-content .close-btn:hover {
         background: #c63a50;
       }
+
+      /* --- 移动端适配 --- */
+      @media (max-width: 768px) {
+        .container {
+          padding: 30px 20px;
+          width: 90%;
+        }
+
+        .avatar {
+          width: 100px;
+          height: 100px;
+        }
+
+        h1 {
+          font-size: 1.8em;
+          min-height: 35px;
+        }
+
+        .tip {
+          font-size: 0.9em;
+        }
+
+        p {
+          font-size: 1em;
+        }
+
+        .btn {
+          padding: 10px 20px;
+          font-size: 1em;
+          margin: 8px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .btn {
+          display: block; /* 按钮垂直排列 */
+          width: 80%;
+          margin: 10px auto;
+        }
+      }
     </style>
   </head>
   <body>
@@ -238,7 +275,15 @@
 
     <div class="container">
       <img class="avatar" src="images/avatar.png" alt="头像" />
-      <h1>页面跳转中...</h1>
+      <h1>
+        <span style="--i: 1">即</span>
+        <span style="--i: 2">将</span>
+        <span style="--i: 3">进</span>
+        <span style="--i: 4">入</span>
+        <span style="--i: 5">.</span>
+        <span style="--i: 6">.</span>
+        <span style="--i: 7">.</span>
+      </h1>
       <div class="tip">温馨提示：网址域名不固定，建议收藏此导航页！</div>
       <p>请稍候，系统即将跳转到网站页面。</p>
       <div class="links" style="margin-bottom: 20px">
