@@ -2,103 +2,146 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <!-- 设置页面图标 -->
     <link rel="icon" href="images/avatar.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>XiaoqiangClub 导航页</title>
     <style>
-      /* 重置样式 */
+      /* --- 重置样式 --- */
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
 
-      /* 使用国内常用系统字体 */
+      /* --- 整体页面样式 --- */
       body {
-        font-family: "微软雅黑", "Microsoft YaHei", "PingFang SC",
-          "Hiragino Sans GB", "宋体", "SimSun", sans-serif;
+        font-family: "Helvetica Neue", "PingFang SC", "Hiragino Sans GB",
+          "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
         display: flex;
         align-items: center;
         justify-content: center;
         min-height: 100vh;
-        background: linear-gradient(135deg, #71b7e6, #9b59b6);
-        color: #fff;
+        background-color: #1a1a2e;
+        color: #e0e0e0;
+        overflow: hidden; /* 隐藏滚动条 */
       }
 
-      /* 中央容器 */
+      /* --- 粒子动画背景容器 --- */
+      #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+
+      /* --- 内容容器 (毛玻璃效果) --- */
       .container {
-        text-align: center;
-        padding: 30px 20px;
-        background: rgba(0, 0, 0, 0.2);
-        border-radius: 10px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        max-width: 90%;
         position: relative;
+        z-index: 2;
+        text-align: center;
+        padding: 40px 30px;
+        background: rgba(27, 27, 43, 0.5); /* 半透明背景 */
+        border-radius: 15px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+        backdrop-filter: blur(10px); /* 毛玻璃效果 */
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        max-width: 90%;
+        width: 600px;
+        animation: fadeIn 1s ease-out;
       }
 
-      /* 头像样式 */
+      /* --- 头像样式与动画 --- */
       .avatar {
         width: 120px;
         height: 120px;
         border-radius: 50%;
         margin: 0 auto 20px;
         display: block;
-        border: 3px solid #fff;
+        border: 3px solid rgba(255, 255, 255, 0.5);
+        animation: float 4s ease-in-out infinite;
       }
 
-      /* 标题样式和动画 */
+      /* --- 标题 (打字机效果) --- */
       h1 {
-        font-size: 2.5em;
-        margin-bottom: 10px;
-        animation: fadeInDown 1s;
+        font-size: 2.2em;
+        margin-bottom: 15px;
+        color: #fff;
+        font-weight: 600;
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 0.1em solid #fff; /* 光标效果 */
+        animation: typing 2s steps(10, end) forwards,
+          blink-caret 0.75s step-end infinite;
       }
 
-      /* 温馨提示样式 */
+      /* --- 温馨提示 --- */
       .tip {
         font-size: 1em;
         margin-bottom: 20px;
-        color: #ffeb3b;
+        color: #f9a825;
+        animation: fadeIn 2s 1s backwards;
       }
 
-      /* 描述文字 */
+      /* --- 描述文字 --- */
       p {
-        font-size: 1.2em;
-        margin-bottom: 30px;
-        animation: fadeIn 2s;
+        font-size: 1.1em;
+        margin-bottom: 25px;
+        color: #c0c0c0;
+        animation: fadeIn 2s 1.5s backwards;
       }
 
-      /* 公共按钮样式 */
+      /* --- 备用地址链接 --- */
+      .links p {
+        margin-bottom: 10px;
+      }
+      .links a {
+        color: #82aaff;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .links a:hover {
+        color: #b3caff;
+      }
+
+      /* --- 按钮通用样式 --- */
       .btn {
         font-size: 1.1em;
         text-decoration: none;
-        background: linear-gradient(45deg, #ff6b6b, #f06595);
+        background: linear-gradient(45deg, #e94560, #8a2be2);
         color: #fff;
-        padding: 10px 20px;
-        border-radius: 30px;
-        transition: background 0.3s, transform 0.3s;
-        margin: 0 10px;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        margin: 10px;
         display: inline-block;
         cursor: pointer;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        font-weight: 500;
       }
 
       .btn:hover {
-        background: linear-gradient(45deg, #f06595, #ff6b6b);
-        transform: translateY(-3px);
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
       }
 
-      /* 倒计时样式 */
+      /* --- 倒计时 --- */
       .countdown {
         font-size: 1.2em;
-        margin-top: 20px;
+        margin-top: 25px;
+        color: #fff;
+        font-weight: 500;
       }
 
-      /* 标题渐现动画 */
-      @keyframes fadeInDown {
+      /* --- 动画定义 --- */
+      @keyframes fadeIn {
         from {
           opacity: 0;
-          transform: translateY(-20px);
+          transform: translateY(10px);
         }
         to {
           opacity: 1;
@@ -106,30 +149,50 @@
         }
       }
 
-      /* 描述文字淡入动画 */
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
         }
-        to {
-          opacity: 1;
+        50% {
+          transform: translateY(-15px);
         }
       }
 
-      /* 自定义弹窗背景 */
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 10ch; /* 10个字符的宽度 */
+        }
+      }
+
+      @keyframes blink-caret {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: #fff;
+        }
+      }
+
+      /* --- 弹窗样式 --- */
       .modal {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.6);
+        background: rgba(0, 0, 0, 0.7);
         display: flex;
         align-items: center;
         justify-content: center;
         visibility: hidden;
         opacity: 0;
-        transition: visibility 0s, opacity 0.3s;
+        transition: opacity 0.3s, visibility 0.3s;
+        z-index: 100;
       }
 
       .modal.active {
@@ -137,63 +200,70 @@
         opacity: 1;
       }
 
-      /* 弹窗内容 */
       .modal-content {
-        background: #fff;
-        color: #333;
-        padding: 20px 30px;
+        background: #1b1b2b;
+        color: #e0e0e0;
+        padding: 30px;
         border-radius: 10px;
         text-align: center;
         max-width: 80%;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.1);
       }
 
       .modal-content p {
         font-size: 1.2em;
         margin-bottom: 20px;
+        color: #fff;
       }
 
       .modal-content .close-btn {
-        background: #ff6b6b;
+        background: #e94560;
         color: #fff;
         border: none;
-        padding: 8px 16px;
+        padding: 10px 20px;
         border-radius: 20px;
         cursor: pointer;
         transition: background 0.3s;
       }
 
       .modal-content .close-btn:hover {
-        background: #f06595;
+        background: #c63a50;
       }
     </style>
   </head>
   <body>
+    <!-- 粒子动画背景 -->
+    <div id="particles-js"></div>
+
     <div class="container">
-      <!-- 显示头像 -->
       <img class="avatar" src="images/avatar.png" alt="头像" />
       <h1>页面跳转中...</h1>
       <div class="tip">温馨提示：网址域名不固定，建议收藏此导航页！</div>
       <p>请稍候，系统即将跳转到网站页面。</p>
-      <div style="margin-bottom: 20px">
-        <p style="margin-bottom: 5px">
+      <div class="links" style="margin-bottom: 20px">
+        <p>
           备用地址1:
-          <a href="https://xiaoqiangclub.qzz.io/" style="color: #fff"
+          <a
+            href="https://xiaoqiangclub.qzz.io/"
+            target="_blank"
+            rel="noopener noreferrer"
             >https://xiaoqiangclub.qzz.io/</a
           >
         </p>
         <p>
           备用地址2:
-          <a href="https://xiaoqiangclub.dpdns.org/" style="color: #fff"
+          <a
+            href="https://xiaoqiangclub.dpdns.org/"
+            target="_blank"
+            rel="noopener noreferrer"
             >https://xiaoqiangclub.dpdns.org/</a
           >
         </p>
       </div>
       <div>
-        <!-- 手动跳转按钮 -->
-        <a id="manualLink" class="btn" href="#">点击这里手动跳转</a>
-        <!-- 收藏导航页按钮 -->
-        <span id="bookmarkBtn" class="btn">收藏导航页</span>
+        <a id="manualLink" class="btn" href="#">手动跳转</a>
+        <span id="bookmarkBtn" class="btn">收藏本页</span>
       </div>
       <div class="countdown">5秒后自动跳转</div>
     </div>
@@ -206,21 +276,80 @@
       </div>
     </div>
 
+    <!-- 引入 particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
-      // 定义目标跳转网址列表
+      // --- 初始化粒子动画 ---
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 80, density: { enable: true, value_area: 800 } },
+          color: { value: "#ffffff" },
+          shape: {
+            type: "circle",
+            stroke: { width: 0, color: "#000000" },
+            polygon: { nb_sides: 5 },
+          },
+          opacity: {
+            value: 0.5,
+            random: false,
+            anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false },
+          },
+          size: {
+            value: 3,
+            random: true,
+            anim: { enable: false, speed: 40, size_min: 0.1, sync: false },
+          },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#ffffff",
+            opacity: 0.4,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 2,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: { enable: false, rotateX: 600, rotateY: 1200 },
+          },
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: { enable: true, mode: "grab" },
+            onclick: { enable: true, mode: "push" },
+            resize: true,
+          },
+          modes: {
+            grab: { distance: 140, line_opacity: 1 },
+            bubble: {
+              distance: 400,
+              size: 40,
+              duration: 2,
+              opacity: 8,
+              speed: 3,
+            },
+            repulse: { distance: 200, duration: 0.4 },
+            push: { particles_nb: 4 },
+            remove: { particles_nb: 2 },
+          },
+        },
+        retina_detect: true,
+      });
+
+      // --- 页面跳转逻辑 ---
       const targetUrls = [
         "https://xiaoqiangclub.qzz.io/",
         "https://xiaoqiangclub.dpdns.org/",
       ];
-
-      // 随机选择一个网址
       const targetUrl =
         targetUrls[Math.floor(Math.random() * targetUrls.length)];
-
-      // 设置手动跳转链接的目标
       document.getElementById("manualLink").href = targetUrl;
 
-      // 倒计时设置，倒计时结束后自动跳转
       let seconds = 5;
       const countdownElement = document.querySelector(".countdown");
       const timer = setInterval(() => {
@@ -233,27 +362,23 @@
         }
       }, 1000);
 
-      // 收藏导航页按钮及弹窗处理
+      // --- 收藏弹窗逻辑 ---
       const bookmarkBtn = document.getElementById("bookmarkBtn");
       const bookmarkModal = document.getElementById("bookmarkModal");
       const closeModalBtn = document.getElementById("closeModalBtn");
 
       bookmarkBtn.addEventListener("click", function () {
-        // 针对IE浏览器尝试调用收藏API
         if (window.external && "AddFavorite" in window.external) {
           window.external.AddFavorite(location.href, document.title);
         } else {
-          // 显示自定义弹窗
           bookmarkModal.classList.add("active");
         }
       });
 
-      // 关闭弹窗按钮
       closeModalBtn.addEventListener("click", function () {
         bookmarkModal.classList.remove("active");
       });
 
-      // 点击弹窗背景也可以关闭
       bookmarkModal.addEventListener("click", function (e) {
         if (e.target === bookmarkModal) {
           bookmarkModal.classList.remove("active");
