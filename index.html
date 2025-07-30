@@ -1,241 +1,264 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <!-- 设置页面图标 -->
-    <link rel="icon" href="images/avatar.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/avatar.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>XiaoqiangClub 导航页</title>
     <style>
-        /* 重置样式 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      /* 重置样式 */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        /* 使用国内常用系统字体 */
-        body {
-            font-family: "微软雅黑", "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "宋体", "SimSun", sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #71b7e6, #9b59b6);
-            color: #fff;
-        }
+      /* 使用国内常用系统字体 */
+      body {
+        font-family: "微软雅黑", "Microsoft YaHei", "PingFang SC",
+          "Hiragino Sans GB", "宋体", "SimSun", sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #71b7e6, #9b59b6);
+        color: #fff;
+      }
 
-        /* 中央容器 */
-        .container {
-            text-align: center;
-            padding: 30px 20px;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            max-width: 90%;
-            position: relative;
-        }
+      /* 中央容器 */
+      .container {
+        text-align: center;
+        padding: 30px 20px;
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        max-width: 90%;
+        position: relative;
+      }
 
-        /* 头像样式 */
-        .avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            display: block;
-            border: 3px solid #fff;
-        }
+      /* 头像样式 */
+      .avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        display: block;
+        border: 3px solid #fff;
+      }
 
-        /* 标题样式和动画 */
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            animation: fadeInDown 1s;
-        }
+      /* 标题样式和动画 */
+      h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        animation: fadeInDown 1s;
+      }
 
-        /* 温馨提示样式 */
-        .tip {
-            font-size: 1em;
-            margin-bottom: 20px;
-            color: #ffeb3b;
-        }
+      /* 温馨提示样式 */
+      .tip {
+        font-size: 1em;
+        margin-bottom: 20px;
+        color: #ffeb3b;
+      }
 
-        /* 描述文字 */
-        p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-            animation: fadeIn 2s;
-        }
+      /* 描述文字 */
+      p {
+        font-size: 1.2em;
+        margin-bottom: 30px;
+        animation: fadeIn 2s;
+      }
 
-        /* 公共按钮样式 */
-        .btn {
-            font-size: 1.1em;
-            text-decoration: none;
-            background: linear-gradient(45deg, #ff6b6b, #f06595);
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 30px;
-            transition: background 0.3s, transform 0.3s;
-            margin: 0 10px;
-            display: inline-block;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        }
+      /* 公共按钮样式 */
+      .btn {
+        font-size: 1.1em;
+        text-decoration: none;
+        background: linear-gradient(45deg, #ff6b6b, #f06595);
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 30px;
+        transition: background 0.3s, transform 0.3s;
+        margin: 0 10px;
+        display: inline-block;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      }
 
-        .btn:hover {
-            background: linear-gradient(45deg, #f06595, #ff6b6b);
-            transform: translateY(-3px);
-        }
+      .btn:hover {
+        background: linear-gradient(45deg, #f06595, #ff6b6b);
+        transform: translateY(-3px);
+      }
 
-        /* 倒计时样式 */
-        .countdown {
-            font-size: 1.2em;
-            margin-top: 20px;
-        }
+      /* 倒计时样式 */
+      .countdown {
+        font-size: 1.2em;
+        margin-top: 20px;
+      }
 
-        /* 标题渐现动画 */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+      /* 标题渐现动画 */
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
         }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-        /* 描述文字淡入动画 */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+      /* 描述文字淡入动画 */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
         }
+        to {
+          opacity: 1;
+        }
+      }
 
-        /* 自定义弹窗背景 */
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            visibility: hidden;
-            opacity: 0;
-            transition: visibility 0s, opacity 0.3s;
-        }
+      /* 自定义弹窗背景 */
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.3s;
+      }
 
-        .modal.active {
-            visibility: visible;
-            opacity: 1;
-        }
+      .modal.active {
+        visibility: visible;
+        opacity: 1;
+      }
 
-        /* 弹窗内容 */
-        .modal-content {
-            background: #fff;
-            color: #333;
-            padding: 20px 30px;
-            border-radius: 10px;
-            text-align: center;
-            max-width: 80%;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
+      /* 弹窗内容 */
+      .modal-content {
+        background: #fff;
+        color: #333;
+        padding: 20px 30px;
+        border-radius: 10px;
+        text-align: center;
+        max-width: 80%;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
 
-        .modal-content p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-        }
+      .modal-content p {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+      }
 
-        .modal-content .close-btn {
-            background: #ff6b6b;
-            color: #fff;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
+      .modal-content .close-btn {
+        background: #ff6b6b;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
 
-        .modal-content .close-btn:hover {
-            background: #f06595;
-        }
+      .modal-content .close-btn:hover {
+        background: #f06595;
+      }
     </style>
-</head>
-<body>
-<div class="container">
-    <!-- 显示头像 -->
-    <img class="avatar" src="images/avatar.png" alt="头像">
-    <h1>页面跳转中...</h1>
-    <div class="tip">温馨提示：网址域名不固定，建议收藏此导航页！</div>
-    <p>请稍候，系统即将跳转到网站页面。</p>
-    <div>
+  </head>
+  <body>
+    <div class="container">
+      <!-- 显示头像 -->
+      <img class="avatar" src="images/avatar.png" alt="头像" />
+      <h1>页面跳转中...</h1>
+      <div class="tip">温馨提示：网址域名不固定，建议收藏此导航页！</div>
+      <p>请稍候，系统即将跳转到网站页面。</p>
+      <div style="margin-bottom: 20px">
+        <p style="margin-bottom: 5px">
+          备用地址1:
+          <a href="https://xiaoqiangclub.qzz.io/" style="color: #fff"
+            >https://xiaoqiangclub.qzz.io/</a
+          >
+        </p>
+        <p>
+          备用地址2:
+          <a href="https://xiaoqiangclub.dpdns.org/" style="color: #fff"
+            >https://xiaoqiangclub.dpdns.org/</a
+          >
+        </p>
+      </div>
+      <div>
         <!-- 手动跳转按钮 -->
         <a id="manualLink" class="btn" href="#">点击这里手动跳转</a>
         <!-- 收藏导航页按钮 -->
         <span id="bookmarkBtn" class="btn">收藏导航页</span>
+      </div>
+      <div class="countdown">5秒后自动跳转</div>
     </div>
-    <div class="countdown">5秒后自动跳转</div>
-</div>
 
-<!-- 自定义收藏提示弹窗 -->
-<div id="bookmarkModal" class="modal">
-    <div class="modal-content">
+    <!-- 自定义收藏提示弹窗 -->
+    <div id="bookmarkModal" class="modal">
+      <div class="modal-content">
         <p>请按 Ctrl+D (Windows) 或 Command+D (Mac) 收藏此页面。</p>
         <button class="close-btn" id="closeModalBtn">关闭</button>
+      </div>
     </div>
-</div>
 
-<script>
-    // 定义目标跳转网址参数，后续若域名发生变化，只需修改此处
-    const targetUrl = "https://xiaoqiangclub.dpdns.org/";
-    // 设置手动跳转链接的目标
-    document.getElementById('manualLink').href = targetUrl;
+    <script>
+      // 定义目标跳转网址列表
+      const targetUrls = [
+        "https://xiaoqiangclub.qzz.io/",
+        "https://xiaoqiangclub.dpdns.org/",
+      ];
 
-    // 倒计时设置，倒计时结束后自动跳转
-    let seconds = 5;
-    const countdownElement = document.querySelector('.countdown');
-    const timer = setInterval(() => {
+      // 随机选择一个网址
+      const targetUrl =
+        targetUrls[Math.floor(Math.random() * targetUrls.length)];
+
+      // 设置手动跳转链接的目标
+      document.getElementById("manualLink").href = targetUrl;
+
+      // 倒计时设置，倒计时结束后自动跳转
+      let seconds = 5;
+      const countdownElement = document.querySelector(".countdown");
+      const timer = setInterval(() => {
         if (seconds > 1) {
-            seconds--;
-            countdownElement.textContent = seconds + "秒后自动跳转";
+          seconds--;
+          countdownElement.textContent = seconds + "秒后自动跳转";
         } else {
-            clearInterval(timer);
-            window.location.href = targetUrl;
+          clearInterval(timer);
+          window.location.href = targetUrl;
         }
-    }, 1000);
+      }, 1000);
 
-    // 收藏导航页按钮及弹窗处理
-    const bookmarkBtn = document.getElementById('bookmarkBtn');
-    const bookmarkModal = document.getElementById('bookmarkModal');
-    const closeModalBtn = document.getElementById('closeModalBtn');
+      // 收藏导航页按钮及弹窗处理
+      const bookmarkBtn = document.getElementById("bookmarkBtn");
+      const bookmarkModal = document.getElementById("bookmarkModal");
+      const closeModalBtn = document.getElementById("closeModalBtn");
 
-    bookmarkBtn.addEventListener('click', function () {
+      bookmarkBtn.addEventListener("click", function () {
         // 针对IE浏览器尝试调用收藏API
-        if (window.external && ('AddFavorite' in window.external)) {
-            window.external.AddFavorite(location.href, document.title);
+        if (window.external && "AddFavorite" in window.external) {
+          window.external.AddFavorite(location.href, document.title);
         } else {
-            // 显示自定义弹窗
-            bookmarkModal.classList.add('active');
+          // 显示自定义弹窗
+          bookmarkModal.classList.add("active");
         }
-    });
+      });
 
-    // 关闭弹窗按钮
-    closeModalBtn.addEventListener('click', function () {
-        bookmarkModal.classList.remove('active');
-    });
+      // 关闭弹窗按钮
+      closeModalBtn.addEventListener("click", function () {
+        bookmarkModal.classList.remove("active");
+      });
 
-    // 点击弹窗背景也可以关闭
-    bookmarkModal.addEventListener('click', function (e) {
+      // 点击弹窗背景也可以关闭
+      bookmarkModal.addEventListener("click", function (e) {
         if (e.target === bookmarkModal) {
-            bookmarkModal.classList.remove('active');
+          bookmarkModal.classList.remove("active");
         }
-    });
-</script>
-</body>
+      });
+    </script>
+  </body>
 </html>
