@@ -386,9 +386,10 @@
       // --- 页面跳转逻辑 ---
       const targetUrls = [
         "https://xiaoqiangclub.qzz.io/",
-        "https://xiaoqiangclub.dpdns.org/",
+        // "https://xiaoqiangclub.dpdns.org/",
       ];
       const targetUrl =
+        // 随机选择一个备用地址
         targetUrls[Math.floor(Math.random() * targetUrls.length)];
       document.getElementById("manualLink").href = targetUrl;
 
