@@ -1,64 +1,144 @@
+# =============================================================================
 # 网站基本信息
+# =============================================================================
 title: XiaoqiangClub
-description: 一起学习，共同进步！
+description: XiaoqiangClub's Blog - 技术分享与学习笔记
 author:
   name: Xiaoqiang
   email: xiaoqiangclub@hotmail.com
   github: xiaoqiangclub
 
+# =============================================================================
 # URL 配置
+# =============================================================================
 url: "https://xiaoqiangclub.github.io"
 baseurl: ""
 
-# 构建设置（重点修改代码高亮，适配 macOS 浅色风格）
+# =============================================================================
+# 主题设置
+# =============================================================================
+# 推荐主题选择（任选其一）：
+
+# 选项1：Cayman 主题 - 简洁大气，适合项目文档和博客
+remote_theme: pages-themes/cayman@v0.2.0
+
+# 选项2：Minimal Mistakes 主题 - 功能丰富，非常流行
+# remote_theme: mmistakes/minimal-mistakes@4.24.0
+
+# 选项3：Just the Docs 主题 - 适合文档站点
+# remote_theme: just-the-docs/just-the-docs@v0.8.2
+
+# 选项4：Chirpy 主题 - 精美博客主题（功能最全）
+# remote_theme: cotes2020/jekyll-theme-chirpy@v6.5.5
+
+# =============================================================================
+# 构建设置
+# =============================================================================
 markdown: kramdown
 kramdown:
-  syntax_highlighter: rouge
+  input: GFM                    # 支持 GitHub 风格 Markdown
+  hard_wrap: false              # 不自动换行
+  syntax_highlighter: rouge     # 代码高亮引擎
   syntax_highlighter_opts:
-    css_class: "highlight macos-code"  # 自定义类名，方便后续 CSS 定位
-    line_numbers: true  # 保留行号（macOS 终端也支持行号，不突兀）
-    line_number_start: 1
-    line_number_padding: 2
-    wrap: true
-    inline: false
-  input: GFM  # 支持 GitHub 格式 Markdown
+    css_class: highlight        # 高亮代码块的 CSS 类名
+    span:
+      line_numbers: false       # 行内代码不显示行号
+    block:
+      line_numbers: false       # 块级代码不显示行号（行号用 CSS 实现更美观）
 
-# 主题设置（不变，保持 Kiko Plus 兼容）
-remote_theme: AWEEKJ/Kiko-Plus@v1.5.0
-kiko_plus:
-  dark_mode: true  # 关闭默认暗黑模式（macOS 风格以浅色为主，如需切换可设为 true）
-  show_excerpt: false
-  show_tags: true
-  show_date: true
-  comment:
-    provider: utterances
-    repo: xiaoqiangclub/xiaoqiangclub.github.io
-    issue_term: pathname
-    theme: github-light  # 评论区同步浅色风格，与代码块统一
+highlighter: rouge
 
-# 时区&语言（不变）
-timezone: "Asia/Shanghai"
+# =============================================================================
+# 时区与语言
+# =============================================================================
+timezone: Asia/Shanghai
 lang: zh-CN
+encoding: UTF-8
 
-# 分页设置（不变）
-paginate: 5
-paginate_path: "/page:num/"
+# =============================================================================
+# 分页设置（需要 jekyll-paginate 插件）
+# =============================================================================
+paginate: 10
+paginate_path: "/page/:num/"
 
-# 社交链接（不变）
-social:
-  github: https://github.com/xiaoqiangclub
-
-# 插件设置（不变）
+# =============================================================================
+# 插件列表（仅使用 GitHub Pages 支持的插件）
+# =============================================================================
 plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-seo-tag
-  - jekyll-paginate
-  - jekyll-remote-theme
+  - jekyll-feed              # RSS 订阅
+  - jekyll-sitemap           # 站点地图
+  - jekyll-seo-tag           # SEO 优化
+  - jekyll-paginate          # 分页
+  - jekyll-remote-theme      # 远程主题支持
+  - jekyll-relative-links    # 相对链接支持
+  - jekyll-optional-front-matter  # 可选 Front Matter
 
-# 排除文件（不变）
+# =============================================================================
+# 默认布局设置
+# =============================================================================
+defaults:
+  # 所有页面的默认设置
+  - scope:
+      path: ""
+    values:
+      layout: default
+      author: Xiaoqiang
+  # 博客文章的默认设置
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: post
+      comments: true
+  # 文档页面的默认设置
+  - scope:
+      path: "docs"
+    values:
+      layout: default
+
+# =============================================================================
+# 排除文件（不参与构建）
+# =============================================================================
 exclude:
   - README.md
   - LICENSE
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
   - node_modules/
+  - vendor/
   - .gitignore
+  - .git/
+  - "*.config.js"
+  - package.json
+  - package-lock.json
+
+# =============================================================================
+# 保留文件（直接复制，不处理）
+# =============================================================================
+keep_files:
+  - assets/images
+
+# =============================================================================
+# 自定义变量（可在页面中通过 site.xxx 访问）
+# =============================================================================
+github_username: xiaoqiangclub
+social:
+  github: https://github.com/xiaoqiangclub
+  email: xiaoqiangclub@hotmail.com
+
+# 网站图标（如果有的话）
+# favicon: /assets/images/favicon.ico
+
+# =============================================================================
+# SEO 设置
+# =============================================================================
+google_analytics:             # Google Analytics ID（如有）
+twitter:
+  card: summary
+
+# =============================================================================
+# Feed 设置
+# =============================================================================
+feed:
+  path: feed.xml

@@ -1,85 +1,536 @@
-// ========== macOS 风格代码块核心样式 ==========
-// 1. 代码块整体样式（浅色背景+圆角+细腻边框）
-.highlight.macos-code {
-  background-color: #f5f5f7 !important;  // macOS 原生浅灰色背景（关键）
-  border: 1px solid #e1e1e6 !important;  // 淡灰色细边框（贴近 macOS 设计）
-  border-radius: 8px !important;  // 圆角（macOS 标志性设计）
-  padding: 1.2rem !important;  // 内边距，避免代码挤边
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05) !important;  // 轻微阴影，增强质感
-  overflow-x: auto;  // 长代码横向滚动（不破坏布局）
-}
+// =============================================================================
+// XiaoqiangClub 自定义样式
+// macOS 风格代码块 + 整体美化
+// =============================================================================
 
-// 2. 代码行号样式（柔和不突兀）
-.highlight.macos-code .lineno {
-  color: #8e8e93 !important;  // 行号灰色（macOS 终端行号色）
-  font-weight: normal !important;
-  margin-right: 0.8rem !important;  // 行号与代码间距
-  border-right: 1px solid #e1e1e6 !important;  // 行号右侧细边框
-  padding-right: 0.8rem !important;
-}
+// -----------------------------------------------------------------------------
+// 变量定义
+// -----------------------------------------------------------------------------
+$mac-bg-dark: #1e1e1e;           // 深色背景
+$mac-bg-light: #2d2d2d;          // 浅一点的背景
+$mac-header-bg: #3c3c3c;         // 标题栏背景
+$mac-border: #4a4a4a;            // 边框色
+$mac-text: #d4d4d4;              // 文字颜色
+$mac-red: #ff5f56;               // 红色按钮
+$mac-yellow: #ffbd2e;            // 黄色按钮
+$mac-green: #27ca40;             // 绿色按钮
+$mac-shadow: rgba(0, 0, 0, 0.3); // 阴影
+$mac-radius: 10px;               // 圆角
 
-// 3. 代码字体（优先 macOS 系统字体，兼顾跨平台）
-.highlight.macos-code pre {
-  font-family: "SF Mono", "Menlo", "Monaco", "Courier New", monospace !important;  // SF Mono 是 macOS 原生等宽字体
-  font-size: 0.85rem !important;  // 字体大小适中，贴近 Xcode/macOS 终端
-  line-height: 1.6 !important;  // 行高，提升可读性
-  color: #1d1d1f !important;  // 代码默认文字色（深灰，不刺眼）
-}
+// 代码高亮颜色（One Dark 主题风格）
+$code-keyword: #c678dd;          // 关键字 - 紫色
+$code-string: #98c379;           // 字符串 - 绿色
+$code-number: #d19a66;           // 数字 - 橙色
+$code-comment: #5c6370;          // 注释 - 灰色
+$code-function: #61afef;         // 函数 - 蓝色
+$code-variable: #e06c75;         // 变量 - 红色
+$code-class: #e5c07b;            // 类名 - 黄色
+$code-operator: #56b6c2;         // 运算符 - 青色
 
-// 4. 语法高亮颜色（低饱和度，符合 macOS 简约风格）
-// 关键字（if/else/function 等）
-.highlight.macos-code .k {
-  color: #007aff !important;  //  macOS 蓝色（系统强调色）
-}
-// 字符串（"" 或 '' 包裹内容）
-.highlight.macos-code .s {
-  color: #34c759 !important;  // 淡绿色（贴近 macOS 成功色）
-}
-// 注释（// 或 /* */ 内容）
-.highlight.macos-code .c1,
-.highlight.macos-code .cm {
-  color: #8e8e93 !important;  // 浅灰色注释（不干扰主代码）
-  font-style: italic !important;
-}
-// 变量/函数名
-.highlight.macos-code .n {
-  color: #1d1d1f !important;
-}
-// 数字
-.highlight.macos-code .mi {
-  color: #af52de !important;  // 淡紫色（柔和不刺眼）
-}
-// 运算符（+/-/*// 等）
-.highlight.macos-code .o {
-  color: #ff9500 !important;  // 淡橙色
-}
-// 类型（int/string/bool 等）
-.highlight.macos-code .kt {
-  color: #5856d6 !important;  // 淡紫色
-}
-
-// ========== 全局优化（可选，让整体更贴近 macOS 风格） ==========
-// 页面背景色（轻微灰，避免纯白刺眼）
+// -----------------------------------------------------------------------------
+// 全局样式优化
+// -----------------------------------------------------------------------------
 body {
-  background-color: #fafafa !important;
-}
-// 文章内容区背景（纯白，突出内容）
-.article-content {
-  background-color: #ffffff !important;
-  border-radius: 8px !important;
-  padding: 2rem !important;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+  line-height: 1.8;
+  color: #333;
 }
 
-// 暗黑模式下的 macOS 代码块（类似 Xcode 暗黑模式）
-[data-theme="dark"] .highlight.macos-code {
-  background-color: #1c1c1e !important;  // macOS 暗黑模式背景
-  border-color: #3a3a3c !important;
+// 链接样式
+a {
+  color: #0366d6;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
 }
-[data-theme="dark"] .highlight.macos-code pre {
-  color: #f5f5f7 !important;
+
+// 标题优化
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1.5em;
+  margin-bottom: 0.8em;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #24292e;
 }
-[data-theme="dark"] .highlight.macos-code .lineno {
-  color: #6e6e73 !important;
-  border-right-color: #3a3a3c !important;
+
+// 段落间距
+p {
+  margin-bottom: 1.2em;
+}
+
+// 图片响应式
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+// -----------------------------------------------------------------------------
+// macOS 风格代码块
+// -----------------------------------------------------------------------------
+div.highlight,
+figure.highlight,
+.highlight {
+  position: relative;
+  margin: 1.5em 0;
+  border-radius: $mac-radius;
+  background: $mac-bg-dark;
+  box-shadow: 0 8px 30px $mac-shadow, 0 2px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+
+  // macOS 窗口标题栏
+  &::before {
+    content: "";
+    display: block;
+    height: 36px;
+    background: linear-gradient(180deg, $mac-header-bg 0%, #333 100%);
+    border-bottom: 1px solid $mac-border;
+    border-radius: $mac-radius $mac-radius 0 0;
+  }
+
+  // macOS 三色按钮
+  &::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 14px;
+    width: 12px;
+    height: 12px;
+    background: $mac-red;
+    border-radius: 50%;
+    box-shadow:
+      20px 0 0 $mac-yellow,
+      40px 0 0 $mac-green;
+  }
+
+  // 代码容器
+  pre {
+    margin: 0;
+    padding: 16px 20px;
+    background: $mac-bg-dark;
+    color: $mac-text;
+    font-family: "SF Mono", "Fira Code", "JetBrains Mono", Monaco,
+                 "Cascadia Code", Consolas, "Liberation Mono",
+                 "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-x: auto;
+    border-radius: 0 0 $mac-radius $mac-radius;
+
+    // 自定义滚动条
+    &::-webkit-scrollbar {
+      height: 8px;
+      background: $mac-bg-dark;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #555;
+      border-radius: 4px;
+
+      &:hover {
+        background: #666;
+      }
+    }
+
+    code {
+      background: transparent;
+      color: inherit;
+      padding: 0;
+      font-size: inherit;
+      border: none;
+    }
+  }
+}
+
+// 语言标签
+div.highlight[data-lang]::before,
+figure.highlight[data-lang]::before {
+  content: attr(data-lang);
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 12px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+// -----------------------------------------------------------------------------
+// Rouge 语法高亮配色（One Dark 主题）
+// -----------------------------------------------------------------------------
+.highlight {
+  // 通用
+  .c, .c1, .cm, .cs { color: $code-comment; font-style: italic; }  // 注释
+  .cp { color: #e06c75; }                                            // 预处理指令
+
+  // 关键字
+  .k, .kc, .kd, .kn, .kp, .kr, .kt, .kv { color: $code-keyword; }
+
+  // 字符串
+  .s, .s1, .s2, .sb, .sc, .sd, .se, .sh, .si, .sr, .ss, .sx { color: $code-string; }
+
+  // 数字
+  .m, .mf, .mh, .mi, .mo, .il { color: $code-number; }
+
+  // 函数、方法
+  .nf, .fm, .nb { color: $code-function; }
+
+  // 变量
+  .nv, .vi, .vg, .vc { color: $code-variable; }
+
+  // 类、命名空间
+  .nc, .nn, .no, .nd { color: $code-class; }
+
+  // 运算符
+  .o, .ow { color: $code-operator; }
+
+  // 标点
+  .p { color: $mac-text; }
+
+  // 属性名（HTML/CSS）
+  .na, .nt { color: $code-variable; }
+
+  // 属性值
+  .nx { color: $code-function; }
+
+  // 常量
+  .bp { color: $code-class; }
+
+  // 错误
+  .err {
+    color: #ff5f56;
+    background: transparent;
+  }
+
+  // 文本
+  .n { color: $mac-text; }
+
+  // 标签
+  .nt { color: $code-variable; }
+
+  // YAML/JSON 键名
+  .na { color: $code-variable; }
+  .l-Scalar-Plain { color: $code-string; }
+}
+
+// -----------------------------------------------------------------------------
+// 行内代码样式
+// -----------------------------------------------------------------------------
+code:not(.highlight code):not(pre code) {
+  background: #f1f3f5;
+  color: #e83e8c;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-family: "SF Mono", "Fira Code", Monaco, Consolas, monospace;
+  font-size: 0.9em;
+  border: 1px solid #e9ecef;
+  word-break: break-word;
+}
+
+// 深色模式下的行内代码
+@media (prefers-color-scheme: dark) {
+  code:not(.highlight code):not(pre code) {
+    background: #2d2d2d;
+    color: #f8b500;
+    border-color: #444;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// 代码块行号（可选 - 用 CSS 实现）
+// -----------------------------------------------------------------------------
+.line-numbers {
+  .highlight pre {
+    counter-reset: line-number;
+
+    code {
+      &::before {
+        counter-increment: line-number;
+        content: counter(line-number);
+        display: inline-block;
+        width: 2.5em;
+        margin-right: 1em;
+        padding-right: 0.5em;
+        color: #5c6370;
+        text-align: right;
+        border-right: 1px solid #444;
+        user-select: none;
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// 表格样式
+// -----------------------------------------------------------------------------
+table {
+  width: 100%;
+  margin: 1.5em 0;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  th, td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+  }
+
+  th {
+    background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+    font-weight: 600;
+    color: #495057;
+  }
+
+  tr:hover td {
+    background: #f8f9fa;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// 引用块样式
+// -----------------------------------------------------------------------------
+blockquote {
+  margin: 1.5em 0;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+  border-left: 4px solid #0366d6;
+  border-radius: 0 8px 8px 0;
+  color: #586069;
+  font-style: normal;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  p {
+    margin: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 0.8em;
+    }
+  }
+
+  // 提示类引用
+  &.tip, &.info {
+    border-left-color: #28a745;
+    background: linear-gradient(135deg, #f0fff4 0%, #fff 100%);
+  }
+
+  &.warning {
+    border-left-color: #ffc107;
+    background: linear-gradient(135deg, #fffbeb 0%, #fff 100%);
+  }
+
+  &.danger {
+    border-left-color: #dc3545;
+    background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// 列表样式
+// -----------------------------------------------------------------------------
+ul, ol {
+  margin: 1em 0;
+  padding-left: 2em;
+
+  li {
+    margin-bottom: 0.5em;
+    line-height: 1.7;
+
+    &::marker {
+      color: #0366d6;
+    }
+  }
+
+  // 嵌套列表
+  ul, ol {
+    margin: 0.5em 0;
+  }
+}
+
+// 任务列表
+ul.task-list {
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    position: relative;
+    padding-left: 28px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 4px;
+      width: 18px;
+      height: 18px;
+      border: 2px solid #d1d5da;
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    &.task-list-item-checked::before {
+      background: #0366d6;
+      border-color: #0366d6;
+    }
+
+    &.task-list-item-checked::after {
+      content: "✓";
+      position: absolute;
+      left: 3px;
+      top: 2px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: bold;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// 水平分割线
+// -----------------------------------------------------------------------------
+hr {
+  margin: 2em 0;
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #e1e4e8, transparent);
+}
+
+// -----------------------------------------------------------------------------
+// 响应式布局
+// -----------------------------------------------------------------------------
+@media screen and (max-width: 768px) {
+  // 代码块移动端优化
+  div.highlight,
+  figure.highlight,
+  .highlight {
+    border-radius: 8px;
+    margin-left: -15px;
+    margin-right: -15px;
+
+    &::before {
+      border-radius: 8px 8px 0 0;
+    }
+
+    pre {
+      font-size: 13px;
+      padding: 12px 15px;
+      border-radius: 0 0 8px 8px;
+    }
+  }
+
+  // 表格横向滚动
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+
+    th, td {
+      padding: 10px 12px;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// 打印样式
+// -----------------------------------------------------------------------------
+@media print {
+  div.highlight,
+  figure.highlight,
+  .highlight {
+    box-shadow: none;
+    border: 1px solid #ddd;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    pre {
+      background: #f8f8f8;
+      color: #333;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// 页面动画
+// -----------------------------------------------------------------------------
+.main-content {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// 自定义滚动条（全局）
+// -----------------------------------------------------------------------------
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 5px;
+
+  &:hover {
+    background: #a8a8a8;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// 返回顶部按钮（如果需要可以配合 JS 使用）
+// -----------------------------------------------------------------------------
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 44px;
+  height: 44px;
+  background: #0366d6;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(3, 102, 214, 0.4);
+  z-index: 1000;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:hover {
+    background: #0056b3;
+    transform: translateY(-3px);
+  }
 }
