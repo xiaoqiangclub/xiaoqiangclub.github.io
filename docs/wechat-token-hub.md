@@ -3,8 +3,25 @@ title: WechatTokenHub
 ---
 
 # 🔐 WechatTokenHub
->🎈 微信公众号 Access Token 管理服务，解决本地开发时 IP 白名单限制问题
 
+<div align="center">
+  <img src="https://s2.loli.net/2025/07/30/Lauge4F7JK2RtEU.png" alt="WechatTokenHub Logo" width="180">
+  
+  <p>微信公众号 Access Token 管理服务，解决本地开发时 IP 白名单限制问题</p>
+
+  <a href="https://github.com/xiaoqiangclub/WechatTokenHub">
+    <img src="https://img.shields.io/badge/GitHub-WechatTokenHub-blue?logo=github" alt="GitHub">
+  </a>
+  <a href="https://hub.docker.com/r/xiaoqiangclub/wechat-token-hub">
+    <img src="https://img.shields.io/badge/Docker-xiaoqiangclub%2Fwechat--token--hub-blue?logo=docker" alt="Docker">
+  </a>
+  <a href="https://www.python.org/">
+    <img src="https://img.shields.io/badge/Python-3.10+-blue?logo=python" alt="Python">
+  </a>
+  <a href="https://fastapi.tiangolo.com/">
+    <img src="https://img.shields.io/badge/FastAPI-0.100+-green?logo=fastapi" alt="FastAPI">
+  </a>
+</div>
 
 ---
 
@@ -895,3 +912,25 @@ curl -X POST "http://localhost:8000/status/refresh"
 ### 6. Token 缓存在哪里
 
 Token 缓存在服务内存中。服务重启后缓存会清空，但首次请求会自动从微信服务器获取新 Token。
+
+---
+
+## 💖 打赏支持
+
+如果这个项目对你有帮助，欢迎打赏支持！你的支持是我持续更新的动力 💪
+
+<div align="center">
+  <img src="https://s2.loli.net/2025/11/10/lQRcAvN3Lgxukqb.png" alt="打赏支持" width="300">
+  
+  <p><strong>扫码打赏 | 支持作者 | 持续更新</strong></p>
+</div>
+
+---
+
+<div align="center">
+  <p><strong>Made with ❤️ by <a href="https://github.com/xiaoqiangclub">Xiaoqiang</a></strong></p>
+  
+  <p><strong>欢迎关注微信公众号：XiaoqiangClub</strong></p>
+  
+  <p><a href="#-wechattokenhub">⬆ 回到顶部</a></p>
+</div>

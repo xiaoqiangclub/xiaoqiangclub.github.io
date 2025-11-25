@@ -1,0 +1,26 @@
+# 网站基本信息
+title: XiaoqiangClub
+description: XiaoqiangClub's Blog
+author: Xiaoqiang
+email: xiaoqiangclub@hotmail.com
+
+# URL 配置
+url: "https://xiaoqiangclub.github.io"
+baseurl: ""  # 如果是项目站点，设置为 "/仓库名"
+
+# 构建设置
+markdown: kramdown
+highlighter: rouge
+
+# 主题设置
+theme: minima
+
+# 时区
+timezone: Asia/Shanghai
+
+# 排除不需要处理的文件
+exclude:
+  - README.md
+  - LICENSE
+  - node_modules/
+  - .gitignore
