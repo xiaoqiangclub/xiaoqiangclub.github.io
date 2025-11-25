@@ -1,4 +1,5 @@
 ---
+title: WechatTokenHub
 ---
 
 # 🔐 WechatTokenHub
@@ -8,10 +9,18 @@
   
   <p>微信公众号 Access Token 管理服务，解决本地开发时 IP 白名单限制问题</p>
 
-  [![GitHub](https://img.shields.io/badge/GitHub-WechatTokenHub-blue?logo=github)](https://github.com/xiaoqiangclub/WechatTokenHub)
-  [![Docker](https://img.shields.io/badge/Docker-xiaoqiangclub%2Fwechat--token--hub-blue?logo=docker)](https://hub.docker.com/r/xiaoqiangclub/wechat-token-hub)
-  [![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)](https://www.python.org/)
-  [![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green?logo=fastapi)](https://fastapi.tiangolo.com/)
+  <a href="https://github.com/xiaoqiangclub/WechatTokenHub">
+    <img src="https://img.shields.io/badge/GitHub-WechatTokenHub-blue?logo=github" alt="GitHub">
+  </a>
+  <a href="https://hub.docker.com/r/xiaoqiangclub/wechat-token-hub">
+    <img src="https://img.shields.io/badge/Docker-xiaoqiangclub%2Fwechat--token--hub-blue?logo=docker" alt="Docker">
+  </a>
+  <a href="https://www.python.org/">
+    <img src="https://img.shields.io/badge/Python-3.10+-blue?logo=python" alt="Python">
+  </a>
+  <a href="https://fastapi.tiangolo.com/">
+    <img src="https://img.shields.io/badge/FastAPI-0.100+-green?logo=fastapi" alt="FastAPI">
+  </a>
 </div>
 
 ---
@@ -70,7 +79,7 @@ services:
   wechat-token-hub:
     image: xiaoqiangclub/wechat-token-hub:latest
     container_name: wechat-token-hub
-    network_mode: bridge # 使用默认的 bridge 网络
+    network_mode: bridge
     restart: always
     ports:
       - "${APP_PORT:-8000}:8000"
@@ -92,11 +101,11 @@ docker-compose up -d
 
 | 地址 | 说明 |
 |------|------|
-| http://localhost:8000/ | 🏠 首页（使用文档 & 账号状态） |
-| http://localhost:8000/docs | 📖 Swagger 交互文档 |
-| http://localhost:8000/redoc | 📚 ReDoc 文档 |
-| http://localhost:8000/health | ❤️ 健康检查 |
-| http://localhost:8000/status | 📊 服务状态（含账号验证结果和出口IP） |
+| `http://localhost:8000/` | 🏠 首页（使用文档 & 账号状态） |
+| `http://localhost:8000/docs` | 📖 Swagger 交互文档 |
+| `http://localhost:8000/redoc` | 📚 ReDoc 文档 |
+| `http://localhost:8000/health` | ❤️ 健康检查 |
+| `http://localhost:8000/status` | 📊 服务状态（含账号验证结果和出口IP） |
 
 ---
 
@@ -259,13 +268,15 @@ curl -X POST "http://localhost:8000/api/v1/token" \
 **简单响应**（`simple_response=true`）：
 
 ```json
-// 成功
 {
   "access_token": "82_xxxxxxxxxxxxxxxx",
   "expires_in": 6500
 }
+```
 
-// 失败
+失败时返回：
+
+```json
 null
 ```
 
@@ -543,7 +554,6 @@ class WechatTokenClient:
         try:
             with open(cache_file, "r") as f:
                 data = json.load(f)
-                # 提前 60 秒过期
                 if time.time() < data["expires_at"] - 60:
                     return data
         except:
@@ -561,23 +571,14 @@ class WechatTokenClient:
             json.dump(data, f)
 
     def get_token(self, name=None, app_id=None, force_refresh=False):
-        """
-        获取 Token（优先本地缓存 -> 服务端缓存 -> 微信服务器）
-        
-        :param name: 账号名称
-        :param app_id: AppID
-        :param force_refresh: 强制刷新
-        :return: access_token 或 None
-        """
+        """获取 Token（优先本地缓存 -> 服务端缓存 -> 微信服务器）"""
         identifier = name or app_id or "default"
 
-        # 检查本地缓存
         if not force_refresh:
             cache = self._load_cache(identifier)
             if cache:
                 return cache["access_token"]
 
-        # 从服务端获取
         params = {"simple_response": True}
         if name:
             params["name"] = name
@@ -605,10 +606,6 @@ client = WechatTokenClient(secret="your_secret")
 token = client.get_token(name="公众号A")
 print(f"Token: {token}")
 ```
-
-> 💡 **双层缓存机制**：
-> - **服务端缓存**：WechatTokenHub 服务自动缓存 Token
-> - **本地缓存**：客户端将 Token 保存到临时文件，减少网络请求
 
 ### 完整封装类
 
@@ -769,23 +766,23 @@ poetry install
 
 ```
 WechatTokenHub/
-├── pyproject.toml              # Poetry 配置文件
-├── poetry.lock                 # 依赖锁定文件
-├── Dockerfile                  # Docker 构建文件
-├── docker-compose.yml          # Docker Compose 配置
-├── .env.example                # 环境变量示例
-├── README.md                   # 项目文档
+├── pyproject.toml
+├── poetry.lock
+├── Dockerfile
+├── docker-compose.yml
+├── .env.example
+├── README.md
 └── src/
     └── wechat_token_hub/
-        ├── __init__.py         # 包初始化
-        ├── main.py             # 应用入口 & 首页生成 & 账号验证
-        ├── config.py           # 配置管理（含代理配置）
-        ├── models.py           # Pydantic 数据模型
-        ├── storage.py          # Token 内存存储
-        ├── wechat_api.py       # 微信 API 调用（支持代理）
+        ├── __init__.py
+        ├── main.py
+        ├── config.py
+        ├── models.py
+        ├── storage.py
+        ├── wechat_api.py
         └── routers/
             ├── __init__.py
-            └── token.py        # Token 相关路由
+            └── token.py
 ```
 
 ### 本地运行
@@ -885,6 +882,7 @@ docker buildx build \
 - **查看具体错误信息** - 访问 `/status` 接口或查看首页
 
 常见错误码：
+
 | 错误码 | 说明 |
 |--------|------|
 | `40001` | AppSecret 错误 |
@@ -915,27 +913,24 @@ curl -X POST "http://localhost:8000/status/refresh"
 
 Token 缓存在服务内存中。服务重启后缓存会清空，但首次请求会自动从微信服务器获取新 Token。
 
+---
 
 ## 💖 打赏支持
 
 如果这个项目对你有帮助，欢迎打赏支持！你的支持是我持续更新的动力 💪
 
 <div align="center">
-
-![打赏支持](https://s2.loli.net/2025/11/10/lQRcAvN3Lgxukqb.png)
-
-**扫码打赏 | 支持作者 | 持续更新**
-
+  <img src="https://s2.loli.net/2025/11/10/lQRcAvN3Lgxukqb.png" alt="打赏支持" width="300">
+  
+  <p><strong>扫码打赏 | 支持作者 | 持续更新</strong></p>
 </div>
 
 ---
 
 <div align="center">
-
-**Made with ❤️ by [Xiaoqiang](https://github.com/xiaoqiangclub)**
-
-**欢迎关注微信公众号：XiaoqiangClub**
-
-[⬆ 回到顶部](#mdnice---markdown-多平台格式转换工具)
-
+  <p><strong>Made with ❤️ by <a href="https://github.com/xiaoqiangclub">Xiaoqiang</a></strong></p>
+  
+  <p><strong>欢迎关注微信公众号：XiaoqiangClub</strong></p>
+  
+  <p><a href="#-wechattokenhub">⬆ 回到顶部</a></p>
 </div>
