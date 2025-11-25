@@ -13,10 +13,10 @@ markdown: kramdown
 highlighter: rouge
 
 # 主题设置
-theme: minima
+theme: jekyll-theme-slate
 
-# 时区
-timezone: Asia/Shanghai
+# 时区设置
+timezone: "Asia/Shanghai"  # 使用字符串格式确保兼容性
 
 # 排除不需要处理的文件
 exclude:
@@ -24,3 +24,20 @@ exclude:
   - LICENSE
   - node_modules/
   - .gitignore
+
+# 语言设置
+lang: zh-CN
+
+# 分页设置（如果需要）
+paginate: 5
+paginate_path: "/page:num/"
+
+# 社交链接（可选）
+github_username: xiaoqiangclub
+twitter_username:
+
+# 插件设置
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
