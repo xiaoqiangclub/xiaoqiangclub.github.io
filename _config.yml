@@ -1,73 +1,64 @@
-# 网站基本信息（保留原有信息，优化格式）
+# 网站基本信息
 title: XiaoqiangClub
 description: 一起学习，共同进步！
 author:
   name: Xiaoqiang
   email: xiaoqiangclub@hotmail.com
-  github: xiaoqiangclub  # 统一社交链接格式
+  github: xiaoqiangclub
 
-# URL 配置（保持原有，无需修改）
+# URL 配置
 url: "https://xiaoqiangclub.github.io"
 baseurl: ""
 
-# 构建设置（核心优化：代码高亮+Markdown渲染）
+# 构建设置（重点修改代码高亮，适配 macOS 浅色风格）
 markdown: kramdown
-# 代码高亮配置（优化样式：Monokai 主题+行号+语法高亮增强）
 kramdown:
   syntax_highlighter: rouge
   syntax_highlighter_opts:
-    # 代码高亮主题（可选：monokai、github、solarized-light 等，Monokai 程序员友好）
-    css_class: "highlight monokai"
-    # 显示代码行号（阅读代码更方便）
-    line_numbers: true
-    # 行号与代码间距
+    css_class: "highlight macos-code"  # 自定义类名，方便后续 CSS 定位
+    line_numbers: true  # 保留行号（macOS 终端也支持行号，不突兀）
     line_number_start: 1
     line_number_padding: 2
-    # 代码块边框/背景优化
     wrap: true
     inline: false
+  input: GFM  # 支持 GitHub 格式 Markdown
 
-# 主题设置（替换为「简约高颜值」的 Minimal Mistakes，比 Slate 更美观且简约）
-# 注：GitHub Pages 支持直接使用 remote_theme，无需本地安装 Gem
-remote_theme: mmistakes/minimal-mistakes
-# 主题核心配置（保持简约，关闭冗余模块）
-minimal_mistakes_skin: "default"  # 简约皮肤（可选：default/air/neon等，均简约风格）
-layout: "single"  # 默认单栏布局（简约核心，避免多栏杂乱）
-author_profile: false  # 关闭侧边栏作者信息（保持页面干净）
-read_time: false  # 关闭阅读时长显示
-share: false  # 关闭分享按钮
-related: false  # 关闭相关文章推荐（减少冗余）
+# 主题设置（不变，保持 Kiko Plus 兼容）
+remote_theme: AWEEKJ/Kiko-Plus@v1.5.0
+kiko_plus:
+  dark_mode: true  # 关闭默认暗黑模式（macOS 风格以浅色为主，如需切换可设为 true）
+  show_excerpt: false
+  show_tags: true
+  show_date: true
+  comment:
+    provider: utterances
+    repo: xiaoqiangclub/xiaoqiangclub.github.io
+    issue_term: pathname
+    theme: github-light  # 评论区同步浅色风格，与代码块统一
 
-# 时区&语言（保留原有，优化兼容性）
+# 时区&语言（不变）
 timezone: "Asia/Shanghai"
 lang: zh-CN
 
-# 分页设置（保留原有，适配简约布局）
+# 分页设置（不变）
 paginate: 5
 paginate_path: "/page:num/"
 
-# 社交链接（简化格式，保持简约）
+# 社交链接（不变）
 social:
-  - platform: github
-    username: xiaoqiangclub
+  github: https://github.com/xiaoqiangclub
 
-# 插件设置（精简插件，确保加载速度）
+# 插件设置（不变）
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-paginate  # 分页插件（Minimal Mistakes 依赖）
+  - jekyll-paginate
+  - jekyll-remote-theme
 
-# 排除文件（保留原有）
+# 排除文件（不变）
 exclude:
   - README.md
   - LICENSE
   - node_modules/
   - .gitignore
-
-# 额外优化：代码块样式增强（可选，如需更自定义可添加）
-# 如需调整代码块背景色、字体等，可在 _sass/custom/_variables.scss 中添加（需创建对应文件）
-# 示例（如果创建了上述文件，可添加）：
-# $code-bg-color: #f8f9fa;  # 浅色背景
-# $code-border-color: #e1e4e8;  # 边框色
-# $code-font-size: 0.9rem;  # 字体大小
