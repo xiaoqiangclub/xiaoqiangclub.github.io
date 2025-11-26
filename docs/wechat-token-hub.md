@@ -51,7 +51,7 @@ docker run -d \
   -p 8000:8000 \
   -e 'WECHAT_ACCOUNTS=[{"app_id":"你的AppID","app_secret":"你的AppSecret","name":"我的公众号"}]' \
   -e API_SECRET=your_secret_key \
-  xiaoqiangclub/wechat-token-hub:latest
+  xiaoqiangclub/wechat-token-hub:1.0.0
 ```
 
 ### 方式二：Docker Compose
@@ -77,7 +77,7 @@ WECHAT_ACCOUNTS='[
 ```yaml
 services:
   wechat-token-hub:
-    image: xiaoqiangclub/wechat-token-hub:latest
+    image: xiaoqiangclub/wechat-token-hub:1.0.0
     container_name: wechat-token-hub
     network_mode: bridge
     restart: always
