@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>26个英文字母发音对照表（A4打印版）</title>
+    <link rel="icon" href="https://smms.app/image/ZmzSQsgpKOM2xBk" type="image/png">
+    <style>
+        /* ========== 基础重置 ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 30px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        /* ========== A4页面容器（横向） ========== */
+        .page-container {
+            width: 297mm;
+            min-height: 210mm;
+            margin: 0 auto;
+            padding: 10mm 12mm;
+            background: #ffffff;
+            box-shadow: 0 10px 60px rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+        }
+
+        /* ========== 头部样式 ========== */
+        .header {
+            text-align: center;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #e74c3c, #f39c12, #27ae60);
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 4px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        /* ========== 图例说明 ========== */
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 10px;
+            padding: 8px 0;
+            background: #f8f9fa;
+            border-radius: 20px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            color: #495057;
+            font-weight: 500;
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .dot-vowel { background: linear-gradient(135deg, #27ae60, #2ecc71); }
+        .dot-clear { background: linear-gradient(135deg, #2980b9, #3498db); }
+        .dot-voiced { background: linear-gradient(135deg, #c0392b, #e74c3c); }
+        .dot-semi { background: linear-gradient(135deg, #8e44ad, #9b59b6); }
+
+        /* ========== 表格样式 ========== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+            table-layout: fixed;
+        }
+
+        thead th {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: #ffffff;
+            font-weight: 600;
+            padding: 10px 6px;
+            text-align: center;
+            font-size: 11px;
+            letter-spacing: 1px;
+            border: none;
+        }
+
+        thead th:first-child { border-radius: 8px 0 0 0; }
+        thead th:last-child { border-radius: 0 8px 0 0; }
+
+        tbody td {
+            border: 1px solid #e9ecef;
+            padding: 6px 5px;
+            text-align: center;
+            vertical-align: middle;
+            transition: background 0.2s ease;
+        }
+
+        tbody tr:last-child td:first-child { border-radius: 0 0 0 8px; }
+        tbody tr:last-child td:last-child { border-radius: 0 0 8px 0; }
+
+        /* 交替行背景 */
+        tbody tr:nth-child(odd) { background: #ffffff; }
+        tbody tr:nth-child(even) { background: #f8fafc; }
+        tbody tr:hover { background: #e8f4f8; }
+
+        /* ========== 字母样式 ========== */
+        .letter-upper {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2c3e50;
+            font-family: "Georgia", "Times New Roman", serif;
+            text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+        }
+
+        .letter-lower {
+            font-size: 18px;
+            font-weight: 600;
+            color: #5d6d7e;
+            font-family: "Georgia", "Times New Roman", serif;
+        }
+
+        .phonetic {
+            font-family: "Lucida Sans Unicode", "Arial Unicode MS", sans-serif;
+            color: #2c3e50;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        /* ========== 类别标签 ========== */
+        .category {
+            padding: 3px 10px;
+            border-radius: 12px;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 10px;
+            display: inline-block;
+            white-space: nowrap;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+        }
+
+        .vowel {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+        }
+        .consonant-clear {
+            background: linear-gradient(135deg, #2980b9, #3498db);
+        }
+        .consonant-voiced {
+            background: linear-gradient(135deg, #c0392b, #e74c3c);
+        }
+        .semivowel {
+            background: linear-gradient(135deg, #8e44ad, #9b59b6);
+        }
+
+        /* ========== 在单词中的发音 ========== */
+        .word-sound {
+            font-size: 10px;
+            color: #2c3e50;
+            line-height: 1.5;
+            text-align: left;
+            padding-left: 5px;
+        }
+
+        .word-sound .sound {
+            font-family: "Lucida Sans Unicode", "Arial Unicode MS", sans-serif;
+            color: #e74c3c;
+            font-weight: 600;
+        }
+
+        .word-sound .note {
+            color: #7f8c8d;
+            font-size: 9px;
+        }
+
+        /* ========== 发音示例 ========== */
+        .example {
+            font-size: 11px;
+            color: #2c3e50;
+            text-align: left;
+            padding-left: 5px;
+            line-height: 1.5;
+        }
+
+        .example-word {
+            font-weight: 700;
+            color: #2980b9;
+        }
+
+        .example-phonetic {
+            color: #7f8c8d;
+            font-size: 10px;
+        }
+
+        .example-note {
+            color: #95a5a6;
+            font-size: 9px;
+            font-style: italic;
+        }
+
+        /* ========== 底部说明 ========== */
+        .footer {
+            margin-top: 10px;
+            padding: 10px 15px;
+            background: linear-gradient(135deg, #fef9e7 0%, #fcf3cf 100%);
+            border-left: 4px solid #f1c40f;
+            border-radius: 0 8px 8px 0;
+            font-size: 11px;
+            color: #7d6608;
+            line-height: 1.6;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-icon {
+            font-size: 20px;
+        }
+
+        .footer strong {
+            color: #5d4e0a;
+        }
+
+        /* ========== 打印按钮 ========== */
+        .print-btn {
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            color: #2c3e50;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 1000;
+        }
+
+        .print-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: #ffffff;
+        }
+
+        .print-btn:active {
+            transform: translateY(-1px);
+        }
+
+        /* ========== 版权信息 ========== */
+        .copyright {
+            text-align: center;
+            margin-top: 8px;
+            font-size: 9px;
+            color: #bdc3c7;
+        }
+        
+        .copyright a {
+            color: #c71429;
+            text-decoration: none;
+        }
+
+        /* ========== 打印样式 ========== */
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 8mm;
+            }
+
+            body {
+                background: #ffffff !important;
+                padding: 0;
+                min-height: auto;
+            }
+
+            .page-container {
+                width: 100%;
+                min-height: auto;
+                padding: 5mm;
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            thead th {
+                background: #2c3e50 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .category,
+            .legend-dot {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .vowel { background: #27ae60 !important; }
+            .consonant-clear { background: #3498db !important; }
+            .consonant-voiced { background: #e74c3c !important; }
+            .semivowel { background: #9b59b6 !important; }
+
+            tbody tr:nth-child(even) {
+                background: #f5f5f5 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .footer {
+                background: #fffbe6 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .legend {
+                background: #f5f5f5 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .header::after {
+                display: none;
+            }
+
+            .copyright {
+                display: none;
+            }
+        }
+
+        /* ========== 屏幕适配 ========== */
+        @media screen and (max-width: 1200px) {
+            .page-container {
+                width: 100%;
+                max-width: 297mm;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+<button class="print-btn no-print" onclick="window.print()">
+    <span>🖨️</span>
+    <span>打印此页</span>
+</button>
+
+<div class="page-container">
+    <div class="header">
+        <h1>26个英文字母发音对照表</h1>
+        <p class="subtitle">美式发音 · A4横向打印版</p>
+    </div>
+
+    <div class="legend">
+        <div class="legend-item">
+            <span class="legend-dot dot-vowel"></span>
+            <span>元音字母 (5个)</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-dot dot-clear"></span>
+            <span>清辅音 (9个)</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-dot dot-voiced"></span>
+            <span>浊辅音 (10个)</span>
+        </div>
+        <div class="legend-item">
+            <span class="legend-dot dot-semi"></span>
+            <span>半元音 (2个)</span>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+        <tr>
+            <th style="width: 5%">大写</th>
+            <th style="width: 5%">小写</th>
+            <th style="width: 9%">美式音标</th>
+            <th style="width: 10%">字母类别</th>
+            <th style="width: 26%">在单词中的发音</th>
+            <th style="width: 45%">发音示例（含音标）</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="letter-upper">A</td>
+            <td class="letter-lower">a</td>
+            <td class="phonetic">/eɪ/</td>
+            <td><span class="category vowel">元音字母</span></td>
+            <td class="word-sound">短音 <span class="sound">/æ/</span>、长音 <span class="sound">/eɪ/</span>、弱读 <span
+                    class="sound">/ə/</span></td>
+            <td class="example"><span class="example-word">apple</span> <span class="example-phonetic">/ˈæpl/</span> ·
+                <span class="example-word">cake</span> <span class="example-phonetic">/keɪk/</span> · <span
+                        class="example-word">about</span> <span class="example-phonetic">/əˈbaʊt/</span></td>
+        </tr>
+        <tr>
+            <td class="letter-upper">B</td>
+            <td class="letter-lower">b</td>
+            <td class="phonetic">/biː/</td>
+            <td><span class="category consonant-voiced">浊辅音</span></td>
+            <td class="word-sound">发 <span class="sound">/b/</span>；<span class="note">mb词尾时b不发音(如climb)</span>
+            </td>
+            <td class="example"><span class="example-word">book</span> <span class="example-phonetic">/bʊk/</span> ·
+                <span class="example-word">baby</span> <span class="example-phonetic">/ˈbeɪbi/</span> · <span
+                        class="example-word">climb</span> <span class="example-phonetic">/klaɪm/</span></td>
+        </tr>
+        <tr>
+            <td class="letter-upper">C</td>
+            <td class="letter-lower">c</td>
+            <td class="phonetic">/siː/</td>
+            <td><span class="category consonant-clear">清辅音</span></td>
+            <td class="word-sound">发 <span class="sound">/k/</span> 或 <span class="sound">/s/</span>；<span
+                    class="note">在e/i/y前常发/s/</span></td>
+            <td class="example"><span class="example-word">cat</span> <span class="example-phonetic">/kæt/</span> ·
+                <span class="example-word">city</span> <span class="example-phonetic">/ˈsɪti/</span> · <span
+                        class="example-word">nice</span> <span class="example-phonetic">/naɪs/</span></td>
+        </tr>
+        <tr>
+            <td class="letter-upper">D</td>
+            <td class="letter-lower">d</td>
+            <td class="phonetic">/diː/</td>
+            <td><span class="category consonant-voiced">浊辅音</span></td>
+            <td class="word-sound">发 <span class="sound">/d/</span>；<span class="note">词尾-ed在清辅音后读/t/</span>
+            </td>
+            <td class="example"><span class="example-word">dog</span> <span class="example-phonetic">/dɔːɡ/</span> ·
+                <span class="example-word">played</span> <span class="example-phonetic">/pleɪd/</span> · <span
+                        class="example-word">asked</span> <span class="example-phonetic">/æskt/</span></td>
+        </tr>
+        <tr>
+            <td class="letter-upper">E</td>
+            <td class="letter-lower">e</td>
+            <td class="phonetic">/iː/</td>
+            <td><span class="category vowel">元音字母</span></td>
+            <td class="word-sound">短音 <span class="sound">/e/</span>、长音 <span class="sound">/iː/</span>；<span
+                    class="note">词尾常不发音</span></td>
+            <td class="example"><span class="example-word">egg</span> <span class="example-phonetic">/eɡ/</span> · <span
+                    class="example-word">me</span> <span class="example-phonetic">/miː/</span> · <span
+                    class="example-word">cake</span> <span class="example-phonetic">/keɪk/</span> <span
+                    class="example-note">(e不发音)</span></td>
+        </tr>
+        <tr>
+            <td class="letter-upper">F</td>
+            <td class="letter-lower">f</td>
+            <td class="phonetic">/ef/</td>
+            <td><span class="category consonant-clear">清辅音</span></td>
+            <td class="word-sound">发 <span class="sound">/f/</span>；<span class="note">上齿轻咬下唇送气</span></td>
+            <td class="example"><span class="example-word">fish</span> <span class="example-phonetic">/fɪʃ/</span> ·
+                <span class="example-word">friend</span> <span class="example-phonetic">/frend/</span> · <span
+                        class="example-word">life</span> <span class="example-phonetic">/laɪf/</span></td>
+        </tr>
+        <tr>
+            <td class="letter-upper">G</td>
+            <td class="letter-lower">g</td>
+            <td class="phonetic">/dʒiː/</td>
+            <td><span class="category consonant-voiced">浊辅音</span></td>
+            <td class="word-sound">发 <span class="sound">/ɡ/</span> 或 <span class="sound">/dʒ/</span>；<span
+                    class="note">在e/i/y前常发/dʒ/</span></td>
+            <td class="example"><span class="example-word">go</span> <span class="example-phonetic">/ɡoʊ/</span> · <span
+                    class="example-word">giant</span> <span class="example-phonetic">/ˈdʒaɪənt/</span> · <span
+                    class="example-word">orange</span> <span class="example-phonetic">/ˈɔːrɪndʒ/</span></td>
+        </tr>
+        <tr>
+            <td class="letter-upper">H</td>
+            <td class="letter-lower">h</td>
+            <td class="phonetic">/eɪtʃ/</td>
+            <td><span class="category consonant-clear">清辅音</span></td>
+            <td class="word-sound">发 <span class="sound">/h/</span>；<span class="note">有时不发音(hour, honest)</span>
+            </td>
+            <td class="example"><span class="example-word">hat</span> <span class="example-phonetic">/hæt/</span> ·
+                <span class="example-word">hello</span> <span class="example-phonetic">/həˈloʊ/</span> · <span
+                        class="example-word">hour</span> <span class="example-phonetic">/ˈaʊər/</span> <span
+                        class="example-note">(h不发音)</span></td>
+        </tr>
+        <tr>
+            <td class="letter-upper">I</td>
+            <td class="letter-lower">i</td>
+            <td class="phonetic">/aɪ/</td>
+            <td><span class="category vowel">元音字母</span></td>
+            <td class="word-sound">短音 <span class="sound">/ɪ/</span>、长音 <span class="sound">/aɪ/</span></td>
+            <td class="example"><span class="example-word">pig</span> <span class="example-phonetic">/pɪɡ/</span> ·
+                <span class="example-word">bike</span> <span class="example-phonetic">/baɪk/</span> · <span
+                        class="example-word">hi</span> <span class="example-phonetic">/haɪ/</span></td>
+        </tr>
+        <tr>
+            <td class="letter-upper">J</td>
+            <td class="letter-lower">j</td>
+            <td class="phonetic">/dʒeɪ/</td>
+            <td><span class="category consonant-voiced">浊辅音</span></td>
+            <td class="word-sound">发 <span class="sound">/dʒ/</span>；<span class="note">类似汉语"之"的声母</span></td>
+            <td class="example"><span class="example-word">jump</span> <span class="example-phonetic">/dʒʌmp/</span> ·
+                <span class="example-word">juice</span> <span class="example-phonetic">/dʒuːs/</span> · <span
+                        class="example-word">job</span> <span class="example-phonetic">/dʒɑːb/</span></td>
+        </tr>
+        <tr>
+            <td class="letter-upper">K</td>
+            <td class="letter-lower">k</td>
+            <td class="phonetic">/keɪ/</td>
+            <td><span class="category consonant-clear">清辅音</span></td>
+            <td class="word-sound">发 <span class="sound">/k/</span>；<span class="note">kn组合中k不发音(如know)</span>
+            </td>
+            <td class="example"><span class="example-word">kite</span> <span class="example-phonetic">/kaɪt/</span> ·
+                <span class="example-word">king</span> <span class="example-phonetic">/kɪŋ/</span> · <span
+                        class="example-word">know</span> <span class="example-phonetic">/noʊ/</span> <span
+                        class="example-note">(k不发音)</span></td>
+        </tr>
+        <tr>
+            <td class="letter-upper">L</td>
+            <td class="letter-lower">l</td>
+            <td class="phonetic">/el/</td>
+            <td><span class="category consonant-voiced">浊辅音</span></td>
+            <td class="word-sound">发 <span class="sound">/l/</span>；<span
+                    class="note">有时不发音(walk, talk, half)</span></td>
+            <td class="example"><span class="example-word">leg</span> <span class="example-phonetic">/leɡ/</span> ·
+                <span class="example-word">apple</span> <span class="example-phonetic">/ˈæpl/</span> · <span
+                        class="example-word">walk</span> <span class="example-phonetic">/wɔːk/</span> <span
+                        class="example-note">(l不发音)</span></td>
+        </tr>
+        <tr>
+            <td class="letter-upper">M</td>
+            <td class="letter-lower">m</td>
+            <td class="phonetic">/em/</td>
+            <td><span class="category consonant-voiced">浊辅音</span></td>
+            <td class="word-sound">发 <span class="sound">/m/</span>；<span class="note">双唇紧闭，气流从鼻腔出</span>
+            </td>
+            <td class="example"><span class="example-word">milk</span> <span class="example-phonetic">/mɪlk/</span> ·
+                <span class="example-word">mother</span> <span class="example-phonetic">/ˈmʌðər/</span> · <span
+                        class="example-word">home</span> <span class="example-phonetic">/hoʊm/</span></td>
+        </tr>
+        <tr>
+            <td class="letter-upper">N</td>
+            <td class="letter-lower">n</td>
+            <td class="phonetic">/en/</td>
+            <td><span class="category consonant-voiced">浊辅音</span></td>
+            <td class="word-sound">发 <span class="sound">/n/</span>；<span class="note">ng组合���/ŋ/(如sing)</span></td>
+            <td class="example"><span class="example-word">nose</span> <span class="example-phonetic">/noʊz/</span> ·
+                <span class="example-word">name</span> <span class="example-phonetic">/neɪm/</span> · <span
+                        class="example-word">sing</span> <span class="example-phonetic">/sɪŋ/</span></td>
+        </tr>
+        <tr>
+            <td class="letter-upper">O</td>
+            <td class="letter-lower">o</td>
+            <td class="phonetic">/oʊ/</td>
+            <td><span class="category vowel">元音字母</span></td>
+            <td class="word-sound">短音 <span class="sound">/ɑː/</span>、长音 <span class="sound">/oʊ/</span>、还可发
+                <span class="sound">/ʌ/</span></td>
+            <td class="example"><span class="example-word">dog</span> <span class="example-phonetic">/dɔːɡ/</span> ·
+                <span class="example-word">go</span> <span class="example-phonetic">/ɡoʊ/</span> · <span
+                        class="example-word">son</span> <span class="example-phonetic">/sʌn/</span></td>
+        </tr>
+        <tr>
+            <td class="letter-upper">P</td>
+            <td class="letter-lower">p</td>
+            <td class="phonetic">/piː/</td>
+            <td><span class="category consonant-clear">清辅音</span></td>
+            <td class="word-sound">发 <span class="sound">/p/</span>；<span class="note">ph组合发/f/(如phone)</span></td>
+            <td class="example"><span class="example-word">pen</span> <span class="example-phonetic">/pen/</span> ·
+                <span class="example-word">phone</span> <span class="example-phonetic">/foʊn/</span> · <span
+                        class="example-word">stop</span> <span class="example-phonetic">/stɑːp/</span></td>
+        </tr>
+        <tr>
+            <td class="letter-upper">Q</td>
+            <td class="letter-lower">q</td>
+            <td class="phonetic">/kjuː/</td>
+            <td><span class="category consonant-clear">清辅音</span></td>
+            <td class="word-sound">常与u连用发 <span class="sound">/kw/</span></td>
+            <td class="example"><span class="example-word">queen</span> <span class="example-phonetic">/kwiːn/</span> ·
+                <span class="example-word">quiet</span> <span class="example-phonetic">/ˈkwaɪət/</span> · <span
+                        class="example-word">quick</span> <span class="example-phonetic">/kwɪk/</span></td>
+        </tr>
+        <tr>
+            <td class="letter-upper">R</td>
+            <td class="letter-lower">r</td>
+            <td class="phonetic">/ɑːr/</td>
+            <td><span class="category consonant-voiced">浊辅音</span></td>
+            <td class="word-sound">发 <span class="sound">/r/</span>；<span class="note">美式中元音后r发卷舌音</span>
+            </td>
+            <td class="example"><span class="example-word">red</span> <span class="example-phonetic">/red/</span> ·
+                <span class="example-word">run</span> <span class="example-phonetic">/rʌn/</span> · <span
+                        class="example-word">car</span> <span class="example-phonetic">/kɑːr/</span></td>
+        </tr>
+        <tr>
+            <td class="letter-upper">S</td>
+            <td class="letter-lower">s</td>
+            <td class="phonetic">/es/</td>
+            <td><span class="category consonant-clear">清辅音</span></td>
+            <td class="word-sound">发 <span class="sound">/s/</span> 或 <span class="sound">/z/</span>；<span
+                    class="note">元音间常发/z/(如is)</span></td>
+            <td class="example"><span class="example-word">sun</span> <span class="example-phonetic">/sʌn/</span> ·
+                <span class="example-word">bus</span> <span class="example-phonetic">/bʌs/</span> · <span
+                        class="example-word">is</span> <span class="example-phonetic">/ɪz/</span></td>
+        </tr>
+        <tr>
+            <td class="letter-upper">T</td>
+            <td class="letter-lower">t</td>
+            <td class="phonetic">/tiː/</td>
+            <td><span class="category consonant-clear">清辅音</span></td>
+            <td class="word-sound">发 <span class="sound">/t/</span>；<span class="note">th组合发/θ/或/ð/</span></td>
+            <td class="example"><span class="example-word">tea</span> <span class="example-phonetic">/tiː/</span> ·
+                <span class="example-word">think</span> <span class="example-phonetic">/θɪŋk/</span> · <span
+                        class="example-word">this</span> <span class="example-phonetic">/ðɪs/</span></td>
+        </tr>
+        <tr>
+            <td class="letter-upper">U</td>
+            <td class="letter-lower">u</td>
+            <td class="phonetic">/juː/</td>
+            <td><span class="category vowel">元音字母</span></td>
+            <td class="word-sound">短音 <span class="sound">/ʌ/</span>、长音 <span class="sound">/juː/</span> 或 <span
+                    class="sound">/uː/</span></td>
+            <td class="example"><span class="example-word">cup</span> <span class="example-phonetic">/kʌp/</span> ·
+                <span class="example-word">use</span> <span class="example-phonetic">/juːz/</span> · <span
+                        class="example-word">blue</span> <span class="example-phonetic">/bluː/</span></td>
+        </tr>
+        <tr>
+            <td class="letter-upper">V</td>
+            <td class="letter-lower">v</td>
+            <td class="phonetic">/viː/</td>
+            <td><span class="category consonant-voiced">浊辅音</span></td>
+            <td class="word-sound">发 <span class="sound">/v/</span>；<span class="note">上齿轻咬下唇，声带振动</span>
+            </td>
+            <td class="example"><span class="example-word">van</span> <span class="example-phonetic">/væn/</span> ·
+                <span class="example-word">very</span> <span class="example-phonetic">/ˈveri/</span> · <span
+                        class="example-word">love</span> <span class="example-phonetic">/lʌv/</span></td>
+        </tr>
+        <tr>
+            <td class="letter-upper">W</td>
+            <td class="letter-lower">w</td>
+            <td class="phonetic">/ˈdʌbljuː/</td>
+            <td><span class="category semivowel">半元音</span></td>
+            <td class="word-sound">发 <span class="sound">/w/</span>；<span class="note">wr组合中w不发音(如write)</span>
+            </td>
+            <td class="example"><span class="example-word">water</span> <span class="example-phonetic">/ˈwɔːtər/</span>
+                · <span class="example-word">we</span> <span class="example-phonetic">/wiː/</span> · <span
+                        class="example-word">write</span> <span class="example-phonetic">/raɪt/</span> <span
+                        class="example-note">(w不发音)</span></td>
+        </tr>
+        <tr>
+            <td class="letter-upper">X</td>
+            <td class="letter-lower">x</td>
+            <td class="phonetic">/eks/</td>
+            <td><span class="category consonant-clear">清辅音</span></td>
+            <td class="word-sound">发 <span class="sound">/ks/</span> 或 <span class="sound">/ɡz/</span>；<span
+                    class="note">词首可发/z/</span></td>
+            <td class="example"><span class="example-word">box</span> <span class="example-phonetic">/bɑːks/</span> ·
+                <span class="example-word">exam</span> <span class="example-phonetic">/ɪɡˈzæm/</span> · <span
+                        class="example-word">xylophone</span> <span class="example-phonetic">/ˈzaɪləfoʊn/</span></td>
+        </tr>
+        <tr>
+            <td class="letter-upper">Y</td>
+            <td class="letter-lower">y</td>
+            <td class="phonetic">/waɪ/</td>
+            <td><span class="category semivowel">半元音</span></td>
+            <td class="word-sound">词首发 <span class="sound">/j/</span>；<span
+                    class="note">词中/尾可作元音/aɪ/、/i/</span></td>
+            <td class="example"><span class="example-word">yes</span> <span class="example-phonetic">/jes/</span> ·
+                <span class="example-word">fly</span> <span class="example-phonetic">/flaɪ/</span> · <span
+                        class="example-word">happy</span> <span class="example-phonetic">/ˈhæpi/</span></td>
+        </tr>
+        <tr>
+            <td class="letter-upper">Z</td>
+            <td class="letter-lower">z</td>
+            <td class="phonetic">/ziː/</td>
+            <td><span class="category consonant-voiced">浊辅音</span></td>
+            <td class="word-sound">发 <span class="sound">/z/</span>；<span class="note">类似s但声带振动</span></td>
+            <td class="example"><span class="example-word">zoo</span> <span class="example-phonetic">/zuː/</span> ·
+                <span class="example-word">zebra</span> <span class="example-phonetic">/ˈzebrə/</span> · <span
+                        class="example-word">zero</span> <span class="example-phonetic">/ˈzɪroʊ/</span></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="footer">
+        <span class="footer-icon">💡</span>
+        <div>
+            <strong>打印说明：</strong>请选择 A4 纸张、<strong>横向打印</strong>、页边距设为最小或
+            8-10mm，务必勾选「背景图形」选项以保留颜色标识。本表采用美式发音标注，便于记忆与对照练习。
+        </div>
+    </div>
+
+    <div class="copyright">© 2025 英语学习资料 | 仅供学习交流使用 | <a href="https://xiaoqiangclub.github.io/">微信公众号：XiaoqiangClub</a></div>
+</div>
+</body>
+</html>
