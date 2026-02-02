@@ -1,89 +1,320 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Page Not Found</title>
+  <title>页面未找到 - XiaoqiangClub</title>
+  <link rel="icon" href="https://xiaoqiangclub.github.io/favicon.ico">
   <style>
+    /* ==========================================================================
+       404 Page - Modern Tech Aesthetics
+       ========================================================================== */
+    
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-tertiary: #1a1a25;
+      --accent-primary: #6366f1;
+      --accent-secondary: #8b5cf6;
+      --accent-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --font-display: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-body: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
     * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
+    
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+    
     body {
+      font-family: var(--font-body);
+      background: var(--bg-primary);
+      background-image: 
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.15), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 60%, rgba(139, 92, 246, 0.08), transparent),
+        radial-gradient(ellipse 50% 30% at 20% 80%, rgba(217, 70, 239, 0.06), transparent);
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      height: 100vh;
-      text-align: center;
+      color: var(--text-primary);
+      overflow: hidden;
+      position: relative;
     }
-    .box {
+    
+    /* Ambient particles */
+    body::before,
+    body::after {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.15;
+      animation: float 20s ease-in-out infinite;
+    }
+    
+    body::before {
+      background: var(--accent-primary);
+      top: -200px;
+      right: -200px;
+    }
+    
+    body::after {
+      background: var(--accent-secondary);
+      bottom: -200px;
+      left: -200px;
+      animation-delay: -10s;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0); }
+      25% { transform: translate(50px, 50px); }
+      50% { transform: translate(0, 100px); }
+      75% { transform: translate(-50px, 50px); }
+    }
+    
+    .container {
       flex: 1;
       display: flex;
-      justify-content: center;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      position: relative;
+      z-index: 1;
     }
-    .number {
-      font-size: 80px;
-      color: #666;
-      font-weight: bold;
+    
+    /* 404 Number */
+    .error-code {
+      font-family: var(--font-display);
+      font-size: clamp(6rem, 20vw, 12rem);
+      font-weight: 800;
+      line-height: 1;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+      animation: glitch 3s ease-in-out infinite;
     }
-    .text {
-      font-size: 14px;
-      margin: 24px;
-      color: #333;
+    
+    @keyframes glitch {
+      0%, 90%, 100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      92% {
+        opacity: 0.8;
+        transform: translateX(-2px);
+      }
+      94% {
+        opacity: 1;
+        transform: translateX(2px);
+      }
+      96% {
+        opacity: 0.9;
+        transform: translateX(-1px);
+      }
     }
+    
+    .error-code::before {
+      content: '404';
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: blur(20px);
+      opacity: 0.5;
+      z-index: -1;
+    }
+    
+    /* Error Message */
+    .error-message {
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 4vw, 2rem);
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 1.5rem 0 1rem;
+      text-align: center;
+    }
+    
+    .error-description {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      text-align: center;
+      max-width: 400px;
+      line-height: 1.6;
+    }
+    
+    /* Button Styles */
     .btn-container {
       display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
       justify-content: center;
+      margin-top: 1rem;
     }
+    
     .btn {
-      padding: 8px 24px;
-      display: inline-block;
-      text-decoration: none;
-      background: #fff;
-      border: 2px solid #efefef;
-      color: #333;
-      margin: 24px;
-      border-radius: 20px;
-      cursor: pointer;
-      display: flex;
+      display: inline-flex;
       align-items: center;
-    }
-    .footer {
-      padding: 16px;
-      border-top: 1px solid #efefef;
-      color: #777;
-      font-weight: lighter;
-    }
-    .footer a {
+      gap: 0.5rem;
+      padding: 0.875rem 2rem;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 500;
       text-decoration: none;
-      font-weight: bold;
-      color: #000;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all var(--transition-normal);
+      border: none;
+    }
+    
+    .btn-primary {
+      background: var(--accent-gradient);
+      color: white;
+      box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(99, 102, 241, 0.4);
+    }
+    
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--accent-primary);
+      transform: translateY(-3px);
+    }
+    
+    .btn svg {
+      width: 18px;
+      height: 18px;
+    }
+    
+    /* Footer */
+    .footer {
+      padding: 1.5rem;
+      text-align: center;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      position: relative;
+      z-index: 1;
+      background: rgba(10, 10, 15, 0.8);
+      backdrop-filter: blur(10px);
+    }
+    
+    .footer a {
+      color: var(--accent-primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color var(--transition-normal);
+    }
+    
+    .footer a:hover {
+      color: var(--accent-secondary);
+    }
+    
+    /* Powered by */
+    .powered {
+      margin-top: 0.5rem;
+      font-size: 0.8125rem;
+    }
+    
+    /* Decorative Elements */
+    .decorative-line {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+      margin: 1.5rem auto;
+      opacity: 0.5;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .btn-container {
+        flex-direction: column;
+        width: 100%;
+        max-width: 280px;
+      }
+      
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+    
+    /* Print Styles */
+    @media print {
+      body {
+        background: white;
+        color: #1a1a1a;
+      }
+      
+      .error-code {
+        color: #333;
+        -webkit-text-fill-color: #333;
+      }
+      
+      body::before,
+      body::after {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="box">
-    <div class="number">4 0 4</div>
-    <div class="text">
-      Page not found
-    </div>
+  <div class="container">
+    <div class="error-code">404</div>
+    <div class="decorative-line"></div>
+    <h1 class="error-message">页面未找到</h1>
+    <p class="error-description">
+      您访问的页面可能已被删除、更名或暂时不可用。<br>
+      让我们一起找回正确的方向吧！
+    </p>
     <div class="btn-container">
-      <a class="btn" id="back">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" style="margin-right: 8px;">
-          <path fill="none" d="M0 0h24v24H0z"/>
+      <a class="btn btn-primary" href="javascript:history.back()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M5.828 7l2.536 2.536L6.95 10.95 2 6l4.95-4.95 1.414 1.414L5.828 5H13a8 8 0 1 1 0 16H4v-2h9a6 6 0 1 0 0-12H5.828z"/>
         </svg>
-        Back
+        返回上一页
+      </a>
+      <a class="btn btn-secondary" href="https://xiaoqiangclub.github.io/">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        回到首页
       </a>
     </div>
   </div>
   <footer class="footer">
-    Powered by <a href="https://gridea.dev" target="_blank">Gridea</a>
+    <div>关注 <a href="https://xiaoqiangclub.github.io/" target="_blank">XiaoqiangClub</a></div>
+    <div class="powered">Powered by Gridea</div>
   </footer>
-  <script>
-    var back = document.getElementById('back')
-    back.onclick = function() { console.log('run...'); history.back() }
-  </script>
 </body>
 </html>

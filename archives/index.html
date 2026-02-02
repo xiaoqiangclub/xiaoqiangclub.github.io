@@ -1,26 +1,181 @@
-<html>
+<!DOCTYPE html>
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>XiaoqiangClub</title>
-<link rel="shortcut icon" href="https://xiaoqiangclub.github.io/favicon.ico?v=1716204806698">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://xiaoqiangclub.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="XiaoqiangClub - Atom Feed" href="https://xiaoqiangclub.github.io/atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=https://hm.baidu.com/hm.js?260324e7aa186cf302b54bcbdab6600b"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'https://hm.baidu.com/hm.js?260324e7aa186cf302b54bcbdab6600b');
-</script>
-
-
-    <meta name="description" content="XiaoqiangClub个人博客" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>归档 - XiaoqiangClub</title>
+    <link rel="shortcut icon" href="https://xiaoqiangclub.github.io/favicon.ico?v=1716204806698">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://xiaoqiangclub.github.io/styles/main.css">
+    <link rel="stylesheet" href="https://xiaoqiangclub.github.io/styles/modern-article.css">
+    <link rel="alternate" type="application/atom+xml" title="XiaoqiangClub - Atom Feed" href="https://xiaoqiangclub.github.io/atom.xml">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+    <style>
+      /* Archives Page Specific Styles */
+      :root {
+        --bg-gradient: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.15), transparent),
+                       radial-gradient(ellipse 60% 40% at 80% 60%, rgba(139, 92, 246, 0.08), transparent),
+                       radial-gradient(ellipse 50% 30% at 20% 80%, rgba(217, 70, 239, 0.06), transparent);
+      }
+      
+      body {
+        background: var(--bg-primary);
+        background-image: var(--bg-gradient);
+      }
+      
+      .main-content {
+        padding: 2rem 0;
+      }
+      
+      .site-header {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--border-color);
+      }
+      
+      .archives-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+      
+      .year {
+        font-size: 2rem;
+        font-weight: 800;
+        margin: 3rem 0 1.5rem;
+        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        position: relative;
+        display: inline-block;
+      }
+      
+      .year::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(90deg, #6366f1, #8b5cf6);
+        border-radius: 2px;
+      }
+      
+      .post {
+        display: block;
+        padding: 1.25rem 1.5rem;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        margin-bottom: 1rem;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .post::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 3px;
+        background: linear-gradient(180deg, #6366f1, #8b5cf6, #d946ef);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      
+      .post:hover {
+        background: rgba(255, 255, 255, 0.06);
+        transform: translateX(8px);
+        border-color: rgba(99, 102, 241, 0.3);
+        box-shadow: 0 4px 30px rgba(99, 102, 241, 0.15);
+      }
+      
+      .post:hover::before {
+        opacity: 1;
+      }
+      
+      .post-title {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin: 0 0 0.5rem;
+        transition: color 0.3s ease;
+      }
+      
+      .post:hover .post-title {
+        color: #818cf8;
+      }
+      
+      .time {
+        font-size: 0.875rem;
+        color: var(--text-muted);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      
+      .time::before {
+        content: '';
+        width: 6px;
+        height: 6px;
+        background: #6366f1;
+        border-radius: 50%;
+      }
+      
+      .site-footer {
+        text-align: center;
+        padding: 2rem;
+        margin-top: 3rem;
+        border-top: 1px solid var(--border-color);
+        color: var(--text-muted);
+        font-size: 0.875rem;
+      }
+      
+      .site-footer a {
+        color: var(--accent-primary);
+        font-weight: 500;
+      }
+      
+      .rss {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-left: 1rem;
+        padding: 0.5rem 1rem;
+        background: rgba(99, 102, 241, 0.1);
+        border: 1px solid rgba(99, 102, 241, 0.2);
+        border-radius: 20px;
+        color: var(--accent-primary);
+        transition: all 0.3s ease;
+      }
+      
+      .rss:hover {
+        background: rgba(99, 102, 241, 0.2);
+        transform: translateY(-2px);
+      }
+      
+      @media (max-width: 768px) {
+        .archives-container {
+          padding: 0 1rem;
+        }
+        
+        .year {
+          font-size: 1.5rem;
+        }
+        
+        .post {
+          padding: 1rem;
+        }
+        
+        .post-title {
+          font-size: 1rem;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="main">
