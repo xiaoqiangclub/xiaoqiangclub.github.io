@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="images/avatar.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XiaoqiangClub - 技术博客与导航</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary: #6366f1;
+        --primary-dark: #4f46e5;
+        --secondary: #f97316;
+        --background: #0f172a;
+        --surface: #1e293b;
+        --surface-light: #334155;
+        --text-primary: #f8fafc;
+        --text-secondary: #94a3b8;
+        --text-muted: #64748b;
+        --border: #334155;
+        --gradient: linear-gradient(135deg, #6366f1 0%, #f97316 100%);
+        --shadow: 0 25px 50px -12px rgb(0 0 0 / 0.5);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          sans-serif;
+        background: var(--background);
+        color: var(--text-primary);
+        line-height: 1.6;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .container {
+        position: relative;
+        z-index: 1;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      header {
+        padding: 2rem 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+        color: var(--text-primary);
+      }
+
+      .logo-icon {
+        width: 48px;
+        height: 48px;
+        background: var(--gradient);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: white;
+        box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+      }
+
+      .logo-text {
+        font-size: 1.5rem;
+        font-weight: 700;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      nav {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      nav a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s ease;
+        font-size: 0.9375rem;
+      }
+
+      nav a:hover {
+        color: var(--text-primary);
+      }
+
+      .hero {
+        padding: 6rem 0 4rem;
+        text-align: center;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: rgba(99, 102, 241, 0.1);
+        border: 1px solid rgba(99, 102, 241, 0.3);
+        border-radius: 9999px;
+        font-size: 0.875rem;
+        color: #818cf8;
+        margin-bottom: 1.5rem;
+      }
+
+      .badge-dot {
+        width: 8px;
+        height: 8px;
+        background: #22c55e;
+        border-radius: 50%;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+
+      h1 {
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.02em;
+      }
+
+      h1 .gradient-text {
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero-description {
+        font-size: 1.25rem;
+        color: var(--text-secondary);
+        max-width: 600px;
+        margin: 0 auto 2.5rem;
+        line-height: 1.7;
+      }
+
+      .cta-group {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 4rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.875rem 1.75rem;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        border: none;
+      }
+
+      .btn-primary {
+        background: var(--gradient);
+        color: white;
+        box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+      }
+
+      .btn-secondary {
+        background: var(--surface);
+        color: var(--text-primary);
+        border: 1px solid var(--border);
+      }
+
+      .btn-secondary:hover {
+        background: var(--surface-light);
+        border-color: var(--primary);
+      }
+
+      .stats {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        padding: 2rem 0;
+      }
+
+      .stat {
+        text-align: center;
+      }
+
+      .stat-value {
+        font-size: 2.5rem;
+        font-weight: 800;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .stat-label {
+        font-size: 0.875rem;
+        color: var(--text-muted);
+        margin-top: 0.25rem;
+      }
+
+      .features {
+        padding: 4rem 0;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 3rem;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .feature-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--primary);
+        box-shadow: var(--shadow);
+      }
+
+      .feature-icon {
+        width: 48px;
+        height: 48px;
+        background: rgba(99, 102, 241, 0.1);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .feature-card h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        color: var(--text-primary);
+      }
+
+      .feature-card p {
+        color: var(--text-secondary);
+        font-size: 0.9375rem;
+        line-height: 1.6;
+      }
+
+      .quick-links {
+        padding: 4rem 0;
+      }
+
+      .links-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+      }
+
+      .link-card {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.25rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        text-decoration: none;
+        color: var(--text-primary);
+        transition: all 0.2s ease;
+      }
+
+      .link-card:hover {
+        background: var(--surface-light);
+        border-color: var(--primary);
+        transform: translateX(4px);
+      }
+
+      .link-icon {
+        width: 40px;
+        height: 40px;
+        background: var(--gradient);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        flex-shrink: 0;
+      }
+
+      .link-info h4 {
+        font-weight: 600;
+        font-size: 1rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .link-info p {
+        font-size: 0.8125rem;
+        color: var(--text-muted);
+      }
+
+      footer {
+        padding: 3rem 0;
+        border-top: 1px solid var(--border);
+        text-align: center;
+      }
+
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .footer-links a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 0.875rem;
+        transition: color 0.2s ease;
+      }
+
+      .footer-links a:hover {
+        color: var(--text-primary);
+      }
+
+      .copyright {
+        color: var(--text-muted);
+        font-size: 0.875rem;
+      }
+
+      .modal {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .modal.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .modal-content {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 2rem;
+        text-align: center;
+        max-width: 90%;
+        width: 400px;
+        transform: scale(0.9);
+        transition: transform 0.3s ease;
+      }
+
+      .modal.active .modal-content {
+        transform: scale(1);
+      }
+
+      .modal h3 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+      }
+
+      .modal p {
+        color: var(--text-secondary);
+        margin-bottom: 1.5rem;
+      }
+
+      .modal-close {
+        background: var(--primary);
+        color: white;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s ease;
+      }
+
+      .modal-close:hover {
+        background: var(--primary-dark);
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 1rem;
+        }
+
+        header {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        nav {
+          gap: 1rem;
+        }
+
+        .hero {
+          padding: 4rem 0 2rem;
+        }
+
+        .stats {
+          gap: 2rem;
+          flex-wrap: wrap;
+        }
+
+        .stat-value {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+      <header>
+        <a href="#" class="logo">
+          <div class="logo-icon">XQ</div>
+          <span class="logo-text">XiaoqiangClub</span>
+        </a>
+        <nav>
+          <a href="#docs">文档</a>
+          <a href="#blog">博客</a>
+          <a href="#tools">工具</a>
+          <a href="https://github.com/xiaoqiangclub" target="_blank">GitHub</a>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          <span>技术博客 & 开发者导航</span>
+        </div>
+
+        <h1>
+          探索技术的<br />
+          <span class="gradient-text">无限可能</span>
+        </h1>
+
+        <p class="hero-description">
+          这里是一个技术分享与学习的空间，记录开发过程中的点点滴滴，分享有趣的项目和实用的工具。
+        </p>
+
+        <div class="cta-group">
+          <a href="md/" class="btn btn-primary">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+            阅读文档
+          </a>
+          <a href="post/" class="btn btn-secondary">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+            </svg>
+            浏览博客
+          </a>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-value">50+</div>
+            <div class="stat-label">技术文章</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">10+</div>
+            <div class="stat-label">开源项目</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">1000+</div>
+            <div class="stat-label">访问量</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features" id="docs">
+        <h2 class="section-title">🚀 特色功能</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">📚</div>
+            <h3>技术文档</h3>
+            <p>详尽的技术文档和教程，涵盖前端开发、后端架构、DevOps 等多个领域。</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💡</div>
+            <h3>最佳实践</h3>
+            <p>分享开发过程中的经验和教训，帮助你避开常见的陷阱和坑。</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🛠️</div>
+            <h3>实用工具</h3>
+            <p>精选的开发工具和工作流，提升开发效率和代码质量。</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎨</div>
+            <h3>开源项目</h3>
+            <p>开源的个人项目和组件库，欢迎贡献代码和提出建议。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="quick-links" id="tools">
+        <h2 class="section-title">🔗 快速访问</h2>
+        <div class="links-grid">
+          <a href="md/" class="link-card">
+            <div class="link-icon">📖</div>
+            <div class="link-info">
+              <h4>文档阅读器</h4>
+              <p>在线阅读 Markdown 文档</p>
+            </div>
+          </a>
+          <a href="post/" class="link-card">
+            <div class="link-icon">📝</div>
+            <div class="link-info">
+              <h4>博客文章</h4>
+              <p>查看所有技术文章</p>
+            </div>
+          </a>
+          <a href="archives/" class="link-card">
+            <div class="link-icon">📅</div>
+            <div class="link-info">
+              <h4>归档</h4>
+              <p>按时间浏览文章</p>
+            </div>
+          </a>
+          <a href="tags/" class="link-card">
+            <div class="link-icon">🏷️</div>
+            <div class="link-info">
+              <h4>标签</h4>
+              <p>按标签查找文章</p>
+            </div>
+          </a>
+          <a href="26words.html" class="link-card">
+            <div class="link-icon">✍️</div>
+            <div class="link-info">
+              <h4>26词</h4>
+              <p>每周26词学习</p>
+            </div>
+          </a>
+          <a href="https://github.com/xiaoqiangclub" target="_blank" class="link-card">
+            <div class="link-icon">⭐</div>
+            <div class="link-info">
+              <h4>GitHub</h4>
+              <p>访问开源仓库</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-links">
+          <a href="#docs">文档</a>
+          <a href="#blog">博客</a>
+          <a href="#tools">工具</a>
+          <a href="https://github.com/xiaoqiangclub">GitHub</a>
+          <a href="mailto:xiaoqiangclub@hotmail.com">联系</a>
+        </div>
+        <p class="copyright">
+          © 2024 XiaoqiangClub. Made with ❤️ and ☕
+        </p>
+      </footer>
+    </div>
+
+    <div class="modal" id="bookmarkModal">
+      <div class="modal-content">
+        <h3>📌 收藏本页</h3>
+        <p>请按 <kbd style="background: var(--surface-light); padding: 0.25rem 0.5rem; border-radius: 4px; font-family: 'JetBrains Mono', monospace;">Ctrl</kbd> + <kbd style="background: var(--surface-light); padding: 0.25rem 0.5rem; border-radius: 4px; font-family: 'JetBrains Mono', monospace;">D</kbd> (Windows) 或 <kbd style="background: var(--surface-light); padding: 0.25rem 0.5rem; border-radius: 4px; font-family: 'JetBrains Mono', monospace;">Command</kbd> + <kbd style="background: var(--surface-light); padding: 0.25rem 0.5rem; border-radius: 4px; font-family: 'JetBrains Mono', monospace;">D</kbd> (Mac) 收藏此页面。</p>
+        <button class="modal-close" id="closeModal">知道了</button>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+      particlesJS("particles", {
+        particles: {
+          number: { value: 60, density: { enable: true, value_area: 800 } },
+          color: { value: "#6366f1" },
+          shape: { type: "circle" },
+          opacity: {
+            value: 0.5,
+            random: false,
+            animation: { enable: true, speed: 1, opacity_min: 0.1 }
+          },
+          size: {
+            value: 3,
+            random: true,
+            animation: { enable: true, speed: 2, size_min: 0.1 }
+          },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#6366f1",
+            opacity: 0.2,
+            width: 1
+          },
+          move: {
+            enable: true,
+            speed: 1,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false
+          }
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: { enable: true, mode: "grab" },
+            onclick: { enable: true, mode: "push" },
+            resize: true
+          },
+          modes: {
+            grab: { distance: 140, line_opacity: 1 },
+            push: { particles_nb: 4 }
+          }
+        },
+        retina_detect: true
+      });
+
+      const bookmarkBtn = document.getElementById("bookmarkBtn");
+      const bookmarkModal = document.getElementById("bookmarkModal");
+      const closeModal = document.getElementById("closeModal");
+
+      if (bookmarkBtn) {
+        bookmarkBtn.addEventListener("click", function () {
+          if (window.external && "AddFavorite" in window.external) {
+            window.external.AddFavorite(location.href, document.title);
+          } else {
+            bookmarkModal.classList.add("active");
+          }
+        });
+      }
+
+      if (closeModal) {
+        closeModal.addEventListener("click", function () {
+          bookmarkModal.classList.remove("active");
+        });
+      }
+
+      bookmarkModal.addEventListener("click", function (e) {
+        if (e.target === bookmarkModal) {
+          bookmarkModal.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>
