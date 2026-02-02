@@ -1,16 +1,24 @@
-<!-- 自定义字体 - Fira Code（代码字体） -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-<!-- 自定义 favicon -->
-<!-- <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}"> -->
+<link rel="stylesheet" href="{{ '/assets/css/markdown-enhanced.css' | relative_url }}">
 
-<!-- 额外的自定义样式 -->
 <style>
-  /* 使用 Fira Code 字体 */
   pre, code {
-    font-family: 'Fira Code', 'SF Mono', Monaco, Consolas, monospace !important;
-    font-feature-settings: "liga" 1; /* 启用连字 */
+    font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Monaco, Consolas, monospace !important;
+    font-feature-settings: "liga" 1;
+  }
+  
+  .markdown-body {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--spacing-xl) var(--spacing-lg);
+  }
+  
+  @media (max-width: 768px) {
+    .markdown-body {
+      padding: var(--spacing-lg) var(--spacing-md);
+    }
   }
 </style>
