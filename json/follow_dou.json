@@ -1,0 +1,8 @@
+{
+  "app": "FollowDou",
+  "stopped": false,
+  "stop_reason": "",
+  "latest_version": "0.0.1",
+  "changelog": "1. 新增远程配置功能\n2. 优化版本检查机制\n3. 修复若干bug",
+  "notice": "欢迎使用 FollowDou 追剧助手！更多内容请关注微信公众号：XiaoqiangClub"
+}
