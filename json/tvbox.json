@@ -20,7 +20,17 @@
       "filterable": 0
     },
     {
-      "key": "xq_00_api",
+      "key": "xq_00_suoniapi",
+      "name": "索尼资源",
+      "type": 1,
+      "api": "https://suoniapi.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "playerType": 2
+    },
+    {
+      "key": "xq_01_api",
       "name": "百度资源",
       "type": 1,
       "api": "https://api.apibdzy.com/api.php/provide/vod",
@@ -30,7 +40,7 @@
       "playerType": 2
     },
     {
-      "key": "xq_01_bfzyapi",
+      "key": "xq_02_bfzyapi",
       "name": "暴风资源",
       "type": 1,
       "api": "https://bfzyapi.com/api.php/provide/vod",
@@ -40,7 +50,7 @@
       "playerType": 2
     },
     {
-      "key": "xq_02_tyyszy",
+      "key": "xq_03_tyyszy",
       "name": "天涯资源",
       "type": 1,
       "api": "http://tyyszy.com/api.php/provide/vod",
@@ -50,7 +60,7 @@
       "playerType": 2
     },
     {
-      "key": "xq_03_jszyapi",
+      "key": "xq_04_jszyapi",
       "name": "极速资源",
       "type": 1,
       "api": "https://jszyapi.com/api.php/provide/vod",
@@ -60,20 +70,20 @@
       "playerType": 2
     },
     {
-      "key": "xq_04_154",
-      "name": "建安资源",
+      "key": "xq_05_jisuzy",
+      "name": "极速二线",
       "type": 1,
-      "api": "http://154.219.117.232:9981/jacloudapi.php/provide/vod",
+      "api": "https://jisuzy.com/api.php/provide/vod",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
       "playerType": 2
     },
     {
-      "key": "xq_05_suoniapi",
-      "name": "索尼资源",
+      "key": "xq_06_154",
+      "name": "建安资源",
       "type": 1,
-      "api": "https://suoniapi.com/api.php/provide/vod",
+      "api": "http://154.219.117.232:9981/jacloudapi.php/provide/vod",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
