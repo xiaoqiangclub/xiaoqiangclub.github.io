@@ -1,12 +1,20 @@
 {
-  "spider": "https://raw.githubusercontent.com/qist/tvbox/master/jar/pg_upgraded.jar;md5;e58c3a2975d24db4978065ab895cf297",
+  "spider": "https://xiaoqiangclub.github.io/tv/spider.jar;md5;36f7db33b7f6cbef73e88fdfc0d12509",
   "wallpaper": "https://wallpaper-1tg.pages.dev/",
   "sites": [
     {
-      "key": "wx_gzh",
+      "key": "XqNotice",
       "name": "📢 关注公众号：52XiaoqiangClub",
-      "type": 1,
-      "api": "https://xiaoqiangclub.github.io/json/notice.json",
+      "type": 3,
+      "api": "csp_XqNotice",
+      "ext": {
+        "text": [
+          "欢迎使用 XiaoqiangClub 自建影视源",
+          "本源每周自动检测更新，保持稳定可用",
+          "📢 请关注公众号：52XiaoqiangClub",
+          "仅供个人学习使用，请勿传播"
+        ]
+      },
       "searchable": 0,
       "quickSearch": 0,
       "filterable": 0
