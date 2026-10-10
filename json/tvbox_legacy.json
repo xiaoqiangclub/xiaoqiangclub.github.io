@@ -1,0 +1,220 @@
+{
+  "spider": "https://xiaoqiangclub.github.io/tv/spider.jar;md5;ed67896181cb4a8fc9464c5d588ff28a",
+  "sites": [
+    {
+      "key": "XqNotice",
+      "name": "📢 关注公众号：52XiaoqiangClub",
+      "type": 3,
+      "api": "csp_XqNotice",
+      "ext": {
+        "text": [
+          "欢迎使用 XiaoqiangClub 自建影视源",
+          "📢 请关注公众号：52XiaoqiangClub"
+        ]
+      },
+      "searchable": 0,
+      "quickSearch": 0,
+      "filterable": 0
+    },
+    {
+      "key": "xq_agg",
+      "name": "🎬 XiaoqiangClub",
+      "type": 3,
+      "api": "csp_XqAgg",
+      "ext": "{\"sites\": [{\"name\": \"索尼资源\", \"api\": \"https://suoniapi.com/api.php/provide/vod\"}, {\"name\": \"百度资源\", \"api\": \"https://api.apibdzy.com/api.php/provide/vod\"}, {\"name\": \"暴风资源\", \"api\": \"https://bfzyapi.com/api.php/provide/vod\"}, {\"name\": \"天涯资源\", \"api\": \"http://tyyszy.com/api.php/provide/vod\"}, {\"name\": \"极速资源\", \"api\": \"https://jszyapi.com/api.php/provide/vod\"}, {\"name\": \"极速二线\", \"api\": \"https://jisuzy.com/api.php/provide/vod\"}, {\"name\": \"电影天堂\", \"api\": \"http://caiji.dyttzyapi.com/api.php/provide/vod\"}, {\"name\": \"非凡资源\", \"api\": \"http://cj.ffzyapi.com/api.php/provide/vod\"}, {\"name\": \"建安资源\", \"api\": \"http://154.219.117.232:9981/jacloudapi.php/provide/vod\"}]}",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "playerType": 2,
+      "timeout": 15
+    },
+    {
+      "key": "xq_00_suoniapi",
+      "name": "索尼资源",
+      "type": 1,
+      "api": "https://suoniapi.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "playerType": 2
+    },
+    {
+      "key": "xq_01_api",
+      "name": "百度资源",
+      "type": 1,
+      "api": "https://api.apibdzy.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "playerType": 2
+    },
+    {
+      "key": "xq_02_bfzyapi",
+      "name": "暴风资源",
+      "type": 1,
+      "api": "https://bfzyapi.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "playerType": 2
+    },
+    {
+      "key": "xq_03_tyyszy",
+      "name": "天涯资源",
+      "type": 1,
+      "api": "http://tyyszy.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "playerType": 2
+    },
+    {
+      "key": "xq_04_jszyapi",
+      "name": "极速资源",
+      "type": 1,
+      "api": "https://jszyapi.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "playerType": 2
+    },
+    {
+      "key": "xq_05_jisuzy",
+      "name": "极速二线",
+      "type": 1,
+      "api": "https://jisuzy.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "playerType": 2
+    },
+    {
+      "key": "xq_06_caiji",
+      "name": "电影天堂",
+      "type": 1,
+      "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "playerType": 2
+    },
+    {
+      "key": "xq_07_cj",
+      "name": "非凡资源",
+      "type": 1,
+      "api": "http://cj.ffzyapi.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "playerType": 2
+    },
+    {
+      "key": "xq_08_154",
+      "name": "建安资源",
+      "type": 1,
+      "api": "http://154.219.117.232:9981/jacloudapi.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "playerType": 2
+    }
+  ],
+  "parses": [
+    {
+      "name": "Json并发",
+      "url": "Parallel",
+      "type": 2,
+      "ext": {
+        "flag": [
+          "qq",
+          "腾讯",
+          "qiyi",
+          "爱奇艺",
+          "奇艺",
+          "youku",
+          "优酷",
+          "sohu",
+          "搜狐",
+          "letv",
+          "乐视",
+          "mgtv",
+          "芒果",
+          "imgo",
+          "bilibili",
+          "哔哩哔哩",
+          "athu",
+          "1905"
+        ],
+        "header": {
+          "User-Agent": "okhttp/3.15"
+        }
+      }
+    },
+    {
+      "name": "Json轮询",
+      "url": "Serial",
+      "type": 1,
+      "ext": {
+        "flag": [
+          "qq",
+          "腾讯",
+          "qiyi",
+          "爱奇艺",
+          "奇艺",
+          "youku",
+          "优酷",
+          "sohu",
+          "搜狐",
+          "letv",
+          "乐视",
+          "mgtv",
+          "芒果",
+          "imgo",
+          "bilibili",
+          "哔哩哔哩"
+        ],
+        "header": {
+          "User-Agent": "okhttp/3.15"
+        }
+      }
+    },
+    {
+      "name": "web嗅探",
+      "url": "Web",
+      "type": 0,
+      "ext": {
+        "flag": [
+          "全集",
+          "蓝光",
+          "4K",
+          "1080P",
+          "720P",
+          "m3u8",
+          "web"
+        ]
+      }
+    }
+  ],
+  "flags": [
+    "qq",
+    "qiyi",
+    "youku",
+    "mgtv",
+    "bilibili",
+    "m3u8"
+  ],
+  "lives": [
+    {
+      "name": "直播",
+      "type": 0,
+      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/qist/tvbox/master/tvlive.txt",
+      "playerType": 1,
+      "ua": "okhttp/3.15",
+      "epg": "http://epg.cdn.loc.cc/?ch={name}&date={date}"
+    }
+  ],
+  "ads": [
+    "mimg.0c1q0l.cn",
+    "www.googletagmanager.com"
+  ]
+}
