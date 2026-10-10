@@ -1,24 +1,8 @@
 {
   "spider": "https://xiaoqiangclub.github.io/tv/spider.jar;md5;36f7db33b7f6cbef73e88fdfc0d12509",
+  "home": "xq_00_suoniapi",
   "wallpaper": "https://wallpaper-1tg.pages.dev/",
   "sites": [
-    {
-      "key": "XqNotice",
-      "name": "📢 关注公众号：52XiaoqiangClub",
-      "type": 3,
-      "api": "csp_XqNotice",
-      "ext": {
-        "text": [
-          "欢迎使用 XiaoqiangClub 自建影视源",
-          "本源每周自动检测更新，保持稳定可用",
-          "📢 请关注公众号：52XiaoqiangClub",
-          "仅供个人学习使用，请勿传播"
-        ]
-      },
-      "searchable": 0,
-      "quickSearch": 0,
-      "filterable": 0
-    },
     {
       "key": "xq_00_suoniapi",
       "name": "索尼资源",
@@ -50,7 +34,17 @@
       "playerType": 2
     },
     {
-      "key": "xq_03_jszyapi",
+      "key": "xq_03_tyyszy",
+      "name": "天涯资源",
+      "type": 1,
+      "api": "http://tyyszy.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "playerType": 2
+    },
+    {
+      "key": "xq_04_jszyapi",
       "name": "极速资源",
       "type": 1,
       "api": "https://jszyapi.com/api.php/provide/vod",
@@ -60,20 +54,10 @@
       "playerType": 2
     },
     {
-      "key": "xq_04_jisuzy",
+      "key": "xq_05_jisuzy",
       "name": "极速二线",
       "type": 1,
       "api": "https://jisuzy.com/api.php/provide/vod",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "playerType": 2
-    },
-    {
-      "key": "xq_05_tyyszy",
-      "name": "天涯资源",
-      "type": 1,
-      "api": "http://tyyszy.com/api.php/provide/vod",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
@@ -108,6 +92,23 @@
       "quickSearch": 1,
       "filterable": 1,
       "playerType": 2
+    },
+    {
+      "key": "XqNotice",
+      "name": "📢 关注公众号：52XiaoqiangClub",
+      "type": 3,
+      "api": "csp_XqNotice",
+      "ext": {
+        "text": [
+          "欢迎使用 XiaoqiangClub 自建影视源",
+          "本源每周自动检测更新，保持稳定可用",
+          "📢 请关注公众号：52XiaoqiangClub",
+          "仅供个人学习使用，请勿传播"
+        ]
+      },
+      "searchable": 0,
+      "quickSearch": 0,
+      "filterable": 0
     }
   ],
   "parses": [
