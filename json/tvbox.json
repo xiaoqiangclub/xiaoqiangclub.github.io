@@ -1,54 +1,15 @@
 {
   "spider": "https://xiaoqiangclub.github.io/tv/spider.jar;md5;ed67896181cb4a8fc9464c5d588ff28a",
   "home": "xq_agg",
-  "notice": "欢迎使用 XiaoqiangClub 自建影视源！\n已默认打开【🎬 小强聚合】，可分类浏览与搜索全部内容\n📢 请关注公众号：52XiaoqiangClub\n本源每周自动更新 · 仅供个人学习使用",
+  "notice": "欢迎使用 XiaoqiangClub 自建影视源！\n已默认打开【🎬 XiaoqiangClub】聚合源，可分类浏览与搜索全部内容\n📢 请关注公众号：52XiaoqiangClub\n本源每周自动更新 · 仅供个人学习使用",
   "wallpaper": "https://wallpaper-1tg.pages.dev/",
   "sites": [
     {
       "key": "xq_agg",
-      "name": "🎬 小强聚合",
+      "name": "🎬 XiaoqiangClub",
       "type": 3,
       "api": "csp_XqAgg",
-      "ext": {
-        "sites": [
-          {
-            "name": "索尼资源",
-            "api": "https://suoniapi.com/api.php/provide/vod"
-          },
-          {
-            "name": "百度资源",
-            "api": "https://api.apibdzy.com/api.php/provide/vod"
-          },
-          {
-            "name": "暴风资源",
-            "api": "https://bfzyapi.com/api.php/provide/vod"
-          },
-          {
-            "name": "天涯资源",
-            "api": "http://tyyszy.com/api.php/provide/vod"
-          },
-          {
-            "name": "极速资源",
-            "api": "https://jszyapi.com/api.php/provide/vod"
-          },
-          {
-            "name": "极速二线",
-            "api": "https://jisuzy.com/api.php/provide/vod"
-          },
-          {
-            "name": "电影天堂",
-            "api": "http://caiji.dyttzyapi.com/api.php/provide/vod"
-          },
-          {
-            "name": "非凡资源",
-            "api": "http://cj.ffzyapi.com/api.php/provide/vod"
-          },
-          {
-            "name": "建安资源",
-            "api": "http://154.219.117.232:9981/jacloudapi.php/provide/vod"
-          }
-        ]
-      },
+      "ext": "{\"sites\": [{\"name\": \"索尼资源\", \"api\": \"https://suoniapi.com/api.php/provide/vod\"}, {\"name\": \"百度资源\", \"api\": \"https://api.apibdzy.com/api.php/provide/vod\"}, {\"name\": \"暴风资源\", \"api\": \"https://bfzyapi.com/api.php/provide/vod\"}, {\"name\": \"天涯资源\", \"api\": \"http://tyyszy.com/api.php/provide/vod\"}, {\"name\": \"极速资源\", \"api\": \"https://jszyapi.com/api.php/provide/vod\"}, {\"name\": \"极速二线\", \"api\": \"https://jisuzy.com/api.php/provide/vod\"}, {\"name\": \"电影天堂\", \"api\": \"http://caiji.dyttzyapi.com/api.php/provide/vod\"}, {\"name\": \"非凡资源\", \"api\": \"http://cj.ffzyapi.com/api.php/provide/vod\"}, {\"name\": \"建安资源\", \"api\": \"http://154.219.117.232:9981/jacloudapi.php/provide/vod\"}]}",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
