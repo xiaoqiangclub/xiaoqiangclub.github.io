@@ -1,21 +1,6 @@
 {
-  "spider": "https://xiaoqiangclub.github.io/tv/spider.jar;md5;ed67896181cb4a8fc9464c5d588ff28a",
+  "spider": "https://xiaoqiangclub.github.io/tv/spider.jar;md5;367f52adf376ec3166a5b0ea386786e0",
   "sites": [
-    {
-      "key": "XqNotice",
-      "name": "📢 关注公众号：52XiaoqiangClub",
-      "type": 3,
-      "api": "csp_XqNotice",
-      "ext": {
-        "text": [
-          "欢迎使用 XiaoqiangClub 自建影视源",
-          "📢 请关注公众号：52XiaoqiangClub"
-        ]
-      },
-      "searchable": 0,
-      "quickSearch": 0,
-      "filterable": 0
-    },
     {
       "key": "xq_agg",
       "name": "🎬 XiaoqiangClub",
@@ -117,6 +102,16 @@
       "quickSearch": 1,
       "filterable": 1,
       "playerType": 2
+    },
+    {
+      "key": "xq_notice",
+      "name": "📢 公告",
+      "type": 3,
+      "api": "csp_XqNotice",
+      "searchable": 0,
+      "quickSearch": 0,
+      "filterable": 0,
+      "playerType": 2
     }
   ],
   "parses": [
@@ -207,7 +202,7 @@
     {
       "name": "直播",
       "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/qist/tvbox/master/tvlive.txt",
+      "url": "https://xiaoqiangclub.github.io/tv/live.txt",
       "playerType": 1,
       "ua": "okhttp/3.15",
       "epg": "http://epg.cdn.loc.cc/?ch={name}&date={date}"
