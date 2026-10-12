@@ -358,7 +358,7 @@
     {
       "name": "直播",
       "type": 0,
-      "url": "https://gh-proxy.com/https://raw.githubusercontent.com/qist/tvbox/master/tvlive.txt",
+      "url": "https://xiaoqiangclub.github.io/tv/live.txt",
       "playerType": 1,
       "ua": "okhttp/3.15",
       "epg": "http://epg.cdn.loc.cc/?ch={name}&date={date}"
