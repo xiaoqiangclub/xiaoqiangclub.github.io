@@ -65,7 +65,7 @@
     },
     {
       "key": "xq_05_sdzyapi",
-      "name": "https://sdzyapi.com/api.php/provide/vod",
+      "name": "闪电资源",
       "type": 1,
       "api": "https://sdzyapi.com/api.php/provide/vod",
       "searchable": 1,
