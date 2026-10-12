@@ -1,59 +1,294 @@
-精选直播,#genre#
-CCTV-10,http://74.91.26.218:82/live/cctv10hd.m3u8
-CCTV-10,https://cdn4.skygo.mn/live/disk1/CCTV-10/HLSv3-FTA/CCTV-10.m3u8
-CCTV-11,http://74.91.26.218:82/live/cctv11hd.m3u8
-CCTV-11,https://xykt-fix.github.io/play/a02b/index.m3u8
-CCTV-13,http://74.91.26.218:82/live/cctv13hd.m3u8
-CCTV-14,http://74.91.26.218:82/live/cctv14hd.m3u8
-CCTV-15,http://74.91.26.218:82/live/cctv15hd.m3u8
-CCTV-16,http://74.91.26.218:82/live/cctv16hd.m3u8
-CCTV-17,http://74.91.26.218:82/live/cctv17hd.m3u8
-CCTV-2,http://74.91.26.218:82/live/cctv2hd.m3u8
-CCTV-3,http://74.91.26.218:82/live/cctv3hd.m3u8
-CCTV-7,http://74.91.26.218:82/live/cctv7hd.m3u8
-CCTV-8,http://74.91.26.218:82/live/cctv8hd.m3u8
-CCTV-9,https://xykt-fix.github.io/Y77.m3u8
-CCTV1,http://74.91.26.218:82/live/cctv1hd.m3u8
-CCTV12,http://124.165.251.82:85/tsfile/live/0012_1.m3u8?key=txiptv&playlive=1&authid=0
-CCTV12,http://74.91.26.218:82/live/cctv12hd.m3u8
-CCTV13,http://ali-m-l.cztv.com/channels/lantian/channel21/1080p.m3u8
-CCTV15,http://gmxw.7766.org:808/hls/102/index.m3u8
-CCTV16,http://gmxw.7766.org:808/hls/169/index.m3u8
-CCTV5,http://gmxw.7766.org:808/hls/93/index.m3u8
-CCTV8,http://124.165.251.82:85/tsfile/live/0008_1.m3u8?key=txiptv&playlive=1&authid=0
-CCTV8,http://gmxw.7766.org:808/hls/96/index.m3u8
+📺 央视频道,#genre#
+CCTV-1,http://74.91.26.218:82/live/cctv1hd.m3u8
+CCTV-11,http://101.66.195.243:9901/tsfile/live/0011_1.m3u8?key=txiptv&playlive=0&authid=0
+CCTV-11,http://101.66.198.93:9901/tsfile/live/0011_1.m3u8?key=txiptv&playlive=0&authid=0
+CCTV-12,http://74.91.26.218:82/live/cctv12hd.m3u8
+CCTV-12,http://124.165.251.82:85/tsfile/live/0012_1.m3u8?key=txiptv&playlive=1&authid=0
+CCTV-13,http://ali-m-l.cztv.com/channels/lantian/channel21/1080p.m3u8
+CCTV-15,http://gmxw.7766.org:808/hls/102/index.m3u8
+CCTV-16,http://gmxw.7766.org:808/hls/169/index.m3u8
+CCTV-3,http://101.66.198.93:9901/tsfile/live/0003_1.m3u8?key=txiptv&playlive=0&authid=0
+CCTV-7,http://101.66.198.93:9901/tsfile/live/0007_1.m3u8?key=txiptv&playlive=0&authid=0
+CCTV-8,http://124.165.251.82:85/tsfile/live/0008_1.m3u8?key=txiptv&playlive=1&authid=0
+CCTV-8,http://gmxw.7766.org:808/hls/96/index.m3u8
+CCTV-9,http://74.91.26.218:82/live/cctv9hd.m3u8
+CCTV-9,http://101.66.195.243:9901/tsfile/live/0009_1.m3u8?key=txiptv&playlive=0&authid=0
+CCTV-9,http://101.66.198.93:9901/tsfile/live/0009_1.m3u8?key=txiptv&playlive=0&authid=0
 CGTN,http://english-livetx.cgtn.com/hls/yypdyyctzb_hd.m3u8
-CGTN,https://0472.org/hls/cgtn.m3u8
-CGTN,https://amg00405-rakutentv-cgtn-rakuten-i9tar.amagi.tv/master.m3u8
-CGTN,https://english-livebkali.cgtn.com/live/encgtn.m3u8
+CGTN法语,http://espanol-liveali.cgtn.com/hls/LSveOGBaBw41Ea7ukkVAUdKQ220802LSTexu6xAuFH8VZNBLE1ZNEa220802cd.m3u8
+CGTN纪录,https://english-livetx.cgtn.com/hls/yypdjlctzb_hd.m3u8
+📡 卫视频道,#genre#
 东南卫视,http://live.zohi.tv/video/s10001-fztv-3/index.m3u8
-东方卫视,http://bp-resource-dfl.bestv.cn/148/3/video.m3u8
-东方卫视,http://bp-resource-dfl.bestv.cn/155/3/video.m3u8
-东方卫视4K,https://bp-resource-dfl.bestv.cn/148/3/video.m3u8
+云南卫视,http://101.66.198.93:9901/tsfile/live/0119_1.m3u8?key=txiptv&playlive=0&authid=0
+云南卫视,http://101.66.195.243:9901/tsfile/live/0119_1.m3u8?key=txiptv&playlive=0&authid=0
 人间卫视,https://5ddce30eb4b55.streamlock.net/bltvhd/bltv1/chunklist_w511254805.m3u8
+人间卫视,http://61.216.67.119:1935/bltvhd/bltv1/chunklist_w1266569526.m3u
 内蒙古卫视,http://play1-qk.nmtv.cn/live/1769652018126032.m3u8
-大湾区卫视,http://222.128.55.152:9080/live/dwq.m3u8
+吉林卫视,http://101.66.198.93:9901/tsfile/live/0116_1.m3u8?key=txiptv&playlive=0&authid=0
+吉林卫视,http://101.66.195.243:9901/tsfile/live/0116_1.m3u8?key=txiptv&playlive=0&authid=0
+四川卫视,http://101.66.195.243:9901/tsfile/live/0123_1.m3u8?key=txiptv&playlive=0&authid=0
+四川卫视,http://101.66.198.93:9901/tsfile/live/0123_1.m3u8?key=txiptv&playlive=0&authid=0
 安多卫视,https://liveout.xntv.tv/a65jur/96iln2.m3u8
+安徽卫视,http://gmxw.7766.org:808/hls/40/index.m3u8
 山西卫视,http://119.39.9.8:9901/tsfile/live/0118_1.m3u8
+山西卫视,http://101.66.195.243:9901/tsfile/live/0118_1.m3u8?key=txiptv&playlive=0&authid=0
+山西卫视,http://101.66.198.93:9901/tsfile/live/0118_1.m3u8?key=txiptv&playlive=0&authid=0
+广东卫视,http://101.66.198.93:9901/tsfile/live/0125_1.m3u8?key=txiptv&playlive=0&authid=0
+广西卫视,http://101.66.198.93:9901/tsfile/live/0113_1.m3u8?key=txiptv&playlive=0&authid=0
+广西卫视,http://101.66.195.243:9901/tsfile/live/0113_1.m3u8?key=txiptv&playlive=0&authid=0
 延边卫视,http://l.cztvcloud.com/channels/lantian/SXxinchang2/720p.m3u8
 延边卫视,https://srs.iyb983.cn/video/CYS/index.m3u8
 延边卫视,https://srs.iyb983.cn:443/video/CYS/index.m3u8
-新疆卫视,http://218.84.12.186:8001/hls/main/playlist.m3u8?zxinjd;http://218.84.12.186:8001/hls/main/playlist.m3u8zxinjd
+江西卫视,http://101.66.198.93:9901/tsfile/live/0138_1.m3u8?key=txiptv&playlive=0&authid=0
 江西卫视,http://112.27.5.218:9901/tsfile/live/faacts/0138_1.m3u8?key=txiptv&playlive=1&authid=0
 河南卫视,http://111.59.139.82:11888/tsfile/live/0139_1.m3u8?key=txiptv&playlive=1&authid=0
-浙江卫视,http://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8
+河南卫视,http://101.66.195.243:9901/tsfile/live/0139_1.m3u8?key=txiptv&playlive=0&authid=0
+河南卫视,http://101.66.198.93:9901/tsfile/live/0139_1.m3u8?key=txiptv&playlive=0&authid=0
 浙江卫视,http://ali-m-l.cztv.com/channels/lantian/channel01/1080p.m3u8
-浙江卫视,https://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8
+浙江卫视,http://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8
 浙江卫视,https://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8?
-深圳卫视,http://38.64.72.148:80/hls/modn/list/4007/playlist.m3u8
-深圳卫视,http://gmxw.7766.org:808/hls/45/index.m3u8
-湖南卫视,http://hlsal-ldvt.qing.mgtv.com/nn_live/nn_x64/Y2RuZXhfaWQ9YWxfaGxzX2xkdnQmZT02OTE0NjA0JnY9MSZpZD1ITldTWkdTVCZzPTcwN2RiYTc2YzJjNmJmMTQ4MmUyZGYzOWU2NWM3YWFi/HNWSZGST.m3u8
+浙江卫视,https://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8
+湖北卫视,http://101.66.198.93:9901/tsfile/live/0132_1.m3u8?key=txiptv&playlive=0&authid=0
 湖南卫视,http://hlsal-ldvt.qing.mgtv.com/nn_live/nn_x64/dWlwPTEyNy4wLjAuMSZ1aWQ9cWluZy1jbXMmbm5fdGltZXpvbmU9OCZjZG5leF9pZD1hbF9obHNfbGR2dCZ1dWlkPTliODY4NmU5ZTM2YzYwMmMmZT02OTE0NjA0JnY9MSZpZD1ITldTWkdTVCZzPTcwN2RiYTc2YzJjNmJmMTQ4MmUyZGYzOWU2NWM3YWFi/HNWSZGST.m3u8
+湖南卫视,http://hlsal-ldvt.qing.mgtv.com/nn_live/nn_x64/Y2RuZXhfaWQ9YWxfaGxzX2xkdnQmZT02OTE0NjA0JnY9MSZpZD1ITldTWkdTVCZzPTcwN2RiYTc2YzJjNmJmMTQ4MmUyZGYzOWU2NWM3YWFi/HNWSZGST.m3u8
 湖南卫视,https://txmov2.a.kwimgs.com/bs3/video-hls/5199687338554291078_hlsb.m3u8
 甘肃卫视,http://218.13.170.98:9901/tsfile/live/0141_1.m3u8
-福建海峡卫视,http://38.64.72.148/hls/modn/list/4009/playlist.m3u8
 福建海峡卫视,http://38.64.72.148:80/hls/modn/list/4009/chunklist0.m3u8
-福建海峡卫视,http://38.64.72.148:80/hls/modn/list/4009/playlist.m3u8
 西藏卫视,http://112.27.5.218:9901/tsfile/live/0111_1.m3u8?key=txiptv&playlive=1&authid=0
-青海卫视,https://hls-qhmh.lanzhousobey.cn/qhmh/mhds.m3u8
+贵州卫视,http://101.66.198.93:9901/tsfile/live/0120_1.m3u8?key=txiptv&playlive=0&authid=0
+辽宁卫视,http://61.136.172.236:9901/tsfile/live/0121_1.m3u8?key=txiptv&playlive=1&authid=0
+陕西卫视,http://101.66.198.93:9901/tsfile/live/0136_1.m3u8?key=txiptv&playlive=0&authid=0
+陕西卫视,http://101.66.195.243:9901/tsfile/live/0136_1.m3u8?key=txiptv&playlive=0&authid=0
 黑龙江卫视,https://idclive.hljtv.com:4430/live/hljws_own.m3u8
+黑龙江卫视,http://61.136.172.236:9901/tsfile/live/0143_1.m3u8?key=txiptv&playlive=1&authid=0
+🏙️ 地方频道,#genre#
+七台河新闻综合,http://live.qthnews.org.cn:1935/live/live1/800k/tzwj_video.m3u8
+东莞新闻综合,https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8
+云南 Ⅰ 文山综合台  [Not 24/7],http://tvdrs.wsrtv.com.cn:8100/channellive/ch1.flv
+南京教科,http://nklive.nbs.cn/hls/75b3c462-b831-4de7-a34b-5d3221db2069/index.m3u8
+南京新闻综合,http://nklive.nbs.cn/hls/d511bc9d-a694-4453-b3a2-4fc842cc97a1/index.m3u8
+南宁都市生活,http://615bbf179ba53515dccad7b1da5d1ad9.livehwc3.cn/hls.nntv.cn/nnlive/WLSH_24.m3u8?sub_m3u8=true&edge_slice=true&user_session_id=2598844eaee8a4265e706fc14b3fc11d
+哈尔滨娱乐,http://stream.hrbtv.net/ylpd/sd/live.m3u8?zheild
+哈尔滨影,http://stream.hrbtv.net/yspd/sd/live.m3u8?zheild
+哈尔滨新闻综合,http://stream.hrbtv.net/xwzh/sd/live.m3u8?zheild
+哈尔滨生活,http://stream.hrbtv.net/shpd/sd/live.m3u8?zheild
+哈尔滨资讯,http://stream.hrbtv.net/zxpd/sd/live.m3u8
+哈尔滨都市咨询,http://stream.hrbtv.net/zxpd/sd/live.m3u8?zheild
+嘉兴新闻综合,http://live.zohi.tv/video/s10001-fztv-1/index.m3u8
+嘉兴新闻综合,http://tvfile.jyrmt.cn:80/nmip-media/channellive/channel104452/playlist.m3u8
+四川科教,http://182.150.115.21:8030/pcgacg/pcgacg_0.m3u8
+四平新闻综合 [Geo-blocked],https://stream2.jlntv.cn/sptv/sd/live.m3u8
+安徽导视,http://dspdhls.appcoo.com:8888/live/dspd/index.m3u8
+宿州新闻综合,http://live.ahsz.tv/video/s10001-szzh/index.m3u8
+宿州科教,http://live.ahsz.tv/video/s10001-kxjy/index.m3u8
+山东教育,https://test1.live.sdetv.com.cn/live/dianshizhibo/playlist.m3u8
+广东 Ⅰ 韶关综合台  [Not 24/7],https://www.sgmsw.cn/videos/tv/201805/1308/SB05RIYZOU8JR418AUQOF62CAJQ08D0E/hls/live.m3u8
+广东民生,http://183.11.239.36:808/hls/18/index.m3u8
+广元公共,https://m3u8.channel.dzsm.com/nmip-media/channellive/channel101257/playlist.m3u8
+广元综合,https://m3u8.channel.dzsm.com/nmip-media/channellive/channel100999/playlist.m3u8
+广安公共,http://live1.gatv.com.cn:85/live/GGPD_ggpdzm.m3u8
+广安公共,http://live1.gatv.com.cn:85/live/GGPD_ggpdzm.m3u8?zsicd
+广安公共,http://live1.gatv.com.cn:85/live/GGPD.m3u8
+广州新闻,http://tencentplay.gztv.com/live/xinwen.m3u8?txSecret=d2c2db0b598c02ec1b5623728434d367&txTime=18d57929bd3
+广州综合,https://tencentplay.gztv.com/live/zonghes.m3u8?txSecret=f0147ae6453a80f5989f382368b72aad&txTime=18d00acf487
+广州综合,https://tencentplay.gztv.com/live/zonghes.m3u8?txSecret=439b0fd2cf766b363c93a59cbcbe1370&txTime=18d00acf488
+广州综合,http://tencentplay.gztv.com/live/zonghes.m3u8?txSecret=c8dbe86d6f86eb1a21999ab479fd5667&txTime=18d3c4690e8
+广州综合,https://tencentplaybusiness.gztv.com/live/zonghes.m3u8
+文山州公共,http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel8/playlist.m3u8
+文山州公共,http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel8/playlist.m3u8?zyund
+文山州新闻综合,http://tvdrs.wsrtv.com.cn:8100/channellive/ch1.flv?zyund
+文山州新闻综合,http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel7/playlist.m3u8?zyund
+文山综合  [Not 24/7],http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel7/playlist.m3u8
+杭州影视,http://101.66.198.93:9901/tsfile/live/1011_1.m3u8?key=txiptv&playlive=0&authid=0
+杭州影视,http://101.66.195.243:9901/tsfile/live/1011_1.m3u8?key=txiptv&playlive=0&authid=0
+河北都市,https://radio.pull.hebtv.com/live/hebnczx.m3u8
+河源综合,https://tmpstream.hyrtv.cn/xwzh/sd/live.m3u8
+浙江 Ⅰ 绍兴影视,http://live.shaoxing.com.cn/video/s10001-sxtv3/index.m3u8
+浙江 Ⅰ 绍兴综合,http://live.shaoxing.com.cn/video/s10001-sxtv1/index.m3u8
+浙江休闲台,http://ali-m-l.cztv.com/channels/lantian/channel006/720p.m3u8
+浙江公共新闻,http://ali-m-l.cztv.com/channels/lantian/channel007/1080p.m3u8
+浙江公共新闻,http://ali-m-l.cztv.com/channels/lantian/channel07/1080p.m3u8
+浙江国际,http://ali-m-l.cztv.com/channels/lantian/channel010/720p.m3u8
+浙江国际,http://ali-m-l.cztv.com/channels/lantian/channel010/1080p.m3u8
+浙江国际,https://ali-m-l.cztv.com/channels/lantian/channel010/1080p.m3u8
+浙江国际,https://ali-m-l.cztv.com/channels/lantian/channel010/1080p.m3u8?
+浙江少儿,http://ali-m-l.cztv.com/channels/lantian/channel008/1080p.m3u8
+浙江少儿,https://ali-m-l.cztv.com/channels/lantian/channel008/1080p.m3u8
+浙江少儿,https://ali-m-l.cztv.com/channels/lantian/channel008/1080p.m3u8?
+浙江少儿,http://ali-vl.cztv.com/channels/lantian/channel008/360p.m3u8
+浙江教科,http://ali-m-l.cztv.com/channels/lantian/channel004/1080p.m3u8
+浙江教科影视,http://ali-m-l.cztv.com/channels/lantian/channel04/1080p.m3u8
+浙江教科影视,https://ali-m-l.cztv.com/channels/lantian/channel004/1080p.m3u8
+浙江教科影视,http://ali-vl.cztv.com/channels/lantian/channel004/360p.m3u8
+浙江教育,http://ali-m-l.cztv.com/channels/lantian/channel04/720p.m3u8
+浙江数码时代,http://ali-m-l.cztv.com/channels/lantian/channel12/720p.m3u8?zzhed
+浙江数码时代,http://ali-m-l.cztv.com/channels/lantian/channel12/720p.m3u8
+浙江新闻,http://ali-m-l.cztv.com/channels/lantian/channel007/720p.m3u8
+浙江新闻,http://ali-m-l.cztv.com/channels/lantian/channel07/720p.m3u8
+浙江新闻,https://ali-m-l.cztv.com/channels/lantian/channel007/1080p.m3u8?
+浙江新闻,https://ali-m-l.cztv.com/channels/lantian/channel007/1080p.m3u8
+浙江民生,http://ali-m-l.cztv.com/channels/lantian/channel006/1080p.m3u8
+浙江民生,http://ali-m-l.cztv.com/channels/lantian/channel06/1080p.m3u8
+浙江民生,http://ali-m-l.cztv.com/channels/lantian/channel06/720p.m3u8
+浙江民生,https://ali-m-l.cztv.com/channels/lantian/channel006/1080p.m3u8?
+浙江民生休闲,https://ali-m-l.cztv.com/channels/lantian/channel006/1080p.m3u8
+浙江民生休闲,http://ali-vl.cztv.com/channels/lantian/channel006/360p.m3u8
+浙江留学,http://ali-vl.cztv.com/channels/lantian/channel009/360p.m3u8
+浙江经济,http://ali-m-l.cztv.com/channels/lantian/channel03/720p.m3u8
+浙江经济,http://ali-m-l.cztv.com/channels/lantian/channel003/1080p.m3u8
+浙江经济,https://ali-m-l.cztv.com/channels/lantian/channel003/1080p.m3u8?
+浙江经济生活,http://ali-m-l.cztv.com/channels/lantian/channel03/1080p.m3u8
+浙江经济生活,https://ali-m-l.cztv.com/channels/lantian/channel003/1080p.m3u8
+浙江经济生活,http://ali-vl.cztv.com/channels/lantian/channel003/360p.m3u8
+浙江经视,http://ali-m-l.cztv.com/channels/lantian/channel003/720p.m3u8
+浙江遂昌,http://l.cztvcloud.com/channels/lantian/SXsuichang1/720p.m3u8
+浙江钱江,http://l.cztvcloud.com/channels/lantian/SXyuyao2/720p.m3u8
+浙江钱江,https://ali-m-l.cztv.com/channels/lantian/channel002/1080p.m3u8
+浙江钱江,https://ali-m-l.cztv.com/channels/lantian/channel002/1080p.m3u8?
+浙江钱江都市,http://ali-xwl.cztv.com/live/channel02720Plxw.m3u8
+浙江钱江都市,http://ali-xwl.cztv.com/live/channel021080Plxw.m3u8
+浙江钱江频道,http://ali-m-l.cztv.com/channels/lantian/channel02/1080p.m3u8
+淮安影院娱乐,http://live1.habctv.com/ysylsl/sd/live.m3u8
+淮安影院娱乐,http://live1.habctv.com/ysylsl/sd/live.m3u8?zjiangsd
+湘潭新闻综合,http://live.hnxttv.com:9601/live/xwzh/800K/tzwj_video.m3u8
+烟台公共,http://live.yantaitv.cn/live/e50f104a4ffe4a41b2217cbda534146f/d86092e69df94668b33390278b061700-1.m3u8
+烟台新闻综合,http://live.yantaitv.cn/live/3e81a8879da44c5dadf3bd9c10468e1c/9b776d420ee4438199b7657c8eb88f07-1.m3u8
+烟台经济科技,http://live.yantaitv.cn/live/27f84144e95a4652ae9e5c211b2a6b55/405f3e33ba384aa0a16014d0becd1261-1.m3u8
+甘孜综合,http://tv.drs.ganzitv.com:8100/channellive/gztv.flv
+甘孜综合,https://m3u8channel.ganzitv.com/nmip-media/channellive/channel1/playlist.m3u8
+白城新闻综合 [Geo-blocked],https://stream2.jlntv.cn/baicheng1/sd/live.m3u8
+白山新闻综合 [Geo-blocked],https://stream2.jlntv.cn/baishan1/sd/live.m3u8
+福州少儿,http://live.zohi.tv/video/s10001-fztv-4/index.m3u8
+福州生活,http://live.zohi.tv:80/video/s10001-fztv-3/index.m3u8
+绍兴公共,http://live.shaoxing.com.cn/video/s10001-sxtv2/index.m3u8
+绍兴文化影院,http://live.shaoxing.com.cn/video/s10001-sxtv3/index.m3u8?zzhed
+绍兴新闻综合,http://live.shaoxing.com.cn/video/s10001-sxtv1/index.m3u8?zzhed
+绍兴新闻综合,http://live.shaoxing.com.cn/video/s10001-sxhb/index.m3u8?zzhed
+绍兴电视台公共,http://live.shaoxing.com.cn/video/s10001-sxtv2/index.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD]
+苏州,https://tylive.kan0512.com/norecord/csztv4k_4k.m3u8
+苏州文化生活,https://live-auth.51kandianshi.com/szgd/csztv3.m3u8
+苏州新闻综合,https://live-auth.51kandianshi.com/szgd/csztv1.m3u8
+苏州生活资讯,https://live-auth.51kandianshi.com/szgd/csztv5.m3u8
+苏州社会经济,https://live-auth.51kandianshi.com/szgd/csztv2.m3u8
+西宁新闻综合,https://liveout.xntv.tv/a65jur/96iln2.m3u8?zqinghd
+通化新闻 [Geo-blocked],https://stream2.jlntv.cn/tonghua1/sd/live.m3u8
+邯郸新闻,https://jwcdnqx.hebyun.com.cn/live/hdxwzh/1500k/tzwj_video.m3u8
+邯郸科技教育,https://jwcdnqx.hebyun.com.cn/live/hdkj/1500k/tzwj_video.m3u8
+镇江二套社会民生,http://zjtv-wshls.homecdn.com/live/2aa16.m3u8
+镇江新闻综合,http://cm-wshls.homecdn.com/live/2aa50.m3u8
+长春综合 [Geo-blocked],https://stream2.jlntv.cn/jlcc/sd/live.m3u8
+雅安新闻综合,https://play.yunxya.com/channellive/xinwen.m3u8
+黑龙江文体,https://idclive.hljtv.com:4430/live/hljwy_hd.m3u8
+黑龙江都市,https://idclive.hljtv.com:4430/live/dushi_hd.m3u8
+🌏 港澳台,#genre#
+TVBS亚洲,http://38.64.72.148/hls/modn/list/4005/chunklist0.m3u8
+东森超视,http://38.64.72.148:80/hls/modn/list/2013/chunklist1.m3u8
+🐟 斗鱼直播,#genre#
+5EplayCSGO-5EPC S1,https://astar.cc.cd/douyu/668668
+A顶梁柱-VIP空间~！！！,https://astar.cc.cd/douyu/7515044
+CF手游官方直播间-2026CFML秋季赛,https://astar.cc.cd/douyu/868191
+CSU上海尤文老王-新加坡正赛模拟,https://astar.cc.cd/douyu/8567880
+DNF官方直播间-2026DNF全国格斗大赛秋季赛,https://astar.cc.cd/douyu/470321
+DNF才艺-金秋打造增幅强化碰瓷辟邪玉,https://astar.cc.cd/douyu/11390993
+DNF枪魂冰子-强化增幅龙袍毕业打造来！,https://astar.cc.cd/douyu/5324388
+JJ斗地主官方-冠军杯S8秋季赛8进4赛段E组,https://astar.cc.cd/douyu/488743
+KZ天意-看一看比赛 12242551,https://astar.cc.cd/douyu/12242551
+QQ飞车手游官方直播间-重播丨26年QQ飞车S联赛秋季赛,https://astar.cc.cd/douyu/5040227
+Suda1027-【亿星】身体健康 天天开心,https://astar.cc.cd/douyu/6681775
+marshuk-跳伞大叔在小黑屋带你看看盒子~~,https://astar.cc.cd/douyu/2912812
+一Eiji一-金秋新号回归打造增幅强化,https://astar.cc.cd/douyu/229864
+一个胖胖的橙子-搬砖/全区YXB/账号,https://astar.cc.cd/douyu/5401083
+九州沐寒-欣赏纯音乐 .,https://astar.cc.cd/douyu/9882679
+云顶陈平安-效率帮上分 不排队新赛季冲,https://astar.cc.cd/douyu/11172527
+倾国互娱丶罗小羽-直播强怼至尊玉麒麟 爆天雷诺,https://astar.cc.cd/douyu/7084829
+全职pk惜别-直播PK黄金灯管不排队,https://astar.cc.cd/douyu/338568
+北海小小卷-日搬50角色-目标200亿,https://astar.cc.cd/douyu/9946408
+十方欧尼酱-要做国服第一导,https://astar.cc.cd/douyu/12867580
+啾啾家的小uu-这游戏咋这么难玩！！！,https://astar.cc.cd/douyu/10468887
+喜喜爱大红-新手主播 12656498,https://astar.cc.cd/douyu/12656498
+圆梦大师丶张宇-强怼碰瓷玉如意 龙车 爆雷 爆天甲,https://astar.cc.cd/douyu/7341863
+圣光天才少年-空闲中 排位巅峰包中,https://astar.cc.cd/douyu/12886422
+圣暮冬-努力战斗！！~,https://astar.cc.cd/douyu/12378388
+大家好请叫我拾玖-Subnautica2:异星水域!,https://astar.cc.cd/douyu/2249445
+大留宝贝-快乐调率小天才,https://astar.cc.cd/douyu/1007912
+小天真的宝宝-安菲尔德：永远不会孤行..,https://astar.cc.cd/douyu/1326179
+心生菩提树i-国产修仙，吞噬苍穹，新服火爆开启,https://astar.cc.cd/douyu/12902419
+心里有我妃妃么-主播我爱你mua~,https://astar.cc.cd/douyu/8941403
+暴脾气的秦风丶-【一起看】职业选手顶级操作,https://astar.cc.cd/douyu/456688
+有只小怪兽丶-手动肝所有！不排队！,https://astar.cc.cd/douyu/680621
+李哥Lrc-天梯艰苦卓绝大混战 431935,https://astar.cc.cd/douyu/431935
+李阳2014-TYang键盘：中秋快樂,https://astar.cc.cd/douyu/7905152
+正能量男孩wzy-每天清晨的第一缕阳光！,https://astar.cc.cd/douyu/254415
+甜妹小阿喵-有车位：队友玩大哥烧心！,https://astar.cc.cd/douyu/9187806
+老杨怪-GMSCW开搞了！,https://astar.cc.cd/douyu/6141287
+老酱评球-和好朋友一起冒险才好玩！ 339556,https://astar.cc.cd/douyu/339556
+英雄联盟手游赛事-英雄联盟手游超级联赛秋季赛,https://astar.cc.cd/douyu/33
+超越Oo一天-一天：踢踢球，需要看号~踢球的来哦！,https://astar.cc.cd/douyu/109868
+酷酷的帅少-金秋套增幅龙袍回归打造,https://astar.cc.cd/douyu/877395
+飘逸徐先森-dota徐先森,https://astar.cc.cd/douyu/1876887
+🦷 虎牙直播,#genre#
+29110丶晴空,https://astar.cc.cd/huya/138478
+AH丶梦屿,https://astar.cc.cd/huya/19117555
+DNF酒武贰七,https://astar.cc.cd/huya/30152749
+EWC电竞世俱杯-【重播】恭喜Spirit获得2026EWC CS2项目冠军,https://astar.cc.cd/huya/660116
+JJ斗地主-JJ斗地主冠军杯,https://astar.cc.cd/huya/152698
+JJ麻将-【重播】恭喜广东星辰获得2026冠军杯公开赛冠军！,https://astar.cc.cd/huya/28511836
+MG-白鹿,https://astar.cc.cd/huya/136279
+Navi丶S1mple小电视-2021全年精彩赛事轮播,https://astar.cc.cd/huya/24252134
+Niko,https://astar.cc.cd/huya/30764404
+Pscndo丶cmj,https://astar.cc.cd/huya/30831770
+QQ飞车专业开箱冠军,https://astar.cc.cd/huya/21957353
+QQ飞车端游开箱冠军,https://astar.cc.cd/huya/20218960
+TI2026舞台一-【重播】三冠加冕！恭喜Spirit获得TI2026 总冠军！,https://astar.cc.cd/huya/660118
+Tata-晚安z,https://astar.cc.cd/huya/16853155
+三国杀绝对技术-冷门将第65期，给古锭刀大宝送杀，大宝丢牌都不敢杀,https://astar.cc.cd/huya/23872009
+丨HS丨虎牙尕冉,https://astar.cc.cd/huya/25971429
+乐哥啊丶,https://astar.cc.cd/huya/11726640
+似水流年z、,https://astar.cc.cd/huya/17942147
+傻妞-[情满四合院] 你准备好感受那份年代情感了吗？,https://astar.cc.cd/huya/11342426
+初七7777,https://astar.cc.cd/huya/517659
+华东苏一寒,https://astar.cc.cd/huya/11348191
+南波万三角洲,https://astar.cc.cd/huya/30764970
+历届TI精彩赛事回顾-我是一颗小虎牙,https://astar.cc.cd/huya/24258633
+古咕咕-跑男1-4季，gogogo出发咯~,https://astar.cc.cd/huya/29465875
+周星星-【周星星】星爷经典不间断,https://astar.cc.cd/huya/11342412
+大漠李白-黑神话悟空文化交流中心,https://astar.cc.cd/huya/26355861
+小木子先生丶-铁齿铜ya纪晓岚 经典铁三角组合,https://astar.cc.cd/huya/11342396
+帝星-圣光,https://astar.cc.cd/huya/528660
+我是詹密-雍正皇帝的风云一生,https://astar.cc.cd/huya/11342439
+特大王天一直播轮播-特大王天一精彩视频,https://astar.cc.cd/huya/19096040
+甜甜-真正的战士 火蓝刀锋,https://astar.cc.cd/huya/20985796
+绿青,https://astar.cc.cd/huya/20681528
+聚梦-太阳,https://astar.cc.cd/huya/16646728
+菜刀三国杀,https://astar.cc.cd/huya/30256349
+虎牙-至尊宝【黑】,https://astar.cc.cd/huya/31398190
+虎牙丶小懒鹿,https://astar.cc.cd/huya/31256293
+虎牙八点档-我摊牌啦 一起看热门大片,https://astar.cc.cd/huya/880261
+迅哥丶雨霖铃,https://astar.cc.cd/huya/30255235
+鑫龙丶鼠King,https://astar.cc.cd/huya/26888247
+📺 B站直播,#genre#
+捏猫屁股会挨咬-争取全剧情,https://astar.cc.cd/bilibili/9996403
+爱讲故事的劳伦斯-老吴来打游戏了,https://astar.cc.cd/bilibili/46492
+📹 快手直播,#genre#
+CFM水源-传奇45枪神25下单秒上号,https://astar.cc.cd/kuaishou/3xnug8vc4nwd2jm
+CS2赛事频道-CS2 BLAST波尔图公开赛,https://astar.cc.cd/kuaishou/kuaishou_csgo
+CSGO赛事菌-CS2 BLAST波尔图公开赛,https://astar.cc.cd/kuaishou/3xcqid7xffxz3u4
+DNF、大瓜-很高兴认识你,https://astar.cc.cd/kuaishou/3xhfzfkzg6xan5u
+QQ飞车手游官方赛事-2026S联赛秋季赛第二赛段,https://astar.cc.cd/kuaishou/qqspeedS
+Y&小花-新开70异界,https://astar.cc.cd/kuaishou/NM9996888
+bbx-跑刀,https://astar.cc.cd/kuaishou/3xa9rk8ybnrvzfk
+csgo东山-孟孟专属直播间,https://astar.cc.cd/kuaishou/3xgh4x6ynpm6eg4
+〔三角洲行动〕瑞吉,https://astar.cc.cd/kuaishou/3xfhrp7hp7cajkc
+七点半互娱 晓忆-炫酷仙侠 开局千亿代鑫扶持,https://astar.cc.cd/kuaishou/3xxcg9s3x3zngxg
+传奇三三三-很高兴认识你,https://astar.cc.cd/kuaishou/3x76tn2spurh6u2
+兔子跳跳跳-兔子跳跳跳,https://astar.cc.cd/kuaishou/3xttb58s69q74a6
+嗨嗨嗨♥☞-传奇打金搬砖手游自由之刃米,https://astar.cc.cd/kuaishou/Lei6969699
+夜尽天明-回忆70复古异界,https://astar.cc.cd/kuaishou/3xnfandf3ujk4tm
+大风,https://astar.cc.cd/kuaishou/3xikxdy3rnifrsu
+封狼胥-游戏而已，别有压力,https://astar.cc.cd/kuaishou/3x5pfk9y32bbr79
+已夕电竞🔥招跑手收哈弗币-三角洲招跑手收哈弗币,https://astar.cc.cd/kuaishou/Yixigg666
+快手用户1782097722142-无敌连点,https://astar.cc.cd/kuaishou/3xfa5qev655vxj2
+怀旧友谊-DNF86怀旧安徒恩,https://astar.cc.cd/kuaishou/3xcfq3yhbdeszhu
+木中无人-新手努力赚哈弗币ing,https://astar.cc.cd/kuaishou/3xzw3xn83vf9s8i
+白裳（原鸣）-肝,https://astar.cc.cd/kuaishou/3xsv4ueurmansu9
+穿越火线手游-2026CFML秋季赛常规赛,https://astar.cc.cd/kuaishou/CFM666_2015
