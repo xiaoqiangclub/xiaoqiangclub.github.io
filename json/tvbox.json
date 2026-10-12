@@ -6,7 +6,7 @@
   "sites": [
     {
       "key": "xq_agg",
-      "name": "🎈 XiaoqiangClub",
+      "name": "🎉 XiaoqiangClub",
       "type": 3,
       "api": "csp_XqAgg",
       "ext": "{\"sites\": [{\"name\": \"🌏 天涯资源\", \"api\": \"https://tyyszy.com/api.php/provide/vod\"}, {\"name\": \"🎞️ 电影天堂\", \"api\": \"http://caiji.dyttzyapi.com/api.php/provide/vod\"}, {\"name\": \"✨ 非凡资源\", \"api\": \"http://cj.ffzyapi.com/api.php/provide/vod\"}, {\"name\": \"🌪️ 暴风资源\", \"api\": \"https://bfzyapi.com/api.php/provide/vod\"}, {\"name\": \"🎮 索尼资源\", \"api\": \"https://suoniapi.com/api.php/provide/vod\"}, {\"name\": \"⚡ 闪电资源\", \"api\": \"https://sdzyapi.com/api.php/provide/vod\"}, {\"name\": \"🐾 百度资源\", \"api\": \"https://api.apibdzy.com/api.php/provide/vod\"}, {\"name\": \"🌀 360资源\", \"api\": \"https://360zy.com/api.php/provide/vod\"}, {\"name\": \"🚀 极速资源\", \"api\": \"https://jszyapi.com/api.php/provide/vod\"}, {\"name\": \"🛩️ 极速二线\", \"api\": \"https://jisuzy.com/api.php/provide/vod\"}, {\"name\": \"🌙 建安资源\", \"api\": \"http://154.219.117.232:9981/jacloudapi.php/provide/vod\"}]}",
