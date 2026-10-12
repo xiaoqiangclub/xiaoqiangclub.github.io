@@ -1,4 +1,4 @@
-📺 央视频道,#genre#
+1️⃣ 📺 央视频道,#genre#
 CCTV-1,http://74.91.26.218:82/live/cctv1hd.m3u8
 CCTV-11,http://101.66.195.243:9901/tsfile/live/0011_1.m3u8?key=txiptv&playlive=0&authid=0
 CCTV-11,http://101.66.198.93:9901/tsfile/live/0011_1.m3u8?key=txiptv&playlive=0&authid=0
@@ -17,7 +17,7 @@ CCTV-9,http://101.66.198.93:9901/tsfile/live/0009_1.m3u8?key=txiptv&playlive=0&a
 CGTN,http://english-livetx.cgtn.com/hls/yypdyyctzb_hd.m3u8
 CGTN法语,http://espanol-liveali.cgtn.com/hls/LSveOGBaBw41Ea7ukkVAUdKQ220802LSTexu6xAuFH8VZNBLE1ZNEa220802cd.m3u8
 CGTN纪录,https://english-livetx.cgtn.com/hls/yypdjlctzb_hd.m3u8
-📡 卫视频道,#genre#
+2️⃣ 📡 卫视频道,#genre#
 东南卫视,http://live.zohi.tv/video/s10001-fztv-3/index.m3u8
 云南卫视,http://101.66.198.93:9901/tsfile/live/0119_1.m3u8?key=txiptv&playlive=0&authid=0
 云南卫视,http://101.66.195.243:9901/tsfile/live/0119_1.m3u8?key=txiptv&playlive=0&authid=0
@@ -61,7 +61,7 @@ CGTN纪录,https://english-livetx.cgtn.com/hls/yypdjlctzb_hd.m3u8
 陕西卫视,http://101.66.195.243:9901/tsfile/live/0136_1.m3u8?key=txiptv&playlive=0&authid=0
 黑龙江卫视,https://idclive.hljtv.com:4430/live/hljws_own.m3u8
 黑龙江卫视,http://61.136.172.236:9901/tsfile/live/0143_1.m3u8?key=txiptv&playlive=1&authid=0
-🏙️ 地方频道,#genre#
+3️⃣ 🏙️ 地方频道,#genre#
 七台河新闻综合,http://live.qthnews.org.cn:1935/live/live1/800k/tzwj_video.m3u8
 东莞新闻综合,https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8
 云南 Ⅰ 文山综合台  [Not 24/7],http://tvdrs.wsrtv.com.cn:8100/channellive/ch1.flv
@@ -180,10 +180,10 @@ CGTN纪录,https://english-livetx.cgtn.com/hls/yypdjlctzb_hd.m3u8
 雅安新闻综合,https://play.yunxya.com/channellive/xinwen.m3u8
 黑龙江文体,https://idclive.hljtv.com:4430/live/hljwy_hd.m3u8
 黑龙江都市,https://idclive.hljtv.com:4430/live/dushi_hd.m3u8
-🌏 港澳台,#genre#
+4️⃣ 🌏 港澳台,#genre#
 TVBS亚洲,http://38.64.72.148/hls/modn/list/4005/chunklist0.m3u8
 东森超视,http://38.64.72.148:80/hls/modn/list/2013/chunklist1.m3u8
-🐟 斗鱼直播,#genre#
+7️⃣ 🐟 斗鱼直播,#genre#
 5EplayCSGO-5EPC S1,https://astar.cc.cd/douyu/668668
 A顶梁柱-VIP空间~！！！,https://astar.cc.cd/douyu/7515044
 CF手游官方直播间-2026CFML秋季赛,https://astar.cc.cd/douyu/868191
@@ -226,7 +226,7 @@ marshuk-跳伞大叔在小黑屋带你看看盒子~~,https://astar.cc.cd/douyu/2
 超越Oo一天-一天：踢踢球，需要看号~踢球的来哦！,https://astar.cc.cd/douyu/109868
 酷酷的帅少-金秋套增幅龙袍回归打造,https://astar.cc.cd/douyu/877395
 飘逸徐先森-dota徐先森,https://astar.cc.cd/douyu/1876887
-🦷 虎牙直播,#genre#
+8️⃣ 🦷 虎牙直播,#genre#
 29110丶晴空,https://astar.cc.cd/huya/138478
 AH丶梦屿,https://astar.cc.cd/huya/19117555
 DNF酒武贰七,https://astar.cc.cd/huya/30152749
@@ -266,10 +266,10 @@ Tata-晚安z,https://astar.cc.cd/huya/16853155
 虎牙八点档-我摊牌啦 一起看热门大片,https://astar.cc.cd/huya/880261
 迅哥丶雨霖铃,https://astar.cc.cd/huya/30255235
 鑫龙丶鼠King,https://astar.cc.cd/huya/26888247
-📺 B站直播,#genre#
+9️⃣ 📺 B站直播,#genre#
 捏猫屁股会挨咬-争取全剧情,https://astar.cc.cd/bilibili/9996403
 爱讲故事的劳伦斯-老吴来打游戏了,https://astar.cc.cd/bilibili/46492
-📹 快手直播,#genre#
+🔟 📹 快手直播,#genre#
 CFM水源-传奇45枪神25下单秒上号,https://astar.cc.cd/kuaishou/3xnug8vc4nwd2jm
 CS2赛事频道-CS2 BLAST波尔图公开赛,https://astar.cc.cd/kuaishou/kuaishou_csgo
 CSGO赛事菌-CS2 BLAST波尔图公开赛,https://astar.cc.cd/kuaishou/3xcqid7xffxz3u4
