@@ -1,7 +1,7 @@
 /*!
  * @name 🎉 XiaoqiangClub 音源
  * @description 自建聚合音源 · 高音质优先 · 多后端自动回退
- * @version 1.0.0
+ * @version 1.1.0
  * @author XiaoqiangClub
  * @homepage https://xiaoqiangclub.github.io/lxmusic/
  */
@@ -17,6 +17,12 @@
  *  5. 所有后端均为公开解析接口，脚本不含任何私有密钥逻辑之外的硬编码。
  *
  * 维护：每周由 projects/lxmusic/scripts 健康检测流水线择优更新本文件。
+ *
+ * v1.1.0 (2026-10-13) —— 基于 TrongChen/raw-hub 候选源沙箱实测的修复：
+ *  1. [严重] tx/aacab 改为关键词模式：传 songmid 会返回无关歌曲（放错歌）；
+ *  2. kg 新增 nianxin(kg.php) 后端并置顶：lossless 返回真 FLAC（cenguigui 实为 MP3 静默降级）；
+ *  3. kw 新增 nianxin 后端：实测对酷我 rid 同样出真 FLAC，作为 cenguigui 故障时的备胎；
+ *  4. wy 维持探测链：本轮实测 K×H/星海/残像/迟言等外部 wy 后端均不可用（token 失效/403）。
  */
 
 const { EVENT_NAMES, request, on, send } = globalThis.lx;
@@ -69,6 +75,14 @@ const CONFIG = {
         extract: (d) => d && (d.url || (d.data && d.data.url)),
       },
       {
+        name: 'nianxin',
+        // 2026-10-13 实测：kg.php 对酷我 rid 同样有效，flac 档返回真 FLAC（fLaC 魔数）
+        timeout: 9000,
+        url: (id, q) => 'https://mcp.nianxinxz.com/share/ceshi/kg.php?hash=' + id + '&level=' + q,
+        qmap: { '128k': 'standard', '320k': 'exhigh', flac: 'lossless' },
+        extract: (d) => d && d.code === 200 && d.url ? d.url : null,
+      },
+      {
         name: 'haitangw',
         timeout: 9000,
         url: (id, q) => 'https://musicapi.haitangw.net/music/kw.php?type=mp3&id=' + id + '&level=' + q,
@@ -101,6 +115,14 @@ const CONFIG = {
     idField: ['hash', 'songmid', 'id', 'FileHash', 'HQFileHash'],
     backends: [
       {
+        name: 'nianxin',
+        // 2026-10-13 实测：lossless/hires 档返回真 FLAC；cenguigui 的 lossless 实为 MP3 静默降级
+        timeout: 9000,
+        url: (id, q) => 'https://mcp.nianxinxz.com/share/ceshi/kg.php?hash=' + id + '&level=' + q,
+        qmap: { '128k': 'standard', '320k': 'exhigh', flac: 'lossless' },
+        extract: (d) => d && d.code === 200 && d.url ? d.url : null,
+      },
+      {
         name: 'cenguigui',
         timeout: 8000,
         url: (id, q) => 'http://103.79.184.97/api/music/url?source=kg&songId=' + id +
@@ -120,8 +142,11 @@ const CONFIG = {
     backends: [
       {
         name: 'aacab',
+        // ⚠️ 2026-10-13 严重 bug 修复：a.aa.cab 的 msg 传 songmid 会返回完全无关的歌曲
+        // （实测传《晴天》mid 返回了无关外文歌）。它是关键词搜索接口，必须用 歌名+歌手。
+        keywordMode: true,
         timeout: 9000,
-        url: (id, q) => 'https://a.aa.cab/qq.music?msg=' + encodeURIComponent(id) +
+        url: (kw, q) => 'https://a.aa.cab/qq.music?msg=' + encodeURIComponent(kw) +
           '&n=1&type=' + q,
         qmap: { '128k': '0', '320k': '1', flac: '4' },
         extract: (d) => d && d.data && (d.data.music || d.data.url),
@@ -335,10 +360,8 @@ const resolveSource = async (srcKey, info, requestedQuality) => {
   const cfg = CONFIG[srcKey];
   if (!cfg) throw new Error('unsupported source: ' + srcKey);
 
-  const id = cfg.keywordMode ? '' : pickId(info, cfg.idField);
-  // keywordMode 平台（如咪咕）：用 歌名+歌手 作检索词
-  const keyword = cfg.keywordMode ?
-    [info && info.name, info && info.singer].filter(Boolean).join(' ') : '';
+  const id = pickId(info, cfg.idField);
+  const keyword = [info && info.name, info && (info.singer || info.artist)].filter(Boolean).join(' ');
   if (!id && !keyword) throw new Error('missing song id/keyword for ' + srcKey);
 
   // 音质阶梯：从请求音质向下
@@ -360,9 +383,12 @@ const resolveSource = async (srcKey, info, requestedQuality) => {
 
     for (let bi = 0; bi < cfg.backends.length; bi++) {
       const b = cfg.backends[bi];
+      // 后端级 keywordMode（如 tx 的 aacab、mg 的 oiapi）：用 歌名+歌手 而非 id
+      const useKeyword = (b.keywordMode || cfg.keywordMode) && keyword;
+      if ((b.keywordMode || cfg.keywordMode) && !keyword) continue;
       try {
         // keywordMode 后端用 keyword 作第一参，否则用 id
-        let u = await resolveViaBackend(cfg, b, id || keyword, q);
+        let u = await resolveViaBackend(cfg, b, useKeyword ? keyword : id, q);
         u = quotePath(u);
         if (!/^https?:\/\//i.test(u)) throw new Error('bad url');
         // 音频头校验：拒绝 HTML 错误页 / 空文件
