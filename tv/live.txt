@@ -61,7 +61,7 @@ CGTN纪录,https://english-livetx.cgtn.com/hls/yypdjlctzb_hd.m3u8
 陕西卫视,http://101.66.195.243:9901/tsfile/live/0136_1.m3u8?key=txiptv&playlive=0&authid=0
 黑龙江卫视,https://idclive.hljtv.com:4430/live/hljws_own.m3u8
 黑龙江卫视,http://61.136.172.236:9901/tsfile/live/0143_1.m3u8?key=txiptv&playlive=1&authid=0
-🏙️ 地方频道,#genre#
+📍 地方频道,#genre#
 七台河新闻综合,http://live.qthnews.org.cn:1935/live/live1/800k/tzwj_video.m3u8
 东莞新闻综合,https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8
 云南 Ⅰ 文山综合台  [Not 24/7],http://tvdrs.wsrtv.com.cn:8100/channellive/ch1.flv
@@ -226,7 +226,7 @@ marshuk-跳伞大叔在小黑屋带你看看盒子~~,https://astar.cc.cd/douyu/2
 超越Oo一天-一天：踢踢球，需要看号~踢球的来哦！,https://astar.cc.cd/douyu/109868
 酷酷的帅少-金秋套增幅龙袍回归打造,https://astar.cc.cd/douyu/877395
 飘逸徐先森-dota徐先森,https://astar.cc.cd/douyu/1876887
-🦷 虎牙直播,#genre#
+🐯 虎牙直播,#genre#
 29110丶晴空,https://astar.cc.cd/huya/138478
 AH丶梦屿,https://astar.cc.cd/huya/19117555
 DNF酒武贰七,https://astar.cc.cd/huya/30152749
