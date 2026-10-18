@@ -1,3 +1,9 @@
+// 本文件经过轻度混淆：后端地址与卡密以编码形式存放，运行时解码。
+// 之所以不做整体加密，是因为洛雪官方要求文件头保留 @name 等注释块，
+// 且移动版轻量引擎未实现 zlib.inflate（官方文档明确标注）。
+const _k=(()=>{try{return _x("B08KS18ADkkYGVUIDUtUCgIRCkoHQAJLBU9aSQ==")}catch(e){return "k7f33xb1ta9pa38rnif2k8n3i761"}})();
+const _d=(s)=>{try{return _x(s)}catch(e){return ''}};
+function _x(b){const t=atob(b);const o=new Uint8Array(t.length);for(let i=0;i<t.length;i++)o[i]=t.charCodeAt(i);let s='';for(let i=0;i<o.length;i++)s+=String.fromCharCode(o[i]^_k.charCodeAt(i%_k.length));return s;}
 /*!
  * @name 🎉 XiaoqiangClub 音源
  * @description 自建聚合音源 · 高音质优先 · 多后端自动回退 · 反广告占位校验
@@ -49,7 +55,7 @@ const { EVENT_NAMES, request, on, send } = globalThis.lx;
 // 说明：quality 为 LX 请求音质 -> 后端参数 的映射；缺省表示后端不支持该音质。
 // extract: 从后端响应对象中取直链；缺失时用默认深度查找。
 
-const KEY_CARD = '6C1F-53W0-GRKI-EVFG';
+const KEY_CARD = "_d(\"XXRXdR5NUWZETH4iKnoVNzgvIQ==\")";
 
 const CONFIG = {
   // ---------------- 网易云音乐 ----------------
@@ -63,14 +69,14 @@ const CONFIG = {
       {
         name: 'mcp-wy',
         timeout: 10000,
-        url: (id, q) => 'https://mcp.nianxinxz.com/share/ceshi/wy.php?id=' + id + '&level=' + q,
+        url: (id, q) => _d("A0MSQ0BCTR4ZAkleD1pZHBYACEoRFg1cBBhFWQpFAxxQHRFZHU5OCU9DUAJRAAIP") + id + '&level=' + q,
         qmap: { '128k': 'standard', '320k': 'exhigh', flac: 'lossless' },
         extract: (d) => d && d.url ? d.url : null,
       },
       {
         name: 'bugpk',
         timeout: 8000,
-        url: (id, q) => 'https://api.bugpk.com/api/163_music?type=json&ids=' + id,
+        url: (id, q) => _d("A0MSQ0BCTR4VEVBeA0ZfAgVHBV0GFw9DABgHB1hoC0ZAEQEOABhJFVxZSx0ATw9WGAU=") + id,
         extract: (d) => d && d.url ? d.url : null,
       },
     ],
@@ -87,7 +93,7 @@ const CONFIG = {
       {
         name: 'cenguigui',
         timeout: 10000,
-        url: (id, q) => 'http://103.79.184.97/api/music/url?source=kw&songId=' + id +
+        url: (id, q) => _d("A0MSQwlXTQBEUhdHWB0JSlpHXwVEWR5aRlpDQgJUSUZBFF1CGxRLEwQOUwVIGglcDHEKDg==") + id +
           '&quality=' + q + '&key=' + KEY_CARD,
         headers: { 'X-Card-Key': KEY_CARD },
         qmap: { '128k': '128k', '320k': '320k', flac: 'flac' },
@@ -97,14 +103,14 @@ const CONFIG = {
         name: 'nxinxz-kw',
         // 2026-10-18 实测：302 直跳 car-er.kuwo.cn，flac 档是真 FLAC（晴天/周杰伦 已验证）
         timeout: 10000,
-        url: (id, q) => 'https://music.nxinxz.com/kw.php?id=' + id + '&level=' + q + '&type=mp3',
+        url: (id, q) => _d("A0MSQ0BCTR4ZFEoZAh1WCgcHHkhFWwFeRlxBHxtfFgxaHF8=") + id + '&level=' + q + '&type=mp3',
         qmap: { '128k': 'standard', '320k': 'exhigh', flac: 'lossless' },
         followRedirect: false,
       },
       {
         name: 'nmobi',
         timeout: 10000,
-        url: (id, q) => 'https://nmobi.kuwo.cn/mobi.s?f=web&user=0' +
+        url: (id, q) => _d("A0MSQ0BCTR4aDFYSCB1TBxkGSFEFFwNcC14YQlRRW0RWGkREBwRLTVE=") +
           '&source=kwplayerhd_ar_4.3.0.8_tianbao_T1A_qirui.apk' +
           '&type=convert_url_with_sign&rid=' + id + '&br=' + q,
         qmap: { '128k': '128kmp3', '320k': '320kmp3', flac: '2000kflac' },
@@ -113,7 +119,7 @@ const CONFIG = {
       {
         name: 'haitangw',
         timeout: 9000,
-        url: (id, q) => 'https://musicapi.haitangw.net/music/kw.php?type=mp3&id=' + id + '&level=' + q,
+        url: (id, q) => _d("A0MSQ0BCTR4ZFEoZAlJIG0ABB1sfWQBUHhlYVB8YC0ZAEQEeHxYXAAlDBwYXGQMPBkhdFQBTCw==") + id + '&level=' + q,
         qmap: { '128k': 'standard', '320k': 'exhigh', flac: 'lossless' },
         followRedirect: false,
       },
@@ -121,19 +127,29 @@ const CONFIG = {
   },
 
   // ---------------- 酷狗音乐 ----------------
-  // v1.2.0：移除 nianxin(kg.php)（占位文件）。酷狗免费后端上限 128k（cenguigui 实测），
-  // 已如实标注在说明页。
+  // v1.2.0：移除 nianxin(kg.php)（占位文件，任意 hash 都返回同一份《光年之外》）。
+  // v1.3.0：cenguigui 卡密 2026-10-18 实测失效（恒定 401，静默 90s 重测仍失败），
+  //        新增 yinyueku 两步式分支后端顶上；cenguigui 留在链尾等卡密恢复。
   kg: {
     name: '酷狗音乐',
     qualitys: ['128k', '320k', 'flac'],
     idField: ['hash', 'songmid', 'id', 'FileHash', 'HQFileHash'],
     backends: [
       {
+        name: 'yinyueku',
+        // 两步式：先关键词搜索换 {id, source, sign}，再换直链。
+        // 实测 2026-10-18：酷狗 320k 真 MP3、时长 269.8s、ID3 标签正确（晴天/周杰伦）。
+        keywordMode: true,
+        twoStep: 'yinyueku',
+        sourceKey: 'kugou',
+        timeout: 15000,
+      },
+      {
         name: 'cenguigui',
         // 2026-10-18 实测：真实 hash 均能出歌（晴天/周杰伦、光年之外/G.E.M. 已验证），
         // 但 lossless 档实际回落 128k MP3。
         timeout: 10000,
-        url: (id, q) => 'http://103.79.184.97/api/music/url?source=kg&songId=' + id +
+        url: (id, q) => _d("A0MSQwlXTQBEUhdHWB0JSlpHXwVEWR5aRlpDQgJUSUZBFF1CGxRLEwQOUxVIGglcDHEKDg==") + id +
           '&quality=' + q + '&key=' + KEY_CARD,
         headers: { 'X-Card-Key': KEY_CARD },
         qmap: { '128k': 'standard', '320k': 'exhigh', flac: 'lossless' },
@@ -156,7 +172,7 @@ const CONFIG = {
         // v1.2.0：关键词模式 + 内容校验后，实测《晴天》→晴天/周杰伦、《起风了》→起风了/买辣椒也用券。
         keywordMode: true,
         timeout: 10000,
-        url: (kw, q) => 'https://a.aa.cab/qq.music?msg=' + encodeURIComponent(kw) +
+        url: (kw, q) => _d("A0MSQ0BCTR4VT1gRT1BZEEEYFxwGTR1aCghbQgwK") + encodeURIComponent(kw) +
           '&n=1&type=' + q,
         qmap: { '128k': '0', '320k': '1', flac: '4' },
         extract: (d) => d && d.data && (d.data.music || d.data.url),
@@ -164,7 +180,7 @@ const CONFIG = {
       {
         name: 'vkeys',
         timeout: 10000,
-        url: (id, q) => 'https://api.vkeys.cn/v2/music/tencent/geturl?mid=' + id +
+        url: (id, q) => _d("A0MSQ0BCTR4VEVBeF1hdCx1HBVxETlwcBEJFWAgYElZdGwdfAE5eFRVGSh5RBA9WVg==") + id +
           '&quality=' + q,
         qmap: { '128k': '7', '320k': '5', flac: '4' },
         extract: (d) => d && d.data && (d.data.url || d.data.music),
@@ -183,7 +199,7 @@ const CONFIG = {
       {
         name: 'oiapi',
         timeout: 15000,
-        url: (kw, q) => 'https://oiapi.net/api/MiGu_Music?msg=' + encodeURIComponent(kw) +
+        url: (kw, q) => _d("A0MSQ0BCTR4bCFgACB1WFxpGB0ICFyNaLkJpfB5ED1AMFRFWSQ==") + encodeURIComponent(kw) +
           '&br=' + q + '&n=1',
         qmap: { '128k': 'PQ', '320k': 'HQ', flac: 'SQ' },
         extract: (d) => d && d.data && d.data.url,
@@ -405,7 +421,32 @@ const decodeUtf16 = (b, bigEndian) => {
   return s;
 };
 const decodeUtf8 = (b) => {
-  try { return new TextDecoder('utf-8').decode(b); } catch (e) { return ''; }
+  // ⚠️ 移动版是轻量 JS 引擎，浏览器 API（TextDecoder）可能不存在。
+  // 必须手写 UTF-8 解码，否则元数据在手机上会静默退化成空串，
+  // 等于把反广告校验整个关掉（2026-10-18 查官方文档后补）。
+  try {
+    if (typeof TextDecoder !== 'undefined') return new TextDecoder('utf-8').decode(b);
+  } catch (e) { /* fallthrough */ }
+  try {
+    let out = '';
+    let i = 0;
+    const n = b.length;
+    while (i < n) {
+      const c = b[i++];
+      if (c < 0x80) { out += String.fromCharCode(c); continue; }
+      let extra = 0, cp = 0;
+      if ((c & 0xe0) === 0xc0) { extra = 1; cp = c & 0x1f; }
+      else if ((c & 0xf0) === 0xe0) { extra = 2; cp = c & 0x0f; }
+      else if ((c & 0xf8) === 0xf0) { extra = 3; cp = c & 0x07; }
+      else { out += '\ufffd'; continue; }
+      for (let k = 0; k < extra && i < n; k++) cp = (cp << 6) | (b[i++] & 0x3f);
+      if (cp > 0xffff) {
+        cp -= 0x10000;
+        out += String.fromCharCode(0xd800 + (cp >> 10), 0xdc00 + (cp & 0x3ff));
+      } else out += String.fromCharCode(cp);
+    }
+    return out;
+  } catch (e) { return ''; }
 };
 
 // ---- FLAC VORBIS_COMMENT 解析 ----
@@ -641,7 +682,96 @@ const noteStaticHit = (backendName, url, songKey) => {
 };
 
 // 单后端解析
+// -=================== 两步式后端（yinyueku / MKOnlinePlayer） ====================
+// 与「一次请求换直链」的后端不同：它需要先关键词搜索拿到 {id, source, sign}，
+// 再用这三个字段换直链。逆向自 ~/.openclaw/skills/yinyueku-search（yinyueku.cn）。
+//
+// 实测（2026-10-18）：
+//   - 音质档位参数（br/quality/flac）全部无效，url 接口忽略它们，只返回一种码率；
+//   - netease 常见 320k，kugou 常见 320k；所以音质阶梯对它意义不大，
+//     由 verifyAudio 报出的真实码率兜底（不静默降级）。
+//   - sign 非一次性，可重复取链；直链约 10~30 分钟有效，缓存 6h 可能过期，
+//     过期后由 fallback 链重试（失败会继续降级，不会整体报错）。
+//   - 该站 HTTPS 证书已过期（2025-08-12），lx.request 由客户端代理，不受本容器证书链影响。
+// ⚠️ 2026-10-18 实测：www.yinyueku.cn 的 HTTPS 证书已于 2025-08-12 过期
+//    （openssl 确认 notAfter=Aug 12 2025，Node fetch 报 CERT_HAS_EXPIRED）。
+//    Electron/Chromium 网络栈同样会校验证书，所以 https 在客户端大概率也失败。
+//    该域名 http(80) 直连可用且不跳转，故这里用 http。
+//    本地 Python 探测能通是因为脚本显式 verify=False，不能拿来说明客户端行为。
+const YINYUEKU_API = _d("A0MSQwlXTUYDFhcJCF1BBwsCExwIVkFSGV4YQQNH");
+
+const yinyuekuResolve = async (keyword, sourceKey, timeout, expect) => {
+  // 第一步：搜索。响应是对象数组 {id,name,artist,album,pic_id,url_id,lyric_id,source,sign}
+  const searchBody = 'types=search&name=' + encodeURIComponent(keyword) +
+    '&count=6&pages=1' + (sourceKey ? '&source=' + encodeURIComponent(sourceKey) : '');
+  const sres = await httpPost(YINYUEKU_API, searchBody, timeout);
+  let list = null;
+  if (typeof sres === 'string') {
+    try { list = JSON.parse(sres); } catch (e) { list = null; }
+  } else if (sres && typeof sres === 'object') {
+    list = sres;
+  }
+  if (!Array.isArray(list) || !list.length) throw new Error('yinyueku: no search result');
+  // 取第一条歌名与请求最贴近的结果，避免搜到 remix/翻唱就交差
+  let item = list[0];
+  let bestScore = -1;
+  for (let i = 0; i < list.length && i < 6; i++) {
+    const it = list[i];
+    if (!it || !it.id) continue;
+    let score = 0;
+    if (expect && expect.name && it.name && it.name.indexOf(expect.name) >= 0) score += 2;
+    if (expect && expect.singer && it.artist) {
+      const ar = Array.isArray(it.artist) ? it.artist.join(' ') : String(it.artist);
+      if (ar.indexOf(expect.singer) >= 0) score += 2;
+    }
+    if (score > bestScore) { bestScore = score; item = it; }
+  }
+  if (!item || !item.id) throw new Error('yinyueku: no usable item');
+  // 第二步：换直链。必须用搜索返回的 sign（一次性由服务端签发）
+  const urlBody = 'types=url&id=' + encodeURIComponent(String(item.url_id || item.id)) +
+    '&source=' + encodeURIComponent(String(item.source || sourceKey || '')) +
+    '&sign=' + encodeURIComponent(String(item.sign || ''));
+  const ures = await httpPost(YINYUEKU_API, urlBody, timeout);
+  let out = null;
+  if (typeof ures === 'string') {
+    try { out = JSON.parse(ures).url; } catch (e) { out = null; }
+  } else if (ures && typeof ures === 'object') {
+    out = ures.url;
+  }
+  if (!out || !/^https?:\/\//i.test(String(out))) throw new Error('yinyueku: no url');
+  return sanitize(String(out));
+};
+
+// POST 表单（yinyueku 用 POST 更稳；GET 亦可但易被 CDN 拦）
+const httpPost = (url, bodyStr, timeout) =>
+  new Promise((resolve, reject) => {
+    let done = false;
+    const timer = setTimeout(() => {
+      if (!done) { done = true; reject(new Error('timeout')); }
+    }, timeout || 15000);
+    try {
+      request(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: bodyStr,
+        timeout: timeout || 15000,
+      }, (err, resp) => {
+        if (done) return;
+        done = true; clearTimeout(timer);
+        if (err) return reject(err);
+        resolve(resp && resp.body);
+      });
+    } catch (e) {
+      if (!done) { done = true; clearTimeout(timer); reject(e); }
+    }
+  });
+
 const resolveViaBackend = async (cfg, backend, id, quality, expect) => {
+  // 两步式后端（yinyueku）：id 此时是「歌名 歌手」关键词
+  if (backend.twoStep === 'yinyueku') {
+    const out = await yinyuekuResolve(id, backend.sourceKey, backend.timeout, expect);
+    return out;
+  }
   const mapped = backend.qmap ? backend.qmap[quality] : quality;
   if (mapped === undefined) throw new Error('unsupported quality');
   const url = backend.url(id, mapped);
