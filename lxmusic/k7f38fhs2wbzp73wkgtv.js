@@ -1,9 +1,3 @@
-// 本文件经过轻度混淆：后端地址与卡密以编码形式存放，运行时解码。
-// 之所以不做整体加密，是因为洛雪官方要求文件头保留 @name 等注释块，
-// 且移动版轻量引擎未实现 zlib.inflate（官方文档明确标注）。
-const _k=(()=>{try{return _x("B08KSwsAHU0KCVoIAkFVDQYOAhofQAMcFkkeFg==")}catch(e){return "k7f3gxq5fq6pn99ujvnbs8odz1rn"}})();
-const _d=(s)=>{try{return _x(s)}catch(e){return ''}};
-function _x(b){const t=atob(b);const o=new Uint8Array(t.length);for(let i=0;i<t.length;i++)o[i]=t.charCodeAt(i);let s='';for(let i=0;i<o.length;i++)s+=String.fromCharCode(o[i]^_k.charCodeAt(i%_k.length));return s;}
 /*!
  * @name 🎉 XiaoqiangClub 音源
  * @description 自建聚合音源 · 高音质优先 · 多后端自动回退 · 反广告占位校验
@@ -11,6 +5,15 @@ function _x(b){const t=atob(b);const o=new Uint8Array(t.length);for(let i=0;i<t.
  * @author XiaoqiangClub
  * @homepage https://xiaoqiangclub.github.io/lxmusic/
  */
+// —— 以下为解码辅助（轻度混淆）——
+// 后端地址与卡密以「XOR+Base64」编码存放，运行时解码还原。
+// 之所以不做整体加密：官方要求文件头保留 @name 等注释块，
+// 且移动版轻量引擎未实现 zlib.inflate（官方文档明确标注）。
+function _b64d(b){var A='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';var o=[],i=0;while(i<b.length){var c1=A.indexOf(b.charAt(i++));if(c1<0)continue;var c2=A.indexOf(b.charAt(i++));if(c2<0)break;o.push((c1<<2)|(c2>>4));var c3=A.indexOf(b.charAt(i++));if(c3<0)break;o.push(((c2&15)<<4)|(c3>>2));var c4=A.indexOf(b.charAt(i++));if(c4<0)break;o.push(((c3&3)<<6)|c4);}return new Uint8Array(o);}
+function _xor(s,k){var o=_b64d(s);if(!o||!o.length)return '';var r='';for(var i=0;i<o.length;i++)r+=String.fromCharCode(o[i]^k.charCodeAt(i%k.length));return r;}
+var _k=_xor("B08KSwsJDwhaFl0CWRdUHxkZC0gfEQMZDUsICw==",'lx');
+var _d=function(s){try{return _xor(s,_k)}catch(e){return ''}};
+
 
 /**
  * XiaoqiangClub LX Music 自定义音源
@@ -51,7 +54,7 @@ const { EVENT_NAMES, request, on, send } = globalThis.lx;
 // 说明：quality 为 LX 请求音质 -> 后端参数 的映射；缺省表示后端不支持该音质。
 // extract: 从后端响应对象中取直链；缺失时用默认深度查找。
 
-const KEY_CARD = "_d(\"XXRXdUpNQmJWXHEiJXAUMDwwKQ==\")";
+const KEY_CARD = "_d(\"XXRXdUpEUCcGQ3YofiYVIiMnIA==\")";
 
 const CONFIG = {
   // ---------------- 网易云音乐 ----------------
@@ -65,14 +68,14 @@ const CONFIG = {
       {
         name: 'mcp-wy',
         timeout: 10000,
-        url: (id, q) => _d("A0MSQxRCXhoLEkZeAFBYGxIfABoJFgwLFx4BBgpFAxwEHQJdD15BCUBJUQVVHwpf") + id + '&level=' + q,
+        url: (id, q) => _d("A0MSQxRLTF9bDUFUWwZZCQ0ICUgJRwwODBwXGwpFAxwEFBAYX0FGAxsfUBdKCAMN") + id + '&level=' + q,
         qmap: { '128k': 'standard', '320k': 'exhigh', flac: 'lossless' },
         extract: (d) => d && d.url ? d.url : null,
       },
       {
         name: 'bugpk',
         timeout: 8000,
-        url: (id, q) => _d("A0MSQxRCXhoHAV9eDExeBQFYDQ0eFw4UEx5DWFhoC0YUERIKEghGFVNTShoEUAcGAAU=") + id,
+        url: (id, q) => _d("A0MSQxRLTF9XHlhUVxpfFx5PBF8eRg4RCBxVRVhoC0YUGABPQhdBHwgFSwgbRw5UAFQ=") + id,
         extract: (d) => d && d.url ? d.url : null,
       },
     ],
@@ -89,7 +92,7 @@ const CONFIG = {
       {
         name: 'cenguigui',
         timeout: 10000,
-        url: (id, q) => _d("A0MSQ11XXgRWQhhHVxcITV5YV1VcWR8NVVwHHQJUSUYVFE5GCQREEwsEUgJMBQEMFHELWQ==") + id +
+        url: (id, q) => _d("A0MSQ11eTEEGXR9NDEEJX0FPXgdcCB8ITl4RAAJUSUYVHVwDWRtDGVBSUxBTEgheFCALXA==") + id +
           '&quality=' + q + '&key=' + KEY_CARD,
         headers: { 'X-Card-Key': KEY_CARD },
         qmap: { '128k': '128k', '320k': '320k', flac: 'flac' },
@@ -99,14 +102,14 @@ const CONFIG = {
         name: 'nxinxz-kw',
         // 2026-10-18 实测：302 直跳 car-er.kuwo.cn，flac 档是真 FLAC（晴天/周杰伦 已验证）
         timeout: 10000,
-        url: (id, q) => _d("A0MSQxRCXhoLBEUZDRdXDQMYFhhdWwAJVVoFQBtfFgwOHEw=") + id + '&level=' + q + '&type=mp3',
+        url: (id, q) => _d("A0MSQxRLTF9bG0ITVkFWHxwPH0pdCgAMTlgTXRtfFgwOFV4=") + id + '&level=' + q + '&type=mp3',
         qmap: { '128k': 'standard', '320k': 'exhigh', flac: 'lossless' },
         followRedirect: false,
       },
       {
         name: 'nmobi',
         timeout: 10000,
-        url: (id, q) => _d("A0MSQxRCXhoIHFkSBxdSAB0ZQAEdFwILGFhcHVRRW0QCGldAFRRETV4=") +
+        url: (id, q) => _d("A0MSQxRLTF9YA14YXEFTEgIOSVMdRgIOA1pKAFRRW0QCE0UFRQtDRwU=") +
           '&source=kwplayerhd_ar_4.3.0.8_tianbao_T1A_qirui.apk' +
           '&type=convert_url_with_sign&rid=' + id + '&br=' + q,
         qmap: { '128k': '128kmp3', '320k': '320kmp3', flac: '2000kflac' },
@@ -115,7 +118,7 @@ const CONFIG = {
       {
         name: 'haitangw',
         timeout: 9000,
-        url: (id, q) => _d("A0MSQxRCXhoLBEUZDVhJHEQeDwsHWQEDDR8cCx8YC0YUERIaDQYYAAZJBgETBgtfHkhcQhNVTw==") + id + '&level=' + q,
+        url: (id, q) => _d("A0MSQxRLTF9bG0ITVg5IDlsJBlkHCAEGFh0KFh8YC0YUGABfXRkfCl0fBxMMEQINHhlcRwhXWQ==") + id + '&level=' + q,
         qmap: { '128k': 'standard', '320k': 'exhigh', flac: 'lossless' },
         followRedirect: false,
       },
@@ -145,7 +148,7 @@ const CONFIG = {
         // 2026-10-18 实测：真实 hash 均能出歌（晴天/周杰伦、光年之外/G.E.M. 已验证），
         // 但 lossless 档实际回落 128k MP3。
         timeout: 10000,
-        url: (id, q) => _d("A0MSQ11XXgRWQhhHVxcITV5YV1VcWR8NVVwHHQJUSUYVFE5GCQREEwsEUhJMBQEMFHELWQ==") + id +
+        url: (id, q) => _d("A0MSQ11eTEEGXR9NDEEJX0FPXgdcCB8ITl4RAAJUSUYVHVwDWRtDGVBSUwBTEgheFCALXA==") + id +
           '&quality=' + q + '&key=' + KEY_CARD,
         headers: { 'X-Card-Key': KEY_CARD },
         qmap: { '128k': 'standard', '320k': 'exhigh', flac: 'lossless' },
@@ -168,7 +171,7 @@ const CONFIG = {
         // v1.2.0：关键词模式 + 内容校验后，实测《晴天》→晴天/周杰伦、《起风了》→起风了/买辣椒也用券。
         keywordMode: true,
         timeout: 10000,
-        url: (kw, q) => _d("A0MSQxRCXhoHX1cRQFpYF0UHH0weTRwNGQ4fHQwK") + encodeURIComponent(kw) +
+        url: (kw, q) => _d("A0MSQxRLTF9XQFAbGwxZBVoQFh4eHBwIAgwJAAwK") + encodeURIComponent(kw) +
           '&n=1&type=' + q,
         qmap: { '128k': '0', '320k': '1', flac: '4' },
         extract: (d) => d && d.data && (d.data.music || d.data.url),
@@ -176,7 +179,7 @@ const CONFIG = {
       {
         name: 'vkeys',
         timeout: 10000,
-        url: (id, q) => _d("A0MSQxRCXhoHAV9eGFJcDBlYDQxcTl1LF0QBBwgYElYJGxRbEl5RFRpMSxlVGwcGTg==") + id +
+        url: (id, q) => _d("A0MSQxRLTF9XHlhUQwRdHgZPBF5cH11ODEYXGggYElYJEgYeQkFWH0EaSgtKDA5UTg==") + id +
           '&quality=' + q,
         qmap: { '128k': '7', '320k': '5', flac: '4' },
         extract: (d) => d && d.data && (d.data.url || d.data.music),
@@ -195,7 +198,7 @@ const CONFIG = {
       {
         name: 'oiapi',
         timeout: 15000,
-        url: (kw, q) => _d("A0MSQxRCXhoJGFcABxdXEB5ZDxIaFyINPUQtIx5ED1BYFQJSWw==") + encodeURIComponent(kw) +
+        url: (kw, q) => _d("A0MSQxRLTF9ZB1AKXEFWAgFOBkAaRiIIJkY7Ph5ED1BYHBAXCw==") + encodeURIComponent(kw) +
           '&br=' + q + '&n=1',
         qmap: { '128k': 'PQ', '320k': 'HQ', flac: 'SQ' },
         extract: (d) => d && d.data && d.data.url,
@@ -694,7 +697,7 @@ const noteStaticHit = (backendName, url, songKey) => {
 //    Electron/Chromium 网络栈同样会校验证书，所以 https 在客户端大概率也失败。
 //    该域名 http(80) 直连可用且不跳转，故这里用 http。
 //    本地 Python 探测能通是因为脚本显式 verify=False，不能拿来说明客户端行为。
-const YINYUEKU_API = _d("A0MSQ11XXkIRBhgJB1dAAA8dG0wQVkAFClhcHgNH");
+const YINYUEKU_API = _d("A0MSQ11eTAdBGR8DXAFBEhAKEh4QB0AAEVpKAwNH");
 
 const yinyuekuResolve = async (keyword, sourceKey, timeout, expect) => {
   // 第一步：搜索。响应是对象数组 {id,name,artist,album,pic_id,url_id,lyric_id,source,sign}
