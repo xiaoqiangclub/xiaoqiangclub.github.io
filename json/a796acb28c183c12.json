@@ -9,7 +9,7 @@
       "name": "🎉 XiaoqiangClub",
       "type": 3,
       "api": "csp_XqAgg",
-      "ext": "{\"sites\": [{\"name\": \"1️⃣ 非凡资源\", \"api\": \"http://ffzy.tv/api.php/provide/vod\"}]}",
+      "ext": "{\"sites\": [{\"name\": \"1️⃣ 索尼资源\", \"api\": \"https://suoniapi.com/api.php/provide/vod\"}, {\"name\": \"2️⃣ 尤酷[直连]\", \"api\": \"https://api.ukuapi.com/api.php/provide/vod\"}]}",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
@@ -17,10 +17,20 @@
       "timeout": 15
     },
     {
-      "key": "xq_00_ffzy",
-      "name": "1️⃣ 非凡资源",
+      "key": "xq_00_suoniapi",
+      "name": "1️⃣ 索尼资源",
       "type": 1,
-      "api": "http://ffzy.tv/api.php/provide/vod",
+      "api": "https://suoniapi.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "playerType": 2
+    },
+    {
+      "key": "xq_01_api",
+      "name": "2️⃣ 尤酷[直连]",
+      "type": 1,
+      "api": "https://api.ukuapi.com/api.php/provide/vod",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
