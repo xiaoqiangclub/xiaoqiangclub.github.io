@@ -9,7 +9,7 @@
       "name": "🎉 XiaoqiangClub",
       "type": 3,
       "api": "csp_XqAgg",
-      "ext": "{\"sites\": [{\"name\": \"1️⃣ 暴风资源\", \"api\": \"https://bfzyapi.com/api.php/provide/vod\"}, {\"name\": \"2️⃣ 天涯资源\", \"api\": \"http://tyyszy.com/api.php/provide/vod\"}, {\"name\": \"3️⃣ 电影天堂\", \"api\": \"http://caiji.dyttzyapi.com/api.php/provide/vod\"}, {\"name\": \"4️⃣ 索尼资源\", \"api\": \"https://suoniapi.com/api.php/provide/vod\"}, {\"name\": \"5️⃣ 百度资源\", \"api\": \"https://api.apibdzy.com/api.php/provide/vod\"}, {\"name\": \"6️⃣ 非凡资源\", \"api\": \"http://ffzy.tv/api.php/provide/vod\"}]}",
+      "ext": "{\"sites\": [{\"name\": \"1️⃣ 暴风资源\", \"api\": \"https://bfzyapi.com/api.php/provide/vod\"}, {\"name\": \"2️⃣ 天涯资源\", \"api\": \"http://tyyszy.com/api.php/provide/vod\"}, {\"name\": \"3️⃣ 电影天堂\", \"api\": \"http://caiji.dyttzyapi.com/api.php/provide/vod\"}, {\"name\": \"4️⃣ 百度资源\", \"api\": \"https://api.apibdzy.com/api.php/provide/vod\"}, {\"name\": \"5️⃣ 闪电资源\", \"api\": \"https://sdzyapi.com/api.php/provide/vod\"}, {\"name\": \"6️⃣ 索尼资源\", \"api\": \"https://suoniapi.com/api.php/provide/vod\"}]}",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
@@ -47,18 +47,8 @@
       "playerType": 2
     },
     {
-      "key": "xq_03_suoniapi",
-      "name": "4️⃣ 索尼资源",
-      "type": 1,
-      "api": "https://suoniapi.com/api.php/provide/vod",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "playerType": 2
-    },
-    {
-      "key": "xq_04_api",
-      "name": "5️⃣ 百度资源",
+      "key": "xq_03_api",
+      "name": "4️⃣ 百度资源",
       "type": 1,
       "api": "https://api.apibdzy.com/api.php/provide/vod",
       "searchable": 1,
@@ -67,10 +57,20 @@
       "playerType": 2
     },
     {
-      "key": "xq_05_ffzy",
-      "name": "6️⃣ 非凡资源",
+      "key": "xq_04_sdzyapi",
+      "name": "5️⃣ 闪电资源",
       "type": 1,
-      "api": "http://ffzy.tv/api.php/provide/vod",
+      "api": "https://sdzyapi.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "playerType": 2
+    },
+    {
+      "key": "xq_05_suoniapi",
+      "name": "6️⃣ 索尼资源",
+      "type": 1,
+      "api": "https://suoniapi.com/api.php/provide/vod",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
