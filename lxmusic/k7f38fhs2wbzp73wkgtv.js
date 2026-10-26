@@ -11,7 +11,7 @@
 // 且移动版轻量引擎未实现 zlib.inflate（官方文档明确标注）。
 function _b64d(b){var A='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';var o=[],i=0;while(i<b.length){var c1=A.indexOf(b.charAt(i++));if(c1<0)continue;var c2=A.indexOf(b.charAt(i++));if(c2<0)break;o.push((c1<<2)|(c2>>4));var c3=A.indexOf(b.charAt(i++));if(c3<0)break;o.push(((c2&15)<<4)|(c3>>2));var c4=A.indexOf(b.charAt(i++));if(c4<0)break;o.push(((c3&3)<<6)|c4);}return new Uint8Array(o);}
 function _xor(s,k){var o=_b64d(s);if(!o||!o.length)return '';var r='';for(var i=0;i<o.length;i++)r+=String.fromCharCode(o[i]^k.charCodeAt(i%k.length));return r;}
-var _k=_xor("B08KSwABAkBYClwTW08cEQ0MFRALAFlKB0xUCA==",'lx');
+var _k=_xor("B08KSxhLBhNfGRgPAg8UQFsKXBpVFAcAWBMVCA==",'lx');
 var _d=function(s){try{return _xor(s,_k)}catch(e){return ''}};
 
 
@@ -59,7 +59,7 @@ const { EVENT_NAMES, request, on, send } = globalThis.lx;
 // 说明：quality 为 LX 请求音质 -> 后端参数 的映射；缺省表示后端不支持该音质。
 // extract: 从后端响应对象中取直链；缺失时用默认深度查找。
 
-const KEY_CARD = "_d(\"XXRXdUFMXW8EX3c5fH5dLDcyPg==\")";
+const KEY_CARD = "_d(\"XXRXdVkGWTwDTDMlJT5VfWE0dw==\")";
 
 const CONFIG = {
   // ---------------- 网易云音乐 ----------------
@@ -73,14 +73,14 @@ const CONFIG = {
       {
         name: 'mcp-wy',
         timeout: 10000,
-        url: (id, q) => _d("A0MSQx9DQRdZEUBFWV4RBxkdFxAdVlZdBhtLGApFAxwPHB1QXV1HEhlHGBleHR1V") + id + '&level=' + q,
+        url: (id, q) => _d("A0MSQwcJRUReAgRZAB4ZVk8bXhpDQggXWUQKGApFAxwXVhkDWk4DDkAHEEgIG1Rf") + id + '&level=' + q,
         qmap: { '128k': 'standard', '320k': 'exhigh', flac: 'lossless' },
         extract: (d) => d && d.url ? d.url : null,
       },
       {
         name: 'bugpk',
         timeout: 8000,
-        url: (id, q) => _d("A0MSQx9DQRdVAllFVUIXGQpaGgcKV1RCAhsJRlhoC0YfEA0HQAtADgpdAwYPUhAMFEU=") + id,
+        url: (id, q) => _d("A0MSQwcJRURSER1ZDAIfSFxcUw1UQwoIXURIRlhoC0YHWglURxgEElMdC1dZVFkGSlE=") + id,
         extract: (d) => d && d.url ? d.url : null,
       },
     ],
@@ -97,7 +97,7 @@ const CONFIG = {
       {
         name: 'cenguigui',
         timeout: 10000,
-        url: (id, q) => _d("A0MSQ1ZWQQkEQR5cDhlBUVVaQF9IGUVbRFlNAwJUSUYeFVFLWwdCCFIKGx5HBxYGADFRDw==") + id +
+        url: (id, q) => _d("A0MSQ04cRVoDUlpAV1lJAANcCVUWDRsRGwYMAwJUSUYGX1UYXBQGFAtKE08RAV8MXiUPRQ==") + id +
           '&quality=' + q + '&key=' + KEY_CARD,
         headers: { 'X-Card-Key': KEY_CARD },
         qmap: { '128k': '128k', '320k': '320k', flac: 'flac' },
@@ -107,14 +107,14 @@ const CONFIG = {
         name: 'nxinxz-kw',
         // 2026-10-18 实测：302 直跳 car-er.kuwo.cn，flac 档是真 FLAC（晴天/周杰伦 已验证）
         timeout: 10000,
-        url: (id, q) => _d("A0MSQx9DQRdZB0MCVBkeEQgaARJJG1pfRF9PXhtfFgwFHVM=") + id + '&level=' + q + '&type=mp3',
+        url: (id, q) => _d("A0MSQwcJRUReFAceDVkWQF4cSBgXDwQVGwAOXhtfFgwdV1c=") + id + '&level=' + q + '&type=mp3',
         qmap: { '128k': 'standard', '320k': 'exhigh', flac: 'lossless' },
         followRedirect: false,
       },
       {
         name: 'nmobi',
         timeout: 10000,
-        url: (id, q) => _d("A0MSQx9DQRdaH18JXhkbHBYbVwsJV1hdCV0WA1RRW0QJG0hNRxdCVgc=") +
+        url: (id, q) => _d("A0MSQwcJRURdDBsVB1kTTUAdHgFXQwYXVgJXA1RRW0QRUUweQAQGSl4=") +
           '&source=kwplayerhd_ar_4.3.0.8_tianbao_T1A_qirui.apk' +
           '&type=convert_url_with_sign&rid=' + id + '&br=' + q,
         qmap: { '128k': '128kmp3', '320k': '320kmp3', flac: '2000kflac' },
@@ -123,7 +123,7 @@ const CONFIG = {
       {
         name: 'haitangw',
         timeout: 9000,
-        url: (id, q) => _d("A0MSQx9DQRdZB0MCVFYAAE8cGAETGVtVHBpWFR8YC0YfEA0XXwUeG19HTx0YBBxVCggGFAJQBQ==") + id + '&level=' + q,
+        url: (id, q) => _d("A0MSQwcJRUReFAceDRYIURkaUQtNDQUfQ0UXFR8YC0YHWglEWBZaBwYHR0xOAlVfVBxYXl0PRA==") + id + '&level=' + q,
         qmap: { '128k': 'standard', '320k': 'exhigh', flac: 'lossless' },
         followRedirect: false,
       },
@@ -153,7 +153,7 @@ const CONFIG = {
         // 2026-10-18 实测：真实 hash 均能出歌（晴天/周杰伦、光年之外/G.E.M. 已验证），
         // 但 lossless 档实际回落 128k MP3。
         timeout: 10000,
-        url: (id, q) => _d("A0MSQ1ZWQQkEQR5cDhlBUVVaQF9IGUVbRFlNAwJUSUYeFVFLWwdCCFIKGw5HBxYGADFRDw==") + id +
+        url: (id, q) => _d("A0MSQ04cRVoDUlpAV1lJAANcCVUWDRsRGwYMAwJUSUYGX1UYXBQGFAtKE18RAV8MXiUPRQ==") + id +
           '&quality=' + q + '&key=' + KEY_CARD,
         headers: { 'X-Card-Key': KEY_CARD },
         qmap: { '128k': 'standard', '320k': 'exhigh', flac: 'lossless' },
@@ -176,19 +176,14 @@ const CONFIG = {
         // v1.2.0：关键词模式 + 内容校验后，实测《晴天》→晴天/周杰伦、《起风了》→起风了/买辣椒也用券。
         keywordMode: true,
         timeout: 10000,
-        url: (kw, q) => _d("A0MSQx9DQRdVXFEKGVQRC04FCEYKDUZbCAtVAwwK") + encodeURIComponent(kw) +
+        url: (kw, q) => _d("A0MSQwcJRURSTxUWQBQZWhgDQUxUGRgRV1QUAwwK") + encodeURIComponent(kw) +
           '&n=1&type=' + q,
         qmap: { '128k': '0', '320k': '1', flac: '4' },
         extract: (d) => d && d.data && (d.data.music || d.data.url),
       },
-      {
-        name: 'vkeys',
-        timeout: 10000,
-        url: (id, q) => _d("A0MSQx9DQRdVAllFQVwVEBJaGgZIDgcdBkFLGQgYElYCGgtWQF1XDkNCAgVeGRAMWg==") + id +
-          '&quality=' + q,
-        qmap: { '128k': '7', '320k': '5', flac: '4' },
-        extract: (d) => d && d.data && (d.data.url || d.data.music),
-      },
+      // 🔴 vkeys 已于 2026-10-24 实测移除：所有音质档均返回 trial-snippet:60s
+      //    （试听片段），用户点歌只能听 1 分钟就被掐断——比不可播更伤体验，零容忍。
+      //    tx 平台保留 aacab（实测 flac 真无损、917ms）。
     ],
   },
 
@@ -203,7 +198,7 @@ const CONFIG = {
       {
         name: 'oiapi',
         timeout: 15000,
-        url: (kw, q) => _d("A0MSQx9DQRdbG1EbXhkeDBVbGBgOV3hbLEFnPR5ED1BTFB1fCQ==") + encodeURIComponent(kw) +
+        url: (kw, q) => _d("A0MSQwcJRURcCBUHB1kWXUNdURJQQyYRcx4mPR5ED1BLXhkMDg==") + encodeURIComponent(kw) +
           '&br=' + q + '&n=1',
         qmap: { '128k': 'PQ', '320k': 'HQ', flac: 'SQ' },
         extract: (d) => d && d.data && d.data.url,
@@ -660,13 +655,34 @@ const verifyAudio = (url, expect) =>
             }
           }
           // --- 歌名/歌手比对 ---
+          // ⚠️ 2026-10-24 误杀修复：QQ 音乐官方 CDN（ws.stream.qqmusic.qq.com）的
+          //    ID3 标签是加密/混淆的——实测 TIT2='wΘN'、TPE1='pN\x12i_N(u8R'，
+          //    根本不是明文歌名。这类标签拿去比对必然 song-mismatch，
+          //    导致《起风了》等正常歌被整首拒掉（用户体验：点了就报错）。
+          //    判定：标签含大量控制字符/非 CJK 非 ASCII 可读字符 → 视为不可读标签，跳过比对。
           const name = expect && expect.name;
           const singer = expect && expect.singer;
+          const readable = (s) => {
+            if (!s) return false;
+            const t = String(s);
+            // 控制字符（除 tab/换行）占比过高 → 加密/二进制垃圾
+            let ctrl = 0;
+            for (const ch of t) {
+              const c = ch.charCodeAt(0);
+              if ((c < 0x20 && c !== 9 && c !== 10 && c !== 13) || c === 0x7f) ctrl++;
+            }
+            if (ctrl / t.length > 0.1) return false;
+            // 可读字符（CJK / 常用拉丁字母数字）占比过低 → 同样视为不可读
+            const good = (t.match(/[\u4e00-\u9fff\u3040-\u30ffA-Za-z0-9]/g) || []).length;
+            return good / t.length >= 0.6;
+          };
           if (name || singer) {
             const title = info.tags.TIT2 || info.tags.TITLE || '';
             const artist = info.tags.TPE1 || info.tags.ARTIST || '';
-            const tOk = name ? textMatch(title, name) : null;
-            const aOk = singer ? textMatch(artist, singer) : null;
+            // 标签不可读（加密/乱码）时不判 mismatch——交给时长闸门和
+            // 静态文件探测兜底，避免误杀正常歌曲。
+            const tOk = (name && readable(title)) ? textMatch(title, name) : null;
+            const aOk = (singer && readable(artist)) ? textMatch(artist, singer) : null;
             if (tOk === false || aOk === false) {
               return finish({ ok: false, reason: 'song-mismatch',
                               tags: { title: title, artist: artist }, duration: info.duration });
@@ -715,7 +731,7 @@ const noteStaticHit = (backendName, url, songKey) => {
 //    Electron/Chromium 网络栈同样会校验证书，所以 https 在客户端大概率也失败。
 //    该域名 http(80) 直连可用且不跳转，故这里用 http。
 //    本地 Python 探测能通是因为脚本显式 verify=False，不能拿来说明客户端行为。
-const YINYUEKU_API = _d("A0MSQ1ZWQU9DBR4SXlkJHAQfDEYEFhpTG10WAANH");
+const YINYUEKU_API = _d("A0MSQ04cRRxEFloOBxkBTVIZRUxaAkQZRAJXAANH");
 
 const yinyuekuResolve = async (keyword, sourceKey, timeout, expect) => {
   // 第一步：搜索。响应是对象数组 {id,name,artist,album,pic_id,url_id,lyric_id,source,sign}
