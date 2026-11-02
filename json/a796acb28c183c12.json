@@ -5,8 +5,28 @@
   "wallpaper": "https://wallpaper-1tg.pages.dev/",
   "sites": [
     {
-      "key": "xq_00_caiji",
-      "name": "1️⃣ 电影天堂",
+      "key": "xq_00_jisuzy",
+      "name": "1️⃣ 极速二线",
+      "type": 1,
+      "api": "https://jisuzy.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "playerType": 2
+    },
+    {
+      "key": "xq_01_jszyapi",
+      "name": "2️⃣ 极速资源",
+      "type": 1,
+      "api": "https://jszyapi.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "playerType": 2
+    },
+    {
+      "key": "xq_02_caiji",
+      "name": "3️⃣ 电影天堂",
       "type": 1,
       "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
       "searchable": 1,
@@ -15,50 +35,10 @@
       "playerType": 2
     },
     {
-      "key": "xq_01_cj",
-      "name": "2️⃣ 非凡资源",
+      "key": "xq_03_cj",
+      "name": "4️⃣ 非凡资源",
       "type": 1,
       "api": "http://cj.ffzyapi.com/api.php/provide/vod",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "playerType": 2
-    },
-    {
-      "key": "xq_02_bfzyapi",
-      "name": "3️⃣ 暴风资源",
-      "type": 1,
-      "api": "https://bfzyapi.com/api.php/provide/vod",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "playerType": 2
-    },
-    {
-      "key": "xq_03_suoniapi",
-      "name": "4️⃣ 索尼资源",
-      "type": 1,
-      "api": "https://suoniapi.com/api.php/provide/vod",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "playerType": 2
-    },
-    {
-      "key": "xq_04_sdzyapi",
-      "name": "5️⃣ 闪电资源",
-      "type": 1,
-      "api": "https://sdzyapi.com/api.php/provide/vod",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "playerType": 2
-    },
-    {
-      "key": "xq_05_api",
-      "name": "6️⃣ 百度资源",
-      "type": 1,
-      "api": "https://api.apibdzy.com/api.php/provide/vod",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
@@ -69,7 +49,7 @@
       "name": "🎉 XiaoqiangClub",
       "type": 3,
       "api": "csp_XqAgg",
-      "ext": "{\"sites\": [{\"name\": \"1️⃣ 电影天堂\", \"api\": \"http://caiji.dyttzyapi.com/api.php/provide/vod\"}, {\"name\": \"2️⃣ 非凡资源\", \"api\": \"http://cj.ffzyapi.com/api.php/provide/vod\"}, {\"name\": \"3️⃣ 暴风资源\", \"api\": \"https://bfzyapi.com/api.php/provide/vod\"}, {\"name\": \"4️⃣ 索尼资源\", \"api\": \"https://suoniapi.com/api.php/provide/vod\"}, {\"name\": \"5️⃣ 闪电资源\", \"api\": \"https://sdzyapi.com/api.php/provide/vod\"}, {\"name\": \"6️⃣ 百度资源\", \"api\": \"https://api.apibdzy.com/api.php/provide/vod\"}]}",
+      "ext": "{\"sites\": [{\"name\": \"1️⃣ 极速二线\", \"api\": \"https://jisuzy.com/api.php/provide/vod\"}, {\"name\": \"2️⃣ 极速资源\", \"api\": \"https://jszyapi.com/api.php/provide/vod\"}, {\"name\": \"3️⃣ 电影天堂\", \"api\": \"http://caiji.dyttzyapi.com/api.php/provide/vod\"}, {\"name\": \"4️⃣ 非凡资源\", \"api\": \"http://cj.ffzyapi.com/api.php/provide/vod\"}]}",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
